@@ -1,7 +1,7 @@
 " TODO: colors in the beginning, Startify Highlighting in the Startify section
 
 " Plugins: {{{
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/git/vim-plug')
 
 Plug 'vim-airline/vim-airline'
 Plug 'lilydjwg/colorizer'

@@ -24,7 +24,8 @@ bindkey -v
 # }}}
 
 # Antigen: {{{
-source $HOME/.antigen/antigen/antigen.zsh
+ADOTDIR=$HOME/git/antigen
+source $HOME/git/antigen/antigen/antigen.zsh
 
 antigen-use oh-my-zsh
 
@@ -32,7 +33,7 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle jump
 antigen-bundle colored-man-pages
 
-antigen-theme /home/marvin/.antigen/themes myLambda
+antigen-theme $HOME/git/antigen/themes myLambda
 # }}}
 
 source $HOME/.zsh_aliases

@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/marvin/.config/xfce4/xfconf/xfce-perchannel-xml'
+let g:netrw_dirhist_2='/home/marvin/bin'
+let g:netrw_dirhist_3='/home/marvin/bootbak'
+let g:netrw_dirhist_4='/home/marvin/Desktop'
+let g:netrw_dirhist_5='/home/marvin/Downloads'
+let g:netrw_dirhist_6='/home/marvin/.config/nvim'
+let g:netrw_dirhist_7='/bin'
+let g:netrw_dirhist_8='/home/marvin/.config/nvim/plugged'

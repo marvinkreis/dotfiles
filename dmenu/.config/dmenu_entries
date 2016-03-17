@@ -1,0 +1,13 @@
+all:dmenu_all
+d:dmenu_dict
+firefox:firefox
+mixer:xfce4-mixer
+o:/home/marvin/bin/dmenu_open
+pkill:dmenu_pkill
+settings:xfce4-settings-manager
+power:dmenu_logout
+thunar:thunar
+urxvt:urxvt
+vlc:vlc
+zathura:zathura
+nvim:urxvt -e nvim

@@ -36,5 +36,5 @@ antigen-bundle colored-man-pages
 antigen-theme $HOME/git/antigen/themes myLambda
 # }}}
 
-source $HOME/.zsh_aliases
-source $HOME/.zsh_functions
+source $HOME/.config/zsh/zsh_aliases
+source $HOME/.config/zsh/zsh_functions

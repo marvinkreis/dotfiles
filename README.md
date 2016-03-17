@@ -1,2 +1,2 @@
 #Dotfiles
-These are the dotfiels for my T450s.
+These are the dotfiles for my T450s.

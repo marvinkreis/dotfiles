@@ -1,2 +1,2 @@
-#Dotfiles
-These are the dotfiles for my T450s.
+# Dotfiles
+Linux Dotfiles

@@ -33,7 +33,7 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle jump
 antigen-bundle colored-man-pages
 
-antigen-theme $HOME/git/antigen/themes myLambda
+antigen-theme $HOME/.config/zsh/themes myLambda
 # }}}
 
 source $HOME/.config/zsh/zsh_aliases

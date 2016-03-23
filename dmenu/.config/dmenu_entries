@@ -6,6 +6,7 @@ mixer:xfce4-mixer
 o:/home/marvin/bin/dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
+screen:dmenu_screen
 power:dmenu_power
 thunar:thunar
 urxvt:urxvt

@@ -3,11 +3,13 @@
 " Plugins: {{{
 call plug#begin('~/git/vim-plug')
 
+Plug 'mkarmona/colorsbox'
 Plug 'vim-airline/vim-airline'
-Plug 'lilydjwg/colorizer'
-Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'mhinz/vim-startify'
+Plug 'lilydjwg/colorizer'
 
 call plug#end()
 " }}}
@@ -54,6 +56,15 @@ let g:startify_list_order = [["Recent files:"], "files", ["Sessions:"], "session
 let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
 let g:startify_session_dir = "~/.local/share/nvim/sessions"
 " }}}
+
+" Goyo: {{{
+function! s:goyo_leave()
+    highlight Normal ctermfg=07 ctermbg=234
+endfunction
+
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+
 
 let mapleader= " "
 map <F1> :bprev! <CR>

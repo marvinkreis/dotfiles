@@ -1,11 +1,12 @@
 all:dmenu_all
 d:dmenu_dict
 firefox:firefox
+flux:dmenu_flux
 mixer:xfce4-mixer
 o:/home/marvin/bin/dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
-power:dmenu_logout
+power:dmenu_power
 thunar:thunar
 urxvt:urxvt
 vlc:vlc

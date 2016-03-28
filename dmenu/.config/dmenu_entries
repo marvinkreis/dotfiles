@@ -2,6 +2,7 @@ all:dmenu_all
 d:dmenu_dict
 firefox:firefox
 flux:dmenu_flux
+g:google
 mixer:xfce4-mixer
 o:/home/marvin/bin/dmenu_open
 pkill:dmenu_pkill

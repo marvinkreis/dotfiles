@@ -1,5 +1,7 @@
 bak () {
-    cp $1:A $1:A.bak
+    for file in $@; do
+        cp $file:A $file:A.bak;
+    done
 }
 
 safe_stow() {

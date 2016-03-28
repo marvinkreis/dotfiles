@@ -1,3 +1,11 @@
 bak () {
     cp $1:A $1:A.bak
 }
+
+safe_stow() {
+    if [[ $(pwd) == "/home/marvin/dotfiles" ]]; then
+        /usr/bin/stow --verbose=2 $*
+    else
+        echo "Wrong directory!"
+    fi
+}

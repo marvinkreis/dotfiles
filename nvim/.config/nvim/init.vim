@@ -144,7 +144,7 @@ highlight StartifySelect ctermfg=09
 highlight StartifyPath ctermfg=11
 " }}}
 
-" EaasyMotion Colors: {{{
+" EasyMotion Colors: {{{
 highlight EasyMotionIncSearch ctermfg=214
 highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
 " }}}

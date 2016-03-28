@@ -32,9 +32,13 @@ antigen-use oh-my-zsh
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle jump
 antigen-bundle colored-man-pages
+antigen-bundle sudo
+antigen-bundle history
 
 antigen-theme $HOME/.config/zsh/themes myLambda
 # }}}
 
 source $HOME/.config/zsh/zsh_aliases
 source $HOME/.config/zsh/zsh_functions
+
+# vim: fdm=marker:

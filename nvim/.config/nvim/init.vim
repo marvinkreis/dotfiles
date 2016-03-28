@@ -1,4 +1,4 @@
-" TODO: colors in the beginning, Startify Highlighting in the Startify section
+" TODO: NERDTree and CtrlP Stuff, name my Airline theme and make it less bright
 
 " Plugins: {{{
 call plug#begin('~/git/vim-plug')
@@ -10,9 +10,49 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-startify'
 Plug 'lilydjwg/colorizer'
+Plug 'easymotion/vim-easymotion'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 " }}}
+
+" Normal Settings: {{{
+filetype plugin indent on
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+set colorcolumn=81
+set cursorline
+set number
+
+set foldmethod=manual
+set wildmode=longest,full
+set ignorecase
+set lazyredraw
+" }}}
+
+" Commands: {{{
+command W w
+command Q Q
+command Wq wq
+command WQ wq
+" }}}
+
+" Key Mappings: {{{
+let mapleader= ","
+
+map <leader>y "+y
+map <leader>p "+p
+
+map <leader>j :bprev! <CR>
+map <leader>k :bnext! <CR>
+map <leader>q :bw <CR>
+map <Leader>n :NERDTreeToggle <CR>
+map <silent> <leader>h :nohlsearch <CR>
+" }}}
+
 
 " Airline: {{{
 let g:airline_powerline_fonts = 1
@@ -31,7 +71,6 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_theme='mytheme'
-
 let g:airline_extensions = ['tabline', 'whitespace']
 
 set noshowmode
@@ -55,6 +94,7 @@ let g:startify_custom_header = [
 let g:startify_list_order = [["Recent files:"], "files", ["Sessions:"], "sessions", ["Bookmarks:"], "bookmarks"]
 let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
 let g:startify_session_dir = "~/.local/share/nvim/sessions"
+let g:startify_change_to_dir = 0
 " }}}
 
 " Goyo: {{{
@@ -65,32 +105,49 @@ endfunction
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
+" EasyMotion: {{{
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
 
-let mapleader= " "
-map <F1> :bprev! <CR>
-map <F2> :bnext! <CR>
-map <Leader>n = :NERDTreeToggle <CR>
+map <leader>f <Plug>(easymotion-sn)
+map <leader>w <Plug>(easymotion-bd-w)
+map <leader>l <Plug>(easymotion-bd-jk)
+" }}}
 
-filetype plugin indent on "auto indent
-set expandtab "spaces instead of tabs"
-set shiftwidth=4 "set indent widh to 4
-set softtabstop=4 "set number of collums for a tab to 4
-set tabstop=4 "set width of a normal tab to 4
+" IndentLine: {{{
+let g:indentLine_color_term = 236
+let g:indentLine_char = '▶'
+let g:indentLine_first_char = '▶'
+let g:indentLine_showFirstIndentLevel = 1
+"}}}
 
-set colorcolumn=81 "highlight the 81th column
-
-set number "enable line numbers
-set fdm=marker "manual folding mode
-set shortmess+=I "disable startup message
 
 " Colors: {{{
 colorscheme colorsbox-stnight
-" highlight Normal ctermfg=254 ctermbg=234
+
+" Normal Colors: {{{
 highlight Normal ctermfg=07 ctermbg=234
+
 highlight ColorColumn ctermbg=235
+highlight CursorLine ctermbg=234
+" highlight CursorLineNr ctermfg=248
+
+highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
+highlight WildMenu ctermfg=214 ctermbg=236
+" }}}
+
+" Startify Colors: {{{
 highlight StartifyHeader ctermfg=07
 highlight StartifyFile ctermfg=07
 highlight StartifyNumber ctermfg=01
 highlight StartifySelect ctermfg=09
 highlight StartifyPath ctermfg=11
 " }}}
+
+" EaasyMotion Colors: {{{
+highlight EasyMotionIncSearch ctermfg=214
+highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+" }}}
+" }}}
+
+" vim: fdm=marker:

@@ -1,4 +1,5 @@
 all:dmenu_all
+c:dmenu_calc
 d:dmenu_dict
 firefox:firefox
 flux:dmenu_flux

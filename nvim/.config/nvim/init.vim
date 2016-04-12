@@ -46,8 +46,8 @@ let mapleader= ","
 map <leader>y "+y
 map <leader>p "+p
 
-map <leader>j :bprev! <CR>
-map <leader>k :bnext! <CR>
+map <leader>j :bnext! <CR>
+map <leader>k :bprev! <CR>
 map <leader>q :bw <CR>
 map <Leader>n :NERDTreeToggle <CR>
 map <silent> <leader>h :nohlsearch <CR>
@@ -129,7 +129,8 @@ colorscheme colorsbox-stnight
 highlight Normal ctermfg=07 ctermbg=234
 
 highlight ColorColumn ctermbg=235
-highlight CursorLine ctermbg=234
+highlight CursorLine ctermbg=235
+highlight CursorLineNr ctermbg=236 ctermfg=214
 " highlight CursorLineNr ctermfg=248
 
 highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE

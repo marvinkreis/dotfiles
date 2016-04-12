@@ -11,3 +11,7 @@ safe_stow() {
         echo "Wrong directory!"
     fi
 }
+
+buptime() {
+    echo "Buptime: (•ᴗ•) days, (•ᴗ•), hours, (•ᴗ•) minutes, (•ᴗ•) seconds."
+}

@@ -13,5 +13,6 @@ power:dmenu_power
 thunar:thunar
 urxvt:urxvt
 vlc:vlc
+volume:dmenu_volume
 zathura:zathura
 nvim:urxvt -e nvim

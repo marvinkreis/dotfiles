@@ -1,14 +1,17 @@
 all:dmenu_all
 c:dmenu_calc
+bookmarks:dmenu_bookmarks
 d:dmenu_dict
 firefox:firefox
 flux:dmenu_flux
 g:google
 mixer:xfce4-mixer
+NetworkManager:dmenu_nm
 o:/home/marvin/bin/dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
 screen:dmenu_screen
+ssh:dmenu_ssh
 power:dmenu_power
 thunar:thunar
 urxvt:urxvt

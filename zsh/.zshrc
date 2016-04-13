@@ -8,7 +8,7 @@ zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-zstyle :compinstall filename '/home/marvin/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit

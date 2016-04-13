@@ -1,1 +1,1 @@
-PATH=$PATH:/home/marvin/bin
+PATH=$PATH:$HOME/bin

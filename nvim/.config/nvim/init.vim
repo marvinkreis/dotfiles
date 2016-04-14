@@ -12,6 +12,7 @@ Plug 'mhinz/vim-startify'
 Plug 'lilydjwg/colorizer'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 " }}}
@@ -35,7 +36,7 @@ set lazyredraw
 
 " Commands: {{{
 command W w
-command Q Q
+command Q q
 command Wq wq
 command WQ wq
 " }}}

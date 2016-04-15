@@ -4,7 +4,7 @@ bookmarks:dmenu_bookmarks
 d:dmenu_dict
 firefox:firefox
 flux:dmenu_flux
-g:google
+s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm
 o:/home/marvin/bin/dmenu_open

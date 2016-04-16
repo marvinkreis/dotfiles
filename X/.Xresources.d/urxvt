@@ -13,8 +13,8 @@ URxvt.iso14755: false
 !tabs
 URxvt.tabbed.tabbar-fg: -2
 URxvt.tabbed.tabbar-bg: -1
-URxvt.tabbed.tab-fg: -2
-URxvt.tabbed.tab-bg: 025
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 131
 URxvt.tabbed.autohide: true
 URxvt.tabbed.new-button: false
 URxvt.tabbed.title: false

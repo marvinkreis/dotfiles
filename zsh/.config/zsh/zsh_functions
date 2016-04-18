@@ -5,8 +5,8 @@ bak () {
 }
 
 safe_stow() {
-    if [[ $(pwd) == "/home/marvin/dotfiles" ]]; then
-        /usr/bin/stow --verbose=2 $*
+    if [[ $(pwd) == "$HOME/dotfiles" ]]; then
+        \stow --verbose=2 $*
     else
         echo "Wrong directory!"
     fi

@@ -1,0 +1,33 @@
+URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
+
+!appearance
+!URxvt.font: xft:Roboto Mono for Powerline:size=11.5
+URxvt.font: xft:Terminus:size=12
+URxvt.internalBorder: 8
+URxvt.cursorBlink: 1
+URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+URxvt.geometry: 90x27
+URxvt.iso14755: false
+
+!tabs
+URxvt.tabbed.tabbar-fg: -2
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 131
+URxvt.tabbed.autohide: true
+URxvt.tabbed.new-button: false
+URxvt.tabbed.title: false
+
+!clipboard
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+Urxvt.clipboard.autocopy: false
+
+!font-size
+URxvt.keysym.Control-Up: perl:font-size:increase
+URxvt.keysym.Control-Down: perl:font-size:decrease
+URxvt.font-size.step: 1
+
+!icon
+URxvt*iconFile: /usr/share/icons/Numix-Circle/48x48/apps/gnome-terminal.svg

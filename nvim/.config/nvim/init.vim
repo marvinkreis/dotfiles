@@ -3,8 +3,10 @@
 " Plugins: {{{
 call plug#begin('~/git/vim-plug')
 
+" Appearance
 Plug 'mkarmona/colorsbox'
 Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
@@ -13,6 +15,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 " }}}
@@ -62,17 +65,25 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+let g:airline_left_sep = '▌'
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = '▐'
+let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = '|'
 
 let g:airline_theme='mytheme'
-let g:airline_extensions = ['tabline', 'whitespace']
+let g:airline_extensions = ['tabline', 'whitespace', 'branch']
 
 set noshowmode
 " }}}
@@ -122,34 +133,28 @@ let g:indentLine_first_char = '▶'
 let g:indentLine_showFirstIndentLevel = 1
 "}}}
 
-
 " Colors: {{{
 colorscheme colorsbox-stnight
 
-" Normal Colors: {{{
+" Normal Colors
 highlight Normal ctermfg=07 ctermbg=234
-
 highlight ColorColumn ctermbg=235
 highlight CursorLine ctermbg=235
 highlight CursorLineNr ctermbg=236 ctermfg=214
-" highlight CursorLineNr ctermfg=248
-
 highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
 highlight WildMenu ctermfg=214 ctermbg=236
-" }}}
 
-" Startify Colors: {{{
+
+" Startify Colors
 highlight StartifyHeader ctermfg=07
 highlight StartifyFile ctermfg=07
 highlight StartifyNumber ctermfg=01
 highlight StartifySelect ctermfg=09
 highlight StartifyPath ctermfg=11
-" }}}
 
-" EasyMotion Colors: {{{
+" EasyMotion Colors
 highlight EasyMotionIncSearch ctermfg=214
 highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
-" }}}
 " }}}
 
 " vim: fdm=marker:

@@ -1,14 +1,14 @@
-let s:N1 = [ '#005f00' , '#aeee00' , 22 , 155] " - normal inside & outside
+let s:N1 = [ '#005f00' , '#aeee00' , 22 , 154] " - normal inside & outside
 let s:N2 = [ '#f4cf86' , '#45413b' , 222 , 238 ] " dirtyblonde    & deepgravel
 let s:N3 = [ '#8cffba' , '#242321' , 121 , 235 ] " saltwatertaffy & darkgravel
 let s:N4 = [ '#666462' , 241 ]                   " mediumgravel
 
 let s:I1 = [ '#000087' , '#0a9dff' , 18 , 39  ] " - insert inside & outside
-let s:I2 = [ '#f4cf86' , '#005fff' , 222 , 25  ] " dirtyblonde    & facebook
+let s:I2 = [ '#f4cf86' , '#005fff' , 222 , 27  ] " dirtyblonde    & facebook
 let s:I3 = [ '#0a9dff' , '#242321' , 39  , 235 ] " tardis         & darkgravel
 
-let s:V1 = [ '#262626' , '#ffa724' , 235 , 215 ] " - visual inside & outside
-let s:V2 = [ '#000000' , '#fade3e' , 16  , 222 ] " coal           & dalespale
+let s:V1 = [ '#262626' , '#ffa724' , 235 , 214 ] " - visual inside & outside
+let s:V2 = [ '#000000' , '#fade3e' , 16  , 221 ] " coal           & dalespale
 let s:V3 = [ '#ff8700' , '#262626' , 208  , 235 ] " - visual font & background
 let s:V4 = [ '#444444' , 238 ]                   " - visual background on unsaved file
 

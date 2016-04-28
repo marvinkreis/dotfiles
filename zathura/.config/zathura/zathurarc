@@ -32,7 +32,7 @@ set recolor                     "false"
 set recolor-keephue             "true"
 set recolor                     "true"
 
-set guioptions                  "" 
+set guioptions                  ""
 set window-icon                 /usr/share/icons/Numix-Circle/48x48/apps/acroread.svg
 set font                        "Terminus 12"
 

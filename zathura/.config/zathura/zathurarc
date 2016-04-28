@@ -1,5 +1,5 @@
 set default-bg                  "#1c1c1c"
-set default-fg                  "#b3b8c4"
+set default-fg                  "#b3b3b3"
 
 set statusbar-bg                "#1c1c1c"
 set statusbar-fg                "#bbbbbb"

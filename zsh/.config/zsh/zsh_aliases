@@ -5,3 +5,4 @@ alias nvlc="nvlc --no-color"
 alias stow=safe_stow
 alias sc=systemctl
 alias s=search
+alias j=jump

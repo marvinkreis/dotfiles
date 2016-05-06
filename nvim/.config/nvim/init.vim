@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 " }}}

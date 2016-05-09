@@ -7,7 +7,7 @@ flux:dmenu_flux
 s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm
-o:/home/marvin/bin/dmenu_open
+o:dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
 screen:dmenu_screen

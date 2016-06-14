@@ -38,13 +38,6 @@ set ignorecase
 set lazyredraw
 " }}}
 
-" Commands: {{{
-command W w
-command Q q
-command Wq wq
-command WQ wq
-" }}}
-
 " Key Mappings: {{{
 let mapleader= ","
 
@@ -57,7 +50,6 @@ map <leader>q :bw <CR>
 map <Leader>n :NERDTreeToggle <CR>
 map <silent> <leader>h :nohlsearch <CR>
 " }}}
-
 
 " Airline: {{{
 let g:airline_powerline_fonts = 1
@@ -156,6 +148,25 @@ highlight StartifyPath ctermfg=11
 " EasyMotion Colors
 highlight EasyMotionIncSearch ctermfg=214
 highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+" }}}
+
+" Commands_and_Functions: {{{
+command W w
+command Q q
+command Wq wq
+command WQ wq
+
+function! HideStuff ()
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = '|'
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = '|'
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = ''
+    let g:airline_symbols.whitespace = ''
+    AirlineRefresh
+endfunction
 " }}}
 
 " vim: fdm=marker:

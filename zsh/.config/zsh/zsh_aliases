@@ -6,3 +6,4 @@ alias stow=safe_stow
 alias sc=systemctl
 alias s=search
 alias j=jump
+alias :q=exit

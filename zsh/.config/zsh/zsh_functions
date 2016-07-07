@@ -1,6 +1,6 @@
 bak () {
     for file in $@; do
-        cp $file:A $file:A.bak;
+        cp -r $file:A $file:A.bak;
     done
 }
 

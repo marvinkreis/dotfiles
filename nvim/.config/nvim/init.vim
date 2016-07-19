@@ -6,17 +6,18 @@ call plug#begin('~/git/vim-plug')
 " Appearance
 Plug 'mkarmona/colorsbox'
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-startify'
-Plug 'lilydjwg/colorizer'
-Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'lilydjwg/colorizer'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+
+" Utility
+Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 " }}}

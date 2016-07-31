@@ -731,7 +731,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not
+    # each rule element can be 4left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
@@ -763,8 +763,8 @@
       # a number like 20, or 'default' to use the size given by the application.
       # you can use fractions such as 1/2 or percentages such as 75% in which
       # case the value is relative to the size of the monitor that the window
-      # appears on.
-      <height>30%</height>
+      # appears eeon.
+      <height>30e%</height>
     </size>
 
     <focus>yes</focus>
@@ -797,6 +797,13 @@
 
   # end of the example
 -->
+  <application title="yabar" type="dock">
+    <position force="yes">
+      <x>0</x>
+      <y>-1056</y>
+    </position>
+    <layer>below</layer>
+  </application>
 </applications>
 
 </openbox_config>

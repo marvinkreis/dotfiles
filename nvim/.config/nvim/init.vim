@@ -37,6 +37,8 @@ set foldmethod=manual
 set wildmode=longest,full
 set ignorecase
 set lazyredraw
+
+set scrolloff=8
 " }}}
 
 " Key Mappings: {{{

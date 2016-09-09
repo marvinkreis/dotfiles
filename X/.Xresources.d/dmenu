@@ -1,0 +1,7 @@
+dmenu.red: -nb '#1c1c1c' -nf '#b3b3b3' -sb '#a33929'
+dmenu.blue: -nb '#1c1c1c' -nf '#b3b3b3' -sb '#005577'
+dmenu.green: -nb '#1c1c1c' -nf '#b3b3b3' -sb '#25741a'
+dmenu.grey: -nb '#1c1c1c' -nf '#b3b3b3' -sb '#303030' -sf '#ffaf00'
+
+dmenu.line: -fn 'Terminus:size=12' -lh 24  -i
+dmenu.list: -fn 'Terminus:size=12' -lh 24  -i -l 21

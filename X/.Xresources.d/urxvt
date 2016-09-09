@@ -30,4 +30,4 @@ URxvt.keysym.Control-Down: perl:font-size:decrease
 URxvt.font-size.step: 1
 
 !icon
-URxvt*iconFile: /usr/share/icons/Numix-Circle/48x48/apps/gnome-terminal.svg
+URxvt*iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg

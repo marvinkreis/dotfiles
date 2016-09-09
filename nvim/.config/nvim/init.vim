@@ -49,6 +49,8 @@ map <leader>p "+p
 
 map <leader>j :bnext! <CR>
 map <leader>k :bprev! <CR>
+map <PageUp> :bprev! <CR>
+map <PageDown> :bnext! <CR>
 map <leader>q :bw <CR>
 map <Leader>n :NERDTreeToggle <CR>
 map <silent> <leader>h :nohlsearch <CR>

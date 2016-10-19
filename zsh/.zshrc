@@ -41,4 +41,6 @@ antigen-theme $HOME/.config/zsh/themes myLambda
 source $HOME/.config/zsh/zsh_aliases
 source $HOME/.config/zsh/zsh_functions
 
+EDITOR=nvim
+
 # vim: fdm=marker:

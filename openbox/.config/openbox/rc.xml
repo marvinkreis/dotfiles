@@ -128,7 +128,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-  <number>4</number>
+  <number>5</number>
   <firstdesk>1</firstdesk>
   <names>
     <name>Workspace 1</name>
@@ -169,7 +169,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
 <margins>
-  <top>24</top>
+  <top>23</top>
   <bottom>0</bottom>
   <left>0</left>
   <right>0</right>

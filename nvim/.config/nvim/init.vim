@@ -6,7 +6,7 @@ call plug#begin('~/git/vim-plug')
 " Appearance
 Plug 'mkarmona/colorsbox'
 Plug 'vim-airline/vim-airline'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lilydjwg/colorizer'

@@ -105,8 +105,8 @@ super + {Left,Down,Up,Right}
 #
 
 # focus
-~button1
-    bspc pointer -g focus
+#~button1
+#    bspc pointer -g focus
 
 # start move/resize
 super + button{1-3}

@@ -2,6 +2,7 @@ all:dmenu_all
 c:dmenu_calc
 bookmarks:dmenu_bookmarks
 d:dmenu_dict
+eclipse:eclipse
 firefox:firefox
 flux:dmenu_flux
 s:search

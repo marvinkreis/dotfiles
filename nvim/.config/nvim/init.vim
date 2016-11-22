@@ -45,8 +45,9 @@ set scrolloff=8
 " Key Mappings: {{{
 let mapleader= ","
 
-map <leader>y "+y
-map <leader>p "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
+inoremap <leader>p <ESC>"+pa
 
 map <leader>j :bnext! <CR>
 map <leader>k :bprev! <CR>

@@ -32,7 +32,7 @@ set recolor                     "false"
 set recolor-keephue             "true"
 set recolor                     "true"
 
-set guioptions                  "sv"
+set guioptions                  ""
 set window-icon                 acroread
 set font                        "Terminus 12"
 

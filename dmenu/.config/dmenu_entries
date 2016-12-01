@@ -4,7 +4,6 @@ bookmarks:dmenu_bookmarks
 d:dmenu_dict
 eclipse:eclipse
 firefox:firefox
-flux:dmenu_flux
 s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm

@@ -48,8 +48,9 @@ let mapleader= ","
 map <F1> <nop>
 imap <F1> <nop>
 
-map <leader>y "+y
-map <leader>p "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
+inoremap <leader>p <ESC>"+pa
 
 map <leader>j :bnext! <CR>
 map <leader>k :bprev! <CR>
@@ -92,17 +93,12 @@ set noshowmode
 
 " Startify: {{{
 let g:startify_custom_header = [
-            \"                             ",
-            \"         █▄████▄█            ",
-            \"        ▄█▀██▀████▄                                     _           ",
-            \"        ███▀▀███████▄▄                                 (_)          ",
-            \"        █▄▀ ▀▀▄███████████▀▀▀     _ __   ___  _____   ___ _ __ ___  ",
-            \"        ██████████████████       | '_ \\ / _ \\/ _ \\ \\ / / | '_ ` _ \\ ",
-            \"        ██████████████████       | | | |  __/ (_) \\ V /| | | | | | |",
-            \"        ▀████████████████        |_| |_|\\___|\\___/ \\_/ |_|_| |_| |_|",
-            \"         ██  █▀    █▀  ██    ",
-            \"         ▀             ▀     ",
-            \"                             "
+            \"                         _           ",
+            \"                        (_)          ",
+            \"   _ __   ___  _____   ___ _ __ ___  ",
+            \"  | '_ \\ / _ \\/ _ \\ \\ / / | '_ ` _ \\ ",
+            \"  | | | |  __/ (_) \\ V /| | | | | | |",
+            \"  |_| |_|\\___|\\___/ \\_/ |_|_| |_| |_|",
             \]
 
 let g:startify_list_order = [["Recent files:"], "files", ["Sessions:"], "sessions", ["Bookmarks:"], "bookmarks"]

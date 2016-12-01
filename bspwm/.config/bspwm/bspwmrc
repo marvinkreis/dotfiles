@@ -17,5 +17,6 @@ bspc config click_to_focus      true
 bspc monitor -d "Workspace 1" "Workspace 2" "Workspace 3" "Workspace 4" "Workspace 5"
 
 bspc rule -a floating state=floating
+bspc rule -a Zathura state=tiled
 
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc_bspwm

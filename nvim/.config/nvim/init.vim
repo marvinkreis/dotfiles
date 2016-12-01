@@ -45,6 +45,9 @@ set scrolloff=8
 " Key Mappings: {{{
 let mapleader= ","
 
+map <F1> <nop>
+imap <F1> <nop>
+
 map <leader>y "+y
 map <leader>p "+p
 

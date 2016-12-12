@@ -42,5 +42,6 @@ source $HOME/.config/zsh/zsh_aliases
 source $HOME/.config/zsh/zsh_functions
 
 EDITOR=nvim
+setopt histignorespace
 
 # vim: fdm=marker:

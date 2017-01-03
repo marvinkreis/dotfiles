@@ -1,5 +1,4 @@
 alias -g tobg="&> /dev/null &"
-alias -g @uni="kreismar@anatol.fim.uni-passau.de"
 
 alias j=jump
 alias nvlc="nvlc --no-color"

@@ -13,7 +13,7 @@ safe_stow() {
 }
 
 buptime() {
-    echo "Buptime: (•ᴗ•) days, (•ᴗ•), hours, (•ᴗ•) minutes, (•ᴗ•) seconds."
+    echo "Buptime: ( •ᴗ•) days, ( •ᴗ•), hours, ( •ᴗ•) minutes, ( •ᴗ•) seconds."
 }
 
 extract(){

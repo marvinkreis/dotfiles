@@ -6,4 +6,4 @@ alias :q=exit
 alias s=search
 alias stow=safe_stow
 alias sc=systemctl
-alias c=clear
+alias c="clear; clear"

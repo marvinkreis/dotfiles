@@ -7,6 +7,7 @@ firefox:firefox
 s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm
+nvim:urxvt -e nvim
 o:dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
@@ -18,4 +19,3 @@ urxvt:urxvt
 vlc:vlc
 volume:dmenu_volume
 zathura:zathura
-nvim:urxvt -e nvim

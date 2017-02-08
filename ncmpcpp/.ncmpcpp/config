@@ -227,6 +227,7 @@ mpd_port = 6600
 ## Note: attributes are not supported for the following variables.
 ##
 #song_window_title_format = {%a - }{%t}|{%f}
+song_window_title_format = [75%% T] {%a - }{%t}|{%f}
 ##
 ## Note: Below variables are used for sorting songs in browser.
 ## The sort mode determines how songs are sorted, and can be used

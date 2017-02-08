@@ -31,3 +31,7 @@ URxvt.font-size.step: 1
 
 !icon
 URxvt*iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg
+
+!transparency
+URxvt*transparent: true
+URxvt*shading: 0

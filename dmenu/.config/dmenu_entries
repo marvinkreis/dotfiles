@@ -7,6 +7,7 @@ firefox:firefox
 s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm
+ncmpcpp:urxvt -bg #000000 -e ncmpcpp
 nvim:urxvt -e nvim
 o:dmenu_open
 pkill:dmenu_pkill

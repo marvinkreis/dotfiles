@@ -1,2 +1,3 @@
 nvim/.config/nvim/autoload/plug.vim
 nvim/.config/nvim/autoload/plug.vim.old
+mpd/.config/mpd/mpd.conf

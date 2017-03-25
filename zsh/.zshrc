@@ -15,7 +15,7 @@ compinit
 # }}}
 
 # zsh-newuser-install: {{{
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=2500
 SAVEHIST=1000
 setopt appendhistory extendedglob notify

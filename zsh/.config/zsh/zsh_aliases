@@ -7,3 +7,4 @@ alias s=search
 alias stow=safe_stow
 alias sc=systemctl
 alias c="clear; clear"
+alias rm="rm -vi"

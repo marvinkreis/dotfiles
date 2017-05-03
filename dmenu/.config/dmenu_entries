@@ -7,7 +7,8 @@ firefox:firefox
 s:search
 mixer:xfce4-mixer
 NetworkManager:dmenu_nm
-ncmpcpp:urxvt -bg #0f0000 -fg #EEEEEE -shading 35 -e ncmpcpp
+ncmpcpp:urxvtc -bg '#000000' -shading 35 -blr 20 -e ncmpcpp
+ncmpcpp_nocover:NO_COVER=1 urxvtc -bg '#000000' -shading 35 -blr 20 -e ncmpcpp
 nvim:urxvt -e nvim
 o:dmenu_open
 pkill:dmenu_pkill
@@ -16,7 +17,8 @@ screen:dmenu_screen
 ssh:dmenu_ssh
 power:dmenu_power
 thunar:thunar
-urxvt:urxvt
+urxvt:urxvtc
+urxvt_transparent:urxvtc -shading 25 -blr 40
 vlc:vlc
 volume:dmenu_volume
 zathura:zathura

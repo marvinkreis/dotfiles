@@ -16,7 +16,7 @@ buptime() {
     echo "Buptime: ( •ᴗ•) days, ( •ᴗ•), hours, ( •ᴗ•) minutes, ( •ᴗ•) seconds."
 }
 
-extract(){
+extract() {
    if [[ -z "$1" ]] ; then
        print -P "usage: \e[1;36mextract\e[1;0m < filename >"
        print -P "       Extract the file specified based on the extension"
@@ -40,4 +40,12 @@ extract(){
    else
        echo "File ('$1') does not exist!"
    fi
+}
+
+set_background() {
+    if [ $1 ]; then
+        printf "\e]20;$1;\a"
+    else
+        printf "\e]20;;100x100+1000+1000\a"
+    fi
 }

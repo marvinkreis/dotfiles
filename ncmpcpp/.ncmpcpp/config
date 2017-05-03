@@ -25,7 +25,7 @@ ncmpcpp_directory = ~/.ncmpcpp
 #
 ##### connection settings #####
 #
-mpd_host = ~/.mpd/socket
+mpd_host = /tmp/mpdsocket
 #
 mpd_port = 6600
 #
@@ -93,7 +93,7 @@ mpd_port = 6600
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-#visualizer_type = wave
+visualizer_type = spectrum
 #
 #visualizer_look = ●▮
 #
@@ -276,7 +276,7 @@ mpd_port = 6600
 ##   not available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (46f)[white]{:Cover} (20)[]{a} (6f)[green]{NE} (30)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -284,7 +284,7 @@ mpd_port = 6600
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "display_cover"
 #
 #playlist_show_mpd_host = no
 #
@@ -299,7 +299,7 @@ mpd_port = 6600
 ##
 #playlist_display_mode = columns
 #
-#browser_display_mode = classic
+browser_display_mode = columns
 #
 #search_engine_display_mode = classic
 #
@@ -331,7 +331,7 @@ mpd_port = 6600
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #

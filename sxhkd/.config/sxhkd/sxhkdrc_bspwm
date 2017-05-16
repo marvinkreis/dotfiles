@@ -51,7 +51,7 @@ super + bracket{left,right}
     bspc desktop -f {prev,next}
 
 # focus the last node/desktop
-super + {grave,Tab}
+{alt, super} + Tab
     bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -111,9 +111,10 @@ super + {Left,Down,Up,Right}
 # start move/resize
 super + button{1-3}
     bspc pointer -g {move,resize_corner,resize_side}
+label-song-underline = ${colors.foreground-alt}
 
-super + !button{1-3}
-	bspc pointer -t %i %i
+#super + !button{1-3}
+#	bspc pointer -t %i %i
 
 # end move/resize
 super + @button{1-3}

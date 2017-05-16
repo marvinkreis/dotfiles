@@ -158,7 +158,7 @@ def_key "mouse"
   mouse_event
 
 def_key "q"
-  stop
+  pause
   quit
 
 def_key "Q"

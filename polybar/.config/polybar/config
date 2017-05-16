@@ -12,11 +12,13 @@
 background = #222222
 background-alt = #333333
 ;foreground = ${xrdb:color7:#222}
-foreground = #DFDFDF
+;foreground = #DFDFDF
+foreground = #EEEEEE
 foreground-alt = #555555
 primary = #F2A5A1
 secondary = #EFB7CD
 alert = #D64937
+icon = #999999
 
 [bar/standard]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -24,12 +26,12 @@ alert = #D64937
 ;height = 27
 ;offset-x = 4
 ;offset-y = 4
-width = 1912
+width = 1920
 height = 27
-offset-x = 4
-offset-y = 4
+offset-x = 0
+offset-y = 0
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -38,7 +40,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #ffffff00
+border-color = #FFFFFFFF
 
 padding-left = 0
 padding-right = 2
@@ -53,15 +55,16 @@ font-3 = Noto Sans CJK JP:style=Regular:pixelsize=10;1
 ;font-3 = IPAPMincho,IPA P明朝:style=Regular:pixelsize=10;1
 
 modules-left = bspwm xwindow
-modules-center = mpd
-modules-right = xbacklight volume memory cpu custom_battery_1 custom_battery_2 temperature date network
+modules-center =
+modules-right = mpd xbacklight volume memory cpu battery snd_battery temperature date wlan
 
 ;tray-transparent = true
 ;tray-background = #0063ff
+tray-position = right
 
 wm-restack = bspwm
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -110,7 +113,7 @@ type = internal/mpd
 host = /tmp/mpdsocket
 port = 6600
 
-format-online = <toggle> <label-song>
+format-online = <icon-stop> <toggle> <label-song>
 
 icon-prev = 
 icon-stop = 
@@ -120,6 +123,7 @@ icon-next = 
 
 label-song-maxlen = 60
 label-song-ellipsis = true
+label-song-underline = ${colors.foreground-alt}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -147,16 +151,16 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-prefix-foreground = ${colors.icon}
+format-underline = ${colors.foreground-alt}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-prefix-foreground = ${colors.icon}
+format-underline = ${colors.foreground-alt}
 label = %percentage_used%%
 
 [module/wlan]
@@ -165,7 +169,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.foreground-alt}
 label-connected = %essid%
 
 format-disconnected =
@@ -179,7 +183,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.icon}
 
 [module/eth]
 type = internal/network
@@ -208,8 +212,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-prefix-foreground = ${colors.icon}
+format-underline = ${colors.foreground-alt}
 
 label = %date% %time%
 
@@ -248,7 +252,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.foreground-alt}
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -260,7 +264,7 @@ format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.icon}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -268,13 +272,17 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
+[module/snd_battery]
+inherit = module/battery
+battery = BAT1
+
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = ${colors.foreground-alt}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -285,7 +293,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.icon}
 
 [module/powermenu]
 type = custom/menu
@@ -314,17 +322,9 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-[module/custom_battery_1]
-type = custom/script
-exec = echo $(($(cat /sys/class/power_supply/BAT0/energy_now) * 100 / $(cat /sys/class/power_supply/BAT0/energy_full)))%
-
-[module/custom_battery_2]
-type = custom/script
-exec = echo $(($(cat /sys/class/power_supply/BAT1/energy_now) * 100 / $(cat /sys/class/power_supply/BAT1/energy_full)))%
-
 [settings]
 screenchange-reload = true
-compositing-background = screen
+compositing-background = source
 ;compositing-foreground = source
 ;compositing-border = over
 

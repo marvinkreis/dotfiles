@@ -1,7 +1,6 @@
 URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
 
 !appearance
-!URxvt.font: xft:Roboto Mono for Powerline:size=11.5
 URxvt.font: xft:Terminus:size=12
 !URxvt.font: xft:xos4 Terminus:style=Regular
 URxvt.internalBorder: 8
@@ -10,6 +9,7 @@ URxvt.scrollBar: false
 URxvt.scrollstyle: plain
 URxvt.geometry: 90x27
 URxvt.iso14755: false
+URxvt.dynamicColors: on
 
 !tabs
 URxvt.tabbed.tabbar-fg: -2

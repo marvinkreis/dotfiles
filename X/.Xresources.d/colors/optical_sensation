@@ -1,20 +1,37 @@
-! FROM ix
-*background:  #252525
-*foreground:  #E8EAEC
+! special
+*background:    #252525
+*foreground:    #E8EAEC
 
-*color0:  #525252
-*color1:  #EF9A89
-*color2:  #ABD37C
-*color3:  #EEC87C
-*color4:  #7CA2EE
-*color5:  #9197BB
-*color6:  #74CADB
-*color7:  #E8E5DC
-*color8:  #707070
-*color9:  #EF9A89
-*color10: #ABD37C
-*color11: #EEC87C
-*color12: #7CA2EE
-*color13: #9197BB
-*color14: #74CADB
-*color15: #E8E5DC
+! black
+*color0:        #525252
+*color8:        #707070
+
+! red
+*color1:        #EF9A89
+*color9:        #EF9A89
+
+! green
+*color2:        #ABD37C
+*color10:       #ABD37C
+
+! yellow
+*color3:        #EEC87C
+*color11:       #EEC87C
+
+! blue
+*color4:        #7CA2EE
+*color12:       #7CA2EE
+
+! magenta
+*color5:        #9197BB
+*color13:       #9197BB
+
+! cyan
+*color6:        #74CADB
+*color14:       #74CADB
+
+! white
+*color7:        #E8E5DC
+*color15:       #E8E5DC
+
+! vim: set ft=xdefaults :

@@ -6,15 +6,16 @@ eclipse:eclipse
 firefox:firefox
 s:search
 mixer:xfce4-mixer
+ncmpcpp:ncmpcpp_gui
+ncmpcpp_nocover:ncmpcpp_gui --nocover
 NetworkManager:dmenu_nm
-ncmpcpp:urxvtc -bg '#000000' -shading 35 -blr 20 -e ncmpcpp
-ncmpcpp_nocover:NO_COVER=1 urxvtc -bg '#000000' -shading 35 -blr 20 -e ncmpcpp
 nvim:urxvt -e nvim
 o:dmenu_open
 pkill:dmenu_pkill
 settings:xfce4-settings-manager
 screen:dmenu_screen
 ssh:dmenu_ssh
+trans:transset-df -c
 power:dmenu_power
 thunar:thunar
 urxvt:urxvtc

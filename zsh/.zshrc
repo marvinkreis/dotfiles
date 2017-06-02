@@ -38,8 +38,11 @@ antigen-bundle history
 antigen-theme $HOME/.config/zsh/themes myLambda
 # }}}
 
-source $HOME/.config/zsh/zsh_aliases
-source $HOME/.config/zsh/zsh_functions
+ZSH_CONFIG=$HOME/.config/zsh
+
+source $ZSH_CONFIG/zsh_aliases
+source $ZSH_CONFIG/zsh_functions
+source $ZSH_CONFIG/zsh_completions
 
 EDITOR=nvim
 setopt histignorespace

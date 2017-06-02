@@ -49,3 +49,22 @@ set_background() {
         printf "\e]20;;100x100+1000+1000\a"
     fi
 }
+
+rbecho() {
+    local opts
+
+    if [ $1 == "-a" ]; then
+        opts="-a"
+        shift
+    fi
+
+    if [ $1 ]; then
+        echo
+        echo $@ | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F 0.2 $opts
+        echo
+    else
+        echo
+        figlet -t -f smslant | lolcat -F 0.2 $opts
+        echo
+    fi
+}

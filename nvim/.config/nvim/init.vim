@@ -7,8 +7,7 @@ call plug#begin('~/git/vim-plug')
 Plug 'mkarmona/colorsbox'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-" Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lilydjwg/colorizer'
@@ -127,7 +126,7 @@ map <leader>l <Plug>(easymotion-bd-jk)
 " }}}
 
 " IndentLine: {{{
-let g:indentLine_color_term = 236
+let g:indentLine_color_term = 8
 let g:indentLine_char = '▶'
 let g:indentLine_first_char = '▶'
 let g:indentLine_showFirstIndentLevel = 1

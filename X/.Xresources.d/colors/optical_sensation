@@ -1,37 +1,37 @@
 ! special
-*background:    #252525
-*foreground:    #E8EAEC
+*.background:    #252525
+*.foreground:    #E8EAEC
 
 ! black
-*color0:        #525252
-*color8:        #707070
+*.color0:        #525252
+*.color8:        #707070
 
 ! red
-*color1:        #EF9A89
-*color9:        #EF9A89
+*.color1:        #EF9A89
+*.color9:        #EF9A89
 
 ! green
-*color2:        #ABD37C
-*color10:       #ABD37C
+*.color2:        #ABD37C
+*.color10:       #ABD37C
 
 ! yellow
-*color3:        #EEC87C
-*color11:       #EEC87C
+*.color3:        #EEC87C
+*.color11:       #EEC87C
 
 ! blue
-*color4:        #7CA2EE
-*color12:       #7CA2EE
+*.color4:        #7CA2EE
+*.color12:       #7CA2EE
 
 ! magenta
-*color5:        #9197BB
-*color13:       #9197BB
+*.color5:        #9197BB
+*.color13:       #9197BB
 
 ! cyan
-*color6:        #74CADB
-*color14:       #74CADB
+*.color6:        #74CADB
+*.color14:       #74CADB
 
 ! white
-*color7:        #E8E5DC
-*color15:       #E8E5DC
+*.color7:        #E8E5DC
+*.color15:       #E8E5DC
 
 ! vim: set ft=xdefaults :

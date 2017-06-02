@@ -7,6 +7,7 @@ call plug#begin('~/git/vim-plug')
 Plug 'mkarmona/colorsbox'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 " Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
@@ -86,7 +87,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:airline#extensions#tabline#right_sep = ''
 "let g:airline#extensions#tabline#right_alt_sep = '|'
 
-let g:airline_theme='mytheme'
+let g:airline_theme='mybase16'
 let g:airline_extensions = ['tabline', 'whitespace', 'branch']
 
 set noshowmode

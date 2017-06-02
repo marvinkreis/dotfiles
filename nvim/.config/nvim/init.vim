@@ -31,8 +31,8 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-set colorcolumn=81
-set cursorline
+"set colorcolumn=81
+"set cursorline
 set number
 
 set foldmethod=manual
@@ -136,12 +136,14 @@ let g:indentLine_showFirstIndentLevel = 1
 colorscheme colorsbox-stnight
 
 " Normal Colors
-highlight Normal ctermfg=07 ctermbg=234
-highlight ColorColumn ctermbg=235
-highlight CursorLine ctermbg=235
+"highlight Normal ctermfg=07 ctermbg=234
+highlight Normal ctermfg=NONE ctermbg=NONE
+"highlight ColorColumn ctermbg=235
+"highlight CursorLine ctermbg=235
 highlight CursorLineNr ctermbg=236 ctermfg=214
 highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
 highlight WildMenu ctermfg=214 ctermbg=236
+highlight Folded ctermbg=0
 
 
 " Startify Colors

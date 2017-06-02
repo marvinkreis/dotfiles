@@ -19,7 +19,7 @@ let s:gui0E = "#d381c3"
 let s:gui0F = "#be643c"
 
 let s:cterm00 = 1
-let s:cterm01 = 0       " layer 3 bg + mode font
+let s:cterm01 = 0       " layer 3 bg
 let s:cterm02 = 8       " layer 2 bg
 let s:cterm03 = 1
 let s:cterm04 = 1
@@ -55,9 +55,9 @@ let s:V2   = [ s:gui06, s:gui02, s:cterm06, s:cterm02 ]
 let s:V3   = [ s:gui09, s:gui01, s:cterm09, s:cterm01 ]
 let g:airline#themes#mybase16#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:IA1   = [ s:gui05, s:gui01, s:cterm05, 7 ]
-let s:IA2   = [ s:gui05, s:gui01, s:cterm05, 7 ]
-let s:IA3   = [ s:gui05, s:gui01, s:cterm05, 7 ]
+let s:IA1   = [ s:gui05, s:gui01, 7, 8 ]
+let s:IA2   = [ s:gui05, s:gui01, 7, 8 ]
+let s:IA3   = [ s:gui05, s:gui01, 7, 8 ]
 let g:airline#themes#mybase16#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
 " Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp

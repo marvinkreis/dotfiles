@@ -6,6 +6,7 @@ call plug#begin('~/git/vim-plug')
 " Appearance
 Plug 'mkarmona/colorsbox'
 Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'jonathanfilip/vim-lucius'
 Plug 'vim-airline/vim-airline'
 "Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
@@ -19,7 +20,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
-Plug 'romainl/vim-cool'
 
 call plug#end()
 " }}}
@@ -31,8 +31,8 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-"set colorcolumn=81
-"set cursorline
+set colorcolumn=81
+set cursorline
 set number
 
 set foldmethod=manual
@@ -135,27 +135,33 @@ let g:indentLine_showFirstIndentLevel = 1
 " Colors: {{{
 colorscheme colorsbox-stnight
 
-" Normal Colors
-"highlight Normal ctermfg=07 ctermbg=234
-highlight Normal ctermfg=NONE ctermbg=NONE
-"highlight ColorColumn ctermbg=235
-"highlight CursorLine ctermbg=235
-highlight CursorLineNr ctermbg=236 ctermfg=214
-highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
-highlight WildMenu ctermfg=214 ctermbg=236
-highlight Folded ctermbg=0
+function MyColors()
+    " Normal Colors
+    "highlight Normal ctermfg=07 ctermbg=234
+    highlight Normal ctermfg=NONE ctermbg=NONE
+    "highlight ColorColumn ctermbg=235
+    "highlight CursorLine ctermbg=235
+    highlight ColorColumn ctermbg=0
+    highlight CursorLine ctermbg=0
+    highlight CursorLineNr ctermbg=236 ctermfg=214
+    highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
+    highlight WildMenu ctermfg=214 ctermbg=236
+    highlight Folded ctermbg=0
 
 
-" Startify Colors
-highlight StartifyHeader ctermfg=07
-highlight StartifyFile ctermfg=07
-highlight StartifyNumber ctermfg=01
-highlight StartifySelect ctermfg=09
-highlight StartifyPath ctermfg=11
+    " Startify Colors
+    highlight StartifyHeader ctermfg=07
+    highlight StartifyFile ctermfg=07
+    highlight StartifyNumber ctermfg=01
+    highlight StartifySelect ctermfg=09
+    highlight StartifyPath ctermfg=11
 
-" EasyMotion Colors
-highlight EasyMotionIncSearch ctermfg=214
-highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+    " EasyMotion Colors
+    highlight EasyMotionIncSearch ctermfg=214
+    highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+endfunction
+
+execute MyColors()
 " }}}
 
 " Commands_and_Functions: {{{
@@ -163,17 +169,33 @@ command W w
 command Q q
 command Wq wq
 command WQ wq
+" }}}
 
-function! HideStuff ()
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = '|'
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = '|'
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
-    let g:airline_symbols.whitespace = ''
-    AirlineRefresh
+" Printing: {{{
+let g:html_number_lines = 0
+let g:html_font = ["Courier New"]
+
+function HTML2PDF(...)
+    let l:default_font_size = '12.5'
+    let l:color_scheme = 'lucius'
+
+    let l:old_colors = g:colors_name
+    let l:font_size = get(a:, '1', l:default_font_size)
+    let l:html_path = "/tmp/" . expand("%:t:r:r") . ".html"
+    let l:pdf_path = get(a:, '2', expand("%:t:r:r") . ".pdf")
+
+    execute 'colorscheme' l:color_scheme
+    highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
+
+    TOhtml
+    execute 'w!' l:html_path
+    q!
+
+    execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', l:font_size, 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
+    execute '!wkhtmltopdf --margin-left 15 --margin-right 15 --margin-top 15 --margin-bottom 15' l:html_path l:pdf_path
+
+    execute 'colorscheme' l:old_colors
+    execute MyColors()
 endfunction
 " }}}
 

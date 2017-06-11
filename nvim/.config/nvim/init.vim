@@ -186,6 +186,7 @@ function HTML2PDF(...)
 
     execute 'colorscheme' l:color_scheme
     highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
+    IndentLinesDisable
 
     TOhtml
     execute 'w!' l:html_path
@@ -193,6 +194,7 @@ function HTML2PDF(...)
 
     execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', l:font_size, 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
     execute '!wkhtmltopdf --margin-left 15 --margin-right 15 --margin-top 15 --margin-bottom 15' l:html_path l:pdf_path
+    IndentLinesEnable
 
     execute 'colorscheme' l:old_colors
     execute MyColors()

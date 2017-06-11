@@ -8,3 +8,4 @@ alias stow=safe_stow
 alias sc=systemctl
 alias c="clear; clear"
 alias rm="rm -vI"
+alias cs="colorscheme-switch -s"

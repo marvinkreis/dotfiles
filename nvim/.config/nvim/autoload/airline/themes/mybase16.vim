@@ -49,6 +49,10 @@ let s:l3_bg             = 0     " also tabbar bg
 let s:l3_fg             = 7
 let s:l3_fg_mod         = 3
 
+" Inactive
+let s:i_bg              = 8
+let s:i_fg              = 7
+
 
 
 let s:N1   = [ s:gui_l1_fg,   s:gui_l1_bg_normal,   s:l1_fg,    s:l1_bg_normal ]
@@ -71,9 +75,9 @@ let s:V2   = [ s:gui_l2_fg,   s:gui_l2_bg,          s:l2_fg,    s:l2_bg ]
 let s:V3   = [ s:gui_l3_fg,   s:gui_l3_bg,          s:l3_fg,    s:l3_bg ]
 let g:airline#themes#mybase16#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:IA1   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
-let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
-let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
+let s:IA1   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
+let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
+let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let g:airline#themes#mybase16#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
 " When file is modified (Only difference right now is layer 3 fg
@@ -98,9 +102,9 @@ let s:V2   = [ s:gui_l2_fg,       s:gui_l2_bg,          s:l2_fg,        s:l2_bg 
 let s:V3   = [ s:gui_l3_fg_mod,   s:gui_l3_bg,          s:l3_fg_mod,    s:l3_bg ]
 let g:airline#themes#mybase16#palette.visual_modified = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:IA1   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
-let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
-let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, 7, 8 ]
+let s:IA1   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
+let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
+let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let g:airline#themes#mybase16#palette.inactive_modified = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
 " Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp

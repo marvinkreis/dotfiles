@@ -1,12 +1,13 @@
-" TODO: NERDTree and CtrlP Stuff, name my Airline theme and make it less bright
-
 " Plugins: {{{
 call plug#begin('~/git/vim-plug')
 
-" Appearance
+" Themes
 Plug 'mkarmona/colorsbox'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'altercation/vim-colors-solarized'
+
+" Appearance
 Plug 'vim-airline/vim-airline'
 "Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
@@ -31,7 +32,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-set colorcolumn=81
+set colorcolumn=81,105
 set cursorline
 set number
 
@@ -49,17 +50,28 @@ let mapleader= ","
 map <F1> <nop>
 imap <F1> <nop>
 
+" System Clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
 inoremap <leader>p <ESC>"+pa
 
+" Normal Mappings
 map <leader>j :bnext! <CR>
 map <leader>k :bprev! <CR>
-map <PageUp> :bprev! <CR>
-map <PageDown> :bnext! <CR>
 map <leader>q :bw <CR>
 map <Leader>n :NERDTreeToggle <CR>
 map <silent> <leader>h :nohlsearch <CR>
+
+" Clear Annoying Keys
+map Q <nop>
+map <PageUp> <nop>
+map <PageDown> <nop>
+imap <PageUp> <nop>
+imap <PageDown> <nop>
+
+" Remap command history
+nnoremap <leader>h q:
+map q: <nop>
 " }}}
 
 " Airline: {{{
@@ -87,7 +99,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:airline#extensions#tabline#right_alt_sep = '|'
 
 let g:airline_theme='mybase16'
-let g:airline_extensions = ['tabline', 'whitespace', 'branch']
+"let g:airline_extensions = ['tabline', 'whitespace', 'branch']
+let g:airline_extensions = ['tabline', 'branch']
 
 set noshowmode
 " }}}
@@ -136,6 +149,8 @@ let g:indentLine_showFirstIndentLevel = 1
 colorscheme colorsbox-stnight
 
 function MyColors()
+    set background=dark
+
     " Normal Colors
     "highlight Normal ctermfg=07 ctermbg=234
     highlight Normal ctermfg=NONE ctermbg=NONE
@@ -143,7 +158,8 @@ function MyColors()
     "highlight CursorLine ctermbg=235
     highlight ColorColumn ctermbg=0
     highlight CursorLine ctermbg=0
-    highlight CursorLineNr ctermbg=236 ctermfg=214
+    "highlight CursorLineNr ctermbg=236 ctermfg=214
+    highlight CursorLineNr ctermbg=0 ctermfg=3
     highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
     highlight WildMenu ctermfg=214 ctermbg=236
     highlight Folded ctermbg=0
@@ -162,6 +178,11 @@ function MyColors()
 endfunction
 
 execute MyColors()
+" }}}
+
+" Highlights: {{{
+syntax match lenght /lenght/
+highlight link lenght Error
 " }}}
 
 " Commands_and_Functions: {{{
@@ -184,6 +205,7 @@ function HTML2PDF(...)
     let l:html_path = "/tmp/" . expand("%:t:r:r") . ".html"
     let l:pdf_path = get(a:, '2', expand("%:t:r:r") . ".pdf")
 
+    set background=light
     execute 'colorscheme' l:color_scheme
     highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
     IndentLinesDisable

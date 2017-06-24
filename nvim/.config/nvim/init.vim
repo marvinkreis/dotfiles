@@ -70,7 +70,6 @@ imap <PageUp> <nop>
 imap <PageDown> <nop>
 
 " Remap command history
-nnoremap <leader>h q:
 map q: <nop>
 " }}}
 

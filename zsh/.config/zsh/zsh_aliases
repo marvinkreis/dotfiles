@@ -1,7 +1,6 @@
 alias -g tobg="&> /dev/null &"
 
 alias j=jump
-alias nvlc="nvlc --no-color"
 alias :q=exit
 alias s=search
 alias stow=safe_stow

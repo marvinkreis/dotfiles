@@ -51,20 +51,42 @@ set_background() {
 }
 
 rbecho() {
-    local opts
+    local text length freq a
 
     if [ $1 == "-a" ]; then
-        opts="-a"
+        a="-a"
         shift
     fi
 
     if [ $1 ]; then
-        echo
-        echo $@ | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F 0.2 $opts
-        echo
+        text=$@
     else
-        echo
-        figlet -t -f smslant | lolcat -F 0.2 $opts
-        echo
+        read -d '' text
     fi
+
+    length=$(echo -e $text | wc -L)
+
+    if (( $length > 20 )); then
+        freq=0.1
+    else
+        freq=0.2
+    fi
+
+    echo
+    echo -e $text | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F $freq $a
+    echo
+
+    #if [ $1 ]; then
+    #    if (( $(echo -e $@ | wc -c) > 20 )); then
+    #        echo -e $@ | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F 0.1 $a
+    #    else
+    #        echo -e $@ | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F 0.2 $a
+    #    fi
+    #else
+    #    figlet -t -f smslant | lolcat -F 0.2 $a
+    #fi
+}
+
+wttr() {
+    curl -s http://wttr.in/$1 | head -n-3
 }

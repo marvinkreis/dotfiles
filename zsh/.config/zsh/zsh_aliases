@@ -1,10 +1,10 @@
 alias -g tobg="&> /dev/null &"
 
+alias c="clear; clear"
+alias cs="colorscheme-switch -s"
 alias j=jump
 alias :q=exit
-alias s=search
-alias stow=safe_stow
-alias sc=systemctl
-alias c="clear; clear"
 alias rm="rm -vI"
-alias cs="colorscheme-switch -s"
+alias s=search
+alias sc=systemctl
+alias stow=safe_stow

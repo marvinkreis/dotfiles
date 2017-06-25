@@ -90,3 +90,11 @@ qr() {
     fi
     echo
 }
+
+snip() {
+    import "${1:-screenshot_$(date +%F-%H%M%S).png}"
+}
+
+screenshot() {
+    scrot "${1:-screenshot_$(date +%F-%H%M%S).png}"
+}

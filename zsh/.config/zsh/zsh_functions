@@ -82,13 +82,11 @@ wttr() {
 }
 
 qr() {
-    if [ "$1" ]; then
-        input=$@
-    else
-        read -d '' input
-    fi
-
     echo
-    curl -s -F-="$input" http://qrenco.de
+    if [ "$1" ]; then
+        echo -e "$@" | curl -s -F-=\<- http://qrenco.de
+    else
+        curl -s -F-=\<- http://qrenco.de
+    fi
     echo
 }

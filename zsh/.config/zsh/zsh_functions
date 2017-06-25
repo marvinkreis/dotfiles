@@ -81,6 +81,10 @@ wttr() {
     curl -s http://wttr.in/$1 | head -n-3
 }
 
+cheatsh() {
+    curl -s http://cheat.sh/$1
+}
+
 qr() {
     echo
     if [ "$1" ]; then

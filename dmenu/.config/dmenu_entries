@@ -1,5 +1,7 @@
 all:dmenu_all
 c:dmenu_calc
+cloud:synology-cloud-station-drive
+colors:dmenu_colorscheme
 bookmarks:dmenu_bookmarks
 d:dmenu_dict
 eclipse:eclipse
@@ -15,6 +17,7 @@ pkill:dmenu_pkill
 settings:xfce4-settings-manager
 screen:dmenu_screen
 ssh:dmenu_ssh
+telegram:telegram-desktop
 trans:transset-df -c
 power:dmenu_power
 thunar:thunar

@@ -197,7 +197,7 @@ command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 
 " Printing: {{{
 let g:html_number_lines = 0
-let g:html_font = ["Courier New"]
+let g:html_font = "Courier New"
 
 function HTML2PDF(...)
     let l:default_font_size = '12.5'
@@ -205,8 +205,10 @@ function HTML2PDF(...)
 
     let l:old_colors = g:colors_name
     let l:font_size = get(a:, '1', l:default_font_size)
-    let l:html_path = "/tmp/" . expand("%:t:r:r") . ".html"
-    let l:pdf_path = get(a:, '2', expand("%:t:r:r") . ".pdf")
+    "let l:html_path = '/tmp/' . expand('%:t:r:r') . '.html'
+    "let l:pdf_path = get(a:, '2', expand('%:t:r:r') . '.pdf')
+    let l:html_path = '/tmp/' . expand('%:t') . '.html'
+    let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
 
     set background=light
     execute 'colorscheme' l:color_scheme

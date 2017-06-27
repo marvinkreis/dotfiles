@@ -47,32 +47,30 @@ set mouse=a
 " Key Mappings: {{{
 let mapleader= ","
 
-map <F1> <nop>
-imap <F1> <nop>
-
 " System Clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
 inoremap <leader>p <ESC>"+pa
 
 " Normal Mappings
-map <leader>j :bnext! <CR>
-map <leader>k :bprev! <CR>
-map <leader>q :bw <CR>
-map <Leader>n :NERDTreeToggle <CR>
-"map <silent> <leader>h :nohlsearch <CR>
-map <silent> <ESC> <ESC>:nohlsearch<CR>
+nnoremap <leader>j :bnext! <CR>
+nnoremap <leader>k :bprev! <CR>
+nnoremap <leader>q :bw <CR>
+nnoremap <Leader>n :NERDTreeToggle <CR>
+nnoremap <silent> <ESC> :nohlsearch<CR>
 
 " Clear Annoying Keys
-map Q <nop>
-map <PageUp> <nop>
-map <PageDown> <nop>
-imap <PageUp> <nop>
-imap <PageDown> <nop>
+nnoremap Q <nop>
+noremap <PageUp> <nop>
+noremap <PageDown> <nop>
+noremap <F1> <nop>
+inoremap <PageUp> <nop>
+inoremap <PageDown> <nop>
+inoremap <F1> <nop>
 
 " Remap command history
-map q: <nop>
-nnoremap <leader>h q:
+noremap q: <nop>
+noremap <leader>h q:
 " }}}
 
 " Airline: {{{

@@ -224,4 +224,9 @@ function HTML2PDF(...)
 endfunction
 " }}}
 
+" Spelling: {{{
+set spellfile=~/.config/nvim/spell/additions.add
+set spelllang=de_de,en_us,umlauts
+" }}}
+
 " vim: fdm=marker:

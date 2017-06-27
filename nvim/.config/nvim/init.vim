@@ -60,7 +60,8 @@ map <leader>j :bnext! <CR>
 map <leader>k :bprev! <CR>
 map <leader>q :bw <CR>
 map <Leader>n :NERDTreeToggle <CR>
-map <silent> <leader>h :nohlsearch <CR>
+"map <silent> <leader>h :nohlsearch <CR>
+map <silent> <ESC> <ESC>:nohlsearch<CR>
 
 " Clear Annoying Keys
 map Q <nop>
@@ -71,6 +72,7 @@ imap <PageDown> <nop>
 
 " Remap command history
 map q: <nop>
+nnoremap <leader>h q:
 " }}}
 
 " Airline: {{{
@@ -190,7 +192,7 @@ command Q q
 command Wq wq
 command WQ wq
 
-command QR '<,'>!curl -s -F-=\<- qrenco.de
+command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
 " Printing: {{{

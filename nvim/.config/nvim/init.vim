@@ -47,30 +47,30 @@ set mouse=a
 " Key Mappings: {{{
 let mapleader= ","
 
-map <F1> <nop>
-imap <F1> <nop>
-
 " System Clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
 inoremap <leader>p <ESC>"+pa
 
 " Normal Mappings
-map <leader>j :bnext! <CR>
-map <leader>k :bprev! <CR>
-map <leader>q :bw <CR>
-map <Leader>n :NERDTreeToggle <CR>
-map <silent> <leader>h :nohlsearch <CR>
+nnoremap <leader>j :bnext! <CR>
+nnoremap <leader>k :bprev! <CR>
+nnoremap <leader>q :bw <CR>
+nnoremap <Leader>n :NERDTreeToggle <CR>
+nnoremap <silent> <ESC> :nohlsearch<CR>
 
 " Clear Annoying Keys
-map Q <nop>
-map <PageUp> <nop>
-map <PageDown> <nop>
-imap <PageUp> <nop>
-imap <PageDown> <nop>
+nnoremap Q <nop>
+noremap <PageUp> <nop>
+noremap <PageDown> <nop>
+noremap <F1> <nop>
+inoremap <PageUp> <nop>
+inoremap <PageDown> <nop>
+inoremap <F1> <nop>
 
 " Remap command history
-map q: <nop>
+noremap q: <nop>
+noremap <leader>h q:
 " }}}
 
 " Airline: {{{
@@ -190,12 +190,12 @@ command Q q
 command Wq wq
 command WQ wq
 
-command QR '<,'>!curl -s -F-=\<- qrenco.de
+command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
 " Printing: {{{
 let g:html_number_lines = 0
-let g:html_font = ["Courier New"]
+let g:html_font = "Courier New"
 
 function HTML2PDF(...)
     let l:default_font_size = '12.5'
@@ -203,8 +203,10 @@ function HTML2PDF(...)
 
     let l:old_colors = g:colors_name
     let l:font_size = get(a:, '1', l:default_font_size)
-    let l:html_path = "/tmp/" . expand("%:t:r:r") . ".html"
-    let l:pdf_path = get(a:, '2', expand("%:t:r:r") . ".pdf")
+    "let l:html_path = '/tmp/' . expand('%:t:r:r') . '.html'
+    "let l:pdf_path = get(a:, '2', expand('%:t:r:r') . '.pdf')
+    let l:html_path = '/tmp/' . expand('%:t') . '.html'
+    let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
 
     set background=light
     execute 'colorscheme' l:color_scheme

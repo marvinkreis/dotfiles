@@ -1,16 +1,16 @@
-!Tomorrow
-#define t_background        #ffffff
-#define t_current_line      #efefef
-#define t_selection      	#d6d6d6
-#define t_foreground      	#4d4d4c
-#define t_comment	     	#8e908c
-#define t_red		     	#c82829
-#define t_orange	     	#f5871f
-#define t_yellow        	#eab700
-#define t_green	        	#718c00
-#define t_aqua	        	#3e999f
-#define t_blue	        	#4271ae
-#define t_purple        	#8959a8
+!TomorrowNightBright
+#define t_background        #000000
+#define t_current_line      #2a2a2a
+#define t_selection      	#424242
+#define t_foreground      	#eaeaea
+#define t_comment	     	#969896
+#define t_red		     	#d54e53
+#define t_orange	     	#e78c45
+#define t_yellow        	#e7c547
+#define t_green	        	#b9ca4a
+#define t_aqua	        	#70c0b1
+#define t_blue	        	#7aa6da
+#define t_purple        	#c397d8
 
 
 *.foreground:   t_foreground
@@ -19,7 +19,7 @@
 
 ! Black / Grey
 *.color0:       #000000
-*.color8:       #666666
+*.color8:       #444444
 
 ! Red / Bright Red
 *.color1:       t_red
@@ -46,5 +46,5 @@
 *.color14:      #54ced6
 
 ! Light Grey (Selection) + White (Current Line)
-*.color7:       t_selection
-*.color15:      t_current_line
+*.color7:       #969896
+*.color15:      #c5c8c6

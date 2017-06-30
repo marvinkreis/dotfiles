@@ -1,6 +1,15 @@
 bak () {
+    local file verbose
+
+    if [[ $1 == "-v" ]]; then
+        verbose="-v"
+        shift 1
+    else
+        verbose=""
+    fi
+
     for file in $@; do
-        cp -r $file:A $file:A.bak;
+        cp $verbose -r $file:A $file:A.bak;
     done
 }
 
@@ -101,4 +110,22 @@ snip() {
 
 screenshot() {
     scrot "${1:-screenshot_$(date +%F-%H%M%S).png}"
+}
+
+swap() {
+    local file1 file2 swap_file verbose
+
+    if [[ $1 == "-v" ]]; then
+        verbose="-v"
+        shift 1
+    else
+        verbose=""
+    fi
+
+    file1="$1:A"
+    file2="$2:A"
+    swap_file="swap_tmp_$(echo "$file1" | md5sum | cut -d ' ' -f 1)"
+    mv $verbose "$file1" "$swap_file"
+    mv $verbose "$file2" "$file1"
+    mv $verbose "$swap_file" "$file2"
 }

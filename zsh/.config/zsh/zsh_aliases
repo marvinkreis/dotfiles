@@ -1,5 +1,6 @@
 alias -g tobg="&> /dev/null &"
 
+alias bak="bak -v"
 alias c="clear; clear"
 alias cs="colorscheme-switch -s"
 alias j=jump
@@ -8,3 +9,4 @@ alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
 alias stow=safe_stow
+alias swap="swap -v"

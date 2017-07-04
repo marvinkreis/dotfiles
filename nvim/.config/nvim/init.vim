@@ -42,6 +42,7 @@ set ignorecase
 set lazyredraw
 set scrolloff=8
 set mouse=a
+set modeline
 " }}}
 
 " Key Mappings: {{{
@@ -198,6 +199,11 @@ let g:html_number_lines = 0
 let g:html_font = "Courier New"
 
 function HTML2PDF(...)
+    "Requires wkhtmltopdf-static from AUR
+    "TODO figure out how to format commands better
+    "TODO better arguments
+    "TODO better structure
+
     let l:default_font_size = '12.5'
     let l:color_scheme = 'lucius'
 
@@ -205,6 +211,7 @@ function HTML2PDF(...)
     let l:font_size = get(a:, '1', l:default_font_size)
     "let l:html_path = '/tmp/' . expand('%:t:r:r') . '.html'
     "let l:pdf_path = get(a:, '2', expand('%:t:r:r') . '.pdf')
+    let l:file_name = expand('%:t')
     let l:html_path = '/tmp/' . expand('%:t') . '.html'
     let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
 
@@ -218,7 +225,24 @@ function HTML2PDF(...)
     q!
 
     execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', l:font_size, 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
-    execute '!wkhtmltopdf --margin-left 15 --margin-right 15 --margin-top 15 --margin-bottom 15' l:html_path l:pdf_path
+
+    "execute '!wkhtmltopdf
+        "\ --no-background
+        "\ --margin-left 15
+        "\ --margin-right 15
+        "\ --margin-top 15
+        "\ --margin-bottom 15
+        "\ --header-right "[page]/[topage]"
+        "\ --header-left "'l:file_name'"
+        "\ --header-font-name "'g:html_font'"
+        "\ --header-font-size 9
+        "\ --header-spacing 5
+        "\ --header-line'
+        "\ l:html_path
+        "\ l:pdf_path
+
+        execute printf("%s%s%s%s%s%s%s%s%s", '!wkhtmltopdf --no-background --margin-left 15 --margin-right 15 --margin-top 15 --margin-bottom 15 --header-right "[page]/[topage]" --header-left "', l:file_name, '" --header-font-name "', g:html_font, '" --header-font-size 9 --header-spacing 5 --header-line "', l:html_path, '" "', l:pdf_path, '"')
+
     IndentLinesEnable
 
     execute 'colorscheme' l:old_colors

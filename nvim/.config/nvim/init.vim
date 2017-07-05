@@ -214,6 +214,9 @@ function HTML2PDF(...)
     let l:file_name = expand('%:t')
     let l:html_path = '/tmp/' . expand('%:t') . '.html'
     let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
+    let l:header_left = expand('%:t')
+    let l:header_right = expand('[page]/[topage]')
+    let l:header_font_size = 9
 
     set background=light
     execute 'colorscheme' l:color_scheme
@@ -241,13 +244,29 @@ function HTML2PDF(...)
         "\ l:html_path
         "\ l:pdf_path
 
-        execute printf("%s%s%s%s%s%s%s%s%s", '!wkhtmltopdf --no-background --margin-left 15 --margin-right 15 --margin-top 15 --margin-bottom 15 --header-right "[page]/[topage]" --header-left "', l:file_name, '" --header-font-name "', g:html_font, '" --header-font-size 9 --header-spacing 5 --header-line "', l:html_path, '" "', l:pdf_path, '"')
+    let l:wk = '!wkhtmltopdf'
+    let l:wk .= ' --no-background'
+    let l:wk .= ' --margin-left 15'
+    let l:wk .= ' --margin-right 15'
+    let l:wk .= ' --margin-top 15'
+    let l:wk .= ' --margin-bottom 15'
+    let l:wk .= ' --header-font-name '  . '"'   . g:html_font           . '"'
+    let l:wk .= ' --header-font-size '          . l:header_font_size
+    let l:wk .= ' --header-spacing '            . ' 5'
+    let l:wk .= ' --header-line '
+    let l:wk .= ' --header-left '       . '"'   . l:header_left         . '"'
+    let l:wk .= ' --header-right '      . '"'   . l:header_right        . '"'
+    let l:wk .= ' "' . l:html_path . '" "' . l:pdf_path . '"'
+
+    execute l:wk
 
     IndentLinesEnable
 
     execute 'colorscheme' l:old_colors
     execute MyColors()
 endfunction
+
+command HTML2PDF execute HTML2PDF()
 " }}}
 
 " Spelling: {{{

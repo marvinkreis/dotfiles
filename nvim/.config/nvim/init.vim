@@ -195,8 +195,22 @@ command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
 " Printing: {{{
-let g:html_number_lines = 0
-let g:html_font = "Courier New"
+let g:html_number_lines = 0         " actual TOhtml variable
+let g:html_font = "Courier New"     " actual TOhtml variable
+
+let g:html_colorscheme = "lucius"
+
+let g:html_font_size = 12 "TODO
+
+let g:html_margin_left = 15
+let g:html_margin_right = 15
+let g:html_margin_bottom = 15
+let g:html_margin_top = 15
+
+let g:html_header_font_size = 9
+let g:html_header_font = "Courier New"
+let g:html_header_spacing = 5
+let g:html_header_line = 1
 
 function HTML2PDF(...)
     "Requires wkhtmltopdf-static from AUR
@@ -204,22 +218,38 @@ function HTML2PDF(...)
     "TODO better arguments
     "TODO better structure
 
-    let l:default_font_size = '12.5'
-    let l:color_scheme = 'lucius'
+    let l:default_number_lines = 0         " actual TOhtml variable
+    let l:default_font = "Courier New"     " actual TOhtml variable
+
+    let l:default_colorscheme = "lucius"
+
+    let l:default_font_size = 12 "TODO float as font size doesnt work because of string concatenation
+
+    let l:default_margin_left = 15
+    let l:default_margin_right = 15
+    let l:default_margin_bottom = 15
+    let l:default_margin_top = 15
+
+    let l:default_header_font_size = 9
+    let l:default_header_font = "Courier New"
+    let l:default_header_spacing = 5
+    let l:default_header_line = 0
 
     let l:old_colors = g:colors_name
     let l:font_size = get(a:, '1', l:default_font_size)
-    "let l:html_path = '/tmp/' . expand('%:t:r:r') . '.html'
-    "let l:pdf_path = get(a:, '2', expand('%:t:r:r') . '.pdf')
+
     let l:file_name = expand('%:t')
     let l:html_path = '/tmp/' . expand('%:t') . '.html'
     let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
+
     let l:header_left = expand('%:t')
     let l:header_right = expand('[page]/[topage]')
-    let l:header_font_size = 9
+    "let l:header_center = strftime('%d.%m.%Y')
+    let l:header_center = "test"
+    "TODO replace date, filename and page with expansions
 
     set background=light
-    execute 'colorscheme' l:color_scheme
+    execute 'colorscheme' get(g:, 'html_colorscheme', l:default_colorscheme)
     highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
     IndentLinesDisable
 
@@ -227,41 +257,34 @@ function HTML2PDF(...)
     execute 'w!' l:html_path
     q!
 
-    execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', l:font_size, 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
+    let l:sed  = '!sed -i "s/body {/body { font-size: '
+    let l:sed .= get(g:, 'html_font_size', l:default_font_size)
+    let l:sed .= 'px;/g; s/pre {/pre { font-size: '
+    let l:sed .= get(g:, 'html_font_size', l:default_font_size)
+    let l:sed .= 'px;/g" '
+    let l:sed .= l:html_path
 
-    "execute '!wkhtmltopdf
-        "\ --no-background
-        "\ --margin-left 15
-        "\ --margin-right 15
-        "\ --margin-top 15
-        "\ --margin-bottom 15
-        "\ --header-right "[page]/[topage]"
-        "\ --header-left "'l:file_name'"
-        "\ --header-font-name "'g:html_font'"
-        "\ --header-font-size 9
-        "\ --header-spacing 5
-        "\ --header-line'
-        "\ l:html_path
-        "\ l:pdf_path
+    "execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', get(g:, 'html_font_size', l:default_font_size), 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
+    execute l:sed
 
-    let l:wk = '!wkhtmltopdf'
+    let l:wk  = '!wkhtmltopdf'
     let l:wk .= ' --no-background'
-    let l:wk .= ' --margin-left 15'
-    let l:wk .= ' --margin-right 15'
-    let l:wk .= ' --margin-top 15'
-    let l:wk .= ' --margin-bottom 15'
-    let l:wk .= ' --header-font-name '  . '"'   . g:html_font           . '"'
-    let l:wk .= ' --header-font-size '          . l:header_font_size
-    let l:wk .= ' --header-spacing '            . ' 5'
-    let l:wk .= ' --header-line '
-    let l:wk .= ' --header-left '       . '"'   . l:header_left         . '"'
-    let l:wk .= ' --header-right '      . '"'   . l:header_right        . '"'
+    let l:wk .= ' --margin-left '               . get(g:, 'html_margin_left',       l:default_margin_left)
+    let l:wk .= ' --margin-right '              . get(g:, 'html_margin_right',      l:default_margin_right)
+    let l:wk .= ' --margin-bottom '             . get(g:, 'html_margin_bottom',     l:default_margin_bottom)
+    let l:wk .= ' --margin-top '                . get(g:, 'html_margin_top',        l:default_margin_top)
+    let l:wk .= ' --header-font-name '  .  '"'  . get(g:, 'html_header_font',       l:default_header_font)          . '"'
+    let l:wk .= ' --header-font-size '          . get(g:, 'html_header_font_size',  l:default_header_font_size)
+    let l:wk .= ' --header-spacing '            . get(g:, 'html_header_spacing',    l:default_header_spacing)
+    let l:wk .= (get(g:, 'html_header_line', l:default_header_line) ? ' --header-line' : '')
+    let l:wk .= ' --header-left '       .  '"'  . l:header_left         . '"'
+    let l:wk .= ' --header-right '      .  '"'  . l:header_right        . '"'
+    let l:wk .= ' --header-center '     .  '"'  . l:header_center        . '"'
     let l:wk .= ' "' . l:html_path . '" "' . l:pdf_path . '"'
 
     execute l:wk
 
     IndentLinesEnable
-
     execute 'colorscheme' l:old_colors
     execute MyColors()
 endfunction

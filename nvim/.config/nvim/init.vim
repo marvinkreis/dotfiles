@@ -199,57 +199,60 @@ let g:html_number_lines = 0         " actual TOhtml variable
 let g:html_font = "Courier New"     " actual TOhtml variable
 
 let g:html_colorscheme = "lucius"
-
 let g:html_font_size = 12 "TODO
-
 let g:html_margin_left = 15
 let g:html_margin_right = 15
 let g:html_margin_bottom = 15
 let g:html_margin_top = 15
-
+let g:html_use_header = 0
 let g:html_header_font_size = 9
 let g:html_header_font = "Courier New"
 let g:html_header_spacing = 5
 let g:html_header_line = 1
+let g:html_use_footer = 0
+let g:html_footer_font_size = 9
+let g:html_footer_font = "Courier New"
+let g:html_footer_spacing = 5
+let g:html_footer_line = 1
 
 function HTML2PDF(...)
     "Requires wkhtmltopdf-static from AUR
-    "TODO figure out how to format commands better
-    "TODO better arguments
-    "TODO better structure
 
-    let l:default_number_lines = 0         " actual TOhtml variable
-    let l:default_font = "Courier New"     " actual TOhtml variable
+    " Set defaults here:
+    let l:colorscheme       =        get(g:, 'html_colorscheme',        'lucius')
+    let l:font_size         = string(get(g:, 'html_font_size',          12))
+    let l:margin_left       = string(get(g:, 'html_margin_left',        15))
+    let l:margin_right      = string(get(g:, 'html_margin_right',       15))
+    let l:margin_bottom     = string(get(g:, 'html_margin_bottom',      15))
+    let l:margin_top        = string(get(g:, 'html_margin_top',         15))
+    let l:use_header        = string(get(g:, 'html_use_header',         0))
+    let l:header_font_size  = string(get(g:, 'html_header_font_size',   9))
+    let l:header_font       =        get(g:, 'html_header_font',        'Courier New')
+    let l:header_spacing    = string(get(g:, 'html_header_spacing',     5))
+    let l:header_line       = string(get(g:, 'html_header_line',        0))
+    let l:use_footer        = string(get(g:, 'html_use_footer',         0))
+    let l:footer_font_size  = string(get(g:, 'html_footer_font_size',   9))
+    let l:footer_font       =        get(g:, 'html_footer_font',        'Courier New')
+    let l:footer_spacing    = string(get(g:, 'html_footer_spacing',     5))
+    let l:footer_line       = string(get(g:, 'html_footer_line',        0))
 
-    let l:default_colorscheme = "lucius"
+    let l:header_left = expand('%:t')
+    let l:header_right = expand('[page]/[topage]')
+    let l:header_center = strftime('%d.%m.%Y')
+    "TODO replace date, filename and page with expansions
+    let l:footer_left = expand('%:t')
+    let l:footer_right = expand('[page]/[topage]')
+    let l:footer_center = strftime('%d.%m.%Y')
 
-    let l:default_font_size = 12 "TODO float as font size doesnt work because of string concatenation
 
-    let l:default_margin_left = 15
-    let l:default_margin_right = 15
-    let l:default_margin_bottom = 15
-    let l:default_margin_top = 15
-
-    let l:default_header_font_size = 9
-    let l:default_header_font = "Courier New"
-    let l:default_header_spacing = 5
-    let l:default_header_line = 0
-
-    let l:old_colors = g:colors_name
-    let l:font_size = get(a:, '1', l:default_font_size)
 
     let l:file_name = expand('%:t')
     let l:html_path = '/tmp/' . expand('%:t') . '.html'
     let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
-
-    let l:header_left = expand('%:t')
-    let l:header_right = expand('[page]/[topage]')
-    "let l:header_center = strftime('%d.%m.%Y')
-    let l:header_center = "test"
-    "TODO replace date, filename and page with expansions
+    let l:old_colors = g:colors_name
 
     set background=light
-    execute 'colorscheme' get(g:, 'html_colorscheme', l:default_colorscheme)
+    execute 'colorscheme' l:colorscheme
     highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
     IndentLinesDisable
 
@@ -258,30 +261,43 @@ function HTML2PDF(...)
     q!
 
     let l:sed  = '!sed -i "s/body {/body { font-size: '
-    let l:sed .= get(g:, 'html_font_size', l:default_font_size)
+    let l:sed .= string(get(g:, 'html_font_size', l:font_size))
     let l:sed .= 'px;/g; s/pre {/pre { font-size: '
-    let l:sed .= get(g:, 'html_font_size', l:default_font_size)
+    let l:sed .= string(get(g:, 'html_font_size', l:font_size))
     let l:sed .= 'px;/g" '
     let l:sed .= l:html_path
 
-    "execute printf("%s%s%s%s%s", '!sed -i "s/body {/body { font-size: ', get(g:, 'html_font_size', l:default_font_size), 'px;/g; s/pre {/pre { font-size:', l:font_size,  'px;/g"') l:html_path
-    execute l:sed
 
     let l:wk  = '!wkhtmltopdf'
     let l:wk .= ' --no-background'
-    let l:wk .= ' --margin-left '               . get(g:, 'html_margin_left',       l:default_margin_left)
-    let l:wk .= ' --margin-right '              . get(g:, 'html_margin_right',      l:default_margin_right)
-    let l:wk .= ' --margin-bottom '             . get(g:, 'html_margin_bottom',     l:default_margin_bottom)
-    let l:wk .= ' --margin-top '                . get(g:, 'html_margin_top',        l:default_margin_top)
-    let l:wk .= ' --header-font-name '  .  '"'  . get(g:, 'html_header_font',       l:default_header_font)          . '"'
-    let l:wk .= ' --header-font-size '          . get(g:, 'html_header_font_size',  l:default_header_font_size)
-    let l:wk .= ' --header-spacing '            . get(g:, 'html_header_spacing',    l:default_header_spacing)
-    let l:wk .= (get(g:, 'html_header_line', l:default_header_line) ? ' --header-line' : '')
-    let l:wk .= ' --header-left '       .  '"'  . l:header_left         . '"'
-    let l:wk .= ' --header-right '      .  '"'  . l:header_right        . '"'
-    let l:wk .= ' --header-center '     .  '"'  . l:header_center        . '"'
+    let l:wk .= ' --margin-left '               . l:margin_left
+    let l:wk .= ' --margin-right '              . l:margin_right
+    let l:wk .= ' --margin-bottom '             . l:margin_bottom
+    let l:wk .= ' --margin-top '                . l:margin_top
+
+    if get(g:, 'html_use_header', l:use_header)
+        let l:wk .= ' --header-font-name  ' . '"' . l:header_font       . '"'
+        let l:wk .= ' --header-font-size '  .       l:header_font_size
+        let l:wk .= ' --header-spacing '    .       l:header_spacing
+        let l:wk .= ' --header-left '       . '"' . l:header_left       . '"'
+        let l:wk .= ' --header-right '      . '"' . l:header_right      . '"'
+        let l:wk .= ' --header-center '     . '"' . l:header_center     . '"'
+        let l:wk .= (l:header_line ? ' --header-line' : '')
+    endif
+
+    if get(g:, 'html_use_footer', l:use_footer)
+        let l:wk .= ' --footer-font-name '  . '"' . l:footer_font       . '"'
+        let l:wk .= ' --footer-font-size '        . l:footer_font_size
+        let l:wk .= ' --footer-spacing '          . l:footer_spacing
+        let l:wk .= ' --footer-left '       . '"' . l:footer_left       . '"'
+        let l:wk .= ' --footer-right '      . '"' . l:footer_right      . '"'
+        let l:wk .= ' --footer-center '     . '"' . l:footer_center     . '"'
+        let l:wk .= (l:footer_line ? ' --footer-line' : '')
+    endif
+
     let l:wk .= ' "' . l:html_path . '" "' . l:pdf_path . '"'
 
+    execute l:sed
     execute l:wk
 
     IndentLinesEnable
@@ -296,5 +312,7 @@ command HTML2PDF execute HTML2PDF()
 set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
 " }}}
+
+" execute printf("%s%s%s", '!cp',  l:file_a, l:file_b) l:file_c
 
 " vim: fdm=marker:

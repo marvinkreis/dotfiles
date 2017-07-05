@@ -291,7 +291,7 @@ function HTML2PDF(...)
         let l:wk .= ' --header-left '       . '"' . l:header_left       . '"'
         let l:wk .= ' --header-right '      . '"' . l:header_right      . '"'
         let l:wk .= ' --header-center '     . '"' . l:header_center     . '"'
-        let l:wk .= (l:header_line ? ' --header-line' : '')
+        let l:wk .= (l:header_line ? ' --header-line' : '--no-header-line')
     endif
 
     if get(g:, 'html_use_footer', l:use_footer)
@@ -301,7 +301,7 @@ function HTML2PDF(...)
         let l:wk .= ' --footer-left '       . '"' . l:footer_left       . '"'
         let l:wk .= ' --footer-right '      . '"' . l:footer_right      . '"'
         let l:wk .= ' --footer-center '     . '"' . l:footer_center     . '"'
-        let l:wk .= (l:footer_line ? ' --footer-line' : '')
+        let l:wk .= (l:footer_line ? ' --footer-line' : '--no-footer-line')
     endif
 
     let l:wk .= ' "' . l:html_path . '" "' . l:pdf_path . '"'

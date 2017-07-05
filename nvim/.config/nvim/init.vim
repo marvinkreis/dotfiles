@@ -195,25 +195,32 @@ command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
 " Printing: {{{
-let g:html_number_lines = 0         " actual TOhtml variable
-let g:html_font = "Courier New"     " actual TOhtml variable
+let g:html_number_lines     = 0                 " actual TOhtml variable
+let g:html_font             = "Courier New"     " actual TOhtml variable
 
-let g:html_colorscheme = "lucius"
-let g:html_font_size = 12 "TODO
-let g:html_margin_left = 15
-let g:html_margin_right = 15
-let g:html_margin_bottom = 15
-let g:html_margin_top = 15
-let g:html_use_header = 0
+let g:html_colorscheme      = "lucius"
+let g:html_font_size        = 12 "TODO
+let g:html_margin_left      = 15
+let g:html_margin_right     = 15
+let g:html_margin_bottom    = 15
+let g:html_margin_top       = 15
+let g:html_use_header       = 0
 let g:html_header_font_size = 9
-let g:html_header_font = "Courier New"
-let g:html_header_spacing = 5
-let g:html_header_line = 1
-let g:html_use_footer = 0
+let g:html_header_font      = "Courier New"
+let g:html_header_spacing   = 5
+let g:html_header_line      = 1
+let g:html_use_footer       = 0
 let g:html_footer_font_size = 9
-let g:html_footer_font = "Courier New"
-let g:html_footer_spacing = 5
-let g:html_footer_line = 1
+let g:html_footer_font      = "Courier New"
+let g:html_footer_spacing   = 5
+let g:html_footer_line      = 1
+
+let g:html_header_left      = '%'
+let g:html_header_right     = '[page]/[topage]'
+let g:html_header_center    = '%d.%m.%Y'
+let g:html_footer_left      = '%'
+let g:html_footer_right     = '[page]/[topage]'
+let g:html_footer_center    = '%d.%m.%Y'
 
 function HTML2PDF(...)
     "Requires wkhtmltopdf-static from AUR
@@ -236,15 +243,17 @@ function HTML2PDF(...)
     let l:footer_spacing    = string(get(g:, 'html_footer_spacing',     5))
     let l:footer_line       = string(get(g:, 'html_footer_line',        0))
 
-    let l:header_left = expand('%:t')
-    let l:header_right = expand('[page]/[topage]')
-    let l:header_center = strftime('%d.%m.%Y')
-    "TODO replace date, filename and page with expansions
-    let l:footer_left = expand('%:t')
-    let l:footer_right = expand('[page]/[topage]')
-    let l:footer_center = strftime('%d.%m.%Y')
 
+    let l:header_left       = expand(strftime(g:html_header_left))
+    let l:header_right      = expand(strftime(g:html_header_right))
+    let l:header_center     = expand(strftime(g:html_header_center))
+    let l:footer_left       = expand(strftime(g:html_footer_left))
+    let l:footer_right      = expand(strftime(g:html_footer_right))
+    let l:footer_center     = expand(strftime(g:html_footer_center))
 
+    "for var in [l:header_left, l:header_right, l:header_center, l:footer_left, l:footer_right, l:footer_center]
+    "    let var = expand(strftime(var))
+    "endfor
 
     let l:file_name = expand('%:t')
     let l:html_path = '/tmp/' . expand('%:t') . '.html'

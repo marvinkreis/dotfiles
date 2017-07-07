@@ -341,7 +341,7 @@ set spelllang=de_de,en_us,umlauts
 " }}}
 
 " Platform-specific and gui options: {{{
-if has('win64')
+if has('win64') || has('win32')
     let g:tmp_path = 'E:\TEMP\'
     cd ~
 endif

@@ -27,22 +27,28 @@ call plug#end()
 
 " Normal Settings: {{{
 filetype plugin indent on
+" Tabs
 set expandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
+" Appearance
 set colorcolumn=81,105
 set cursorline
 set number
-
-set foldmethod=manual
 set wildmode=longest,full
-set ignorecase
-set lazyredraw
-set scrolloff=8
-set mouse=a
+set wildmenu
+set laststatus=2
+set hlsearch
+
+set backspace=indent,eol,start
+set foldmethod=manual
 set modeline
+set ignorecase
+set scrolloff=8
+set lazyredraw
+set mouse=a
 " }}}
 
 " Key Mappings: {{{
@@ -175,9 +181,16 @@ function MyColors()
     " EasyMotion Colors
     highlight EasyMotionIncSearch ctermfg=214
     highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+
+    " Gui Colors
+    if has('gui')
+        highlight Normal guifg=#b3b3b3 guibg=#1c1c1c
+        highlight Comment gui=NONE
+    endif
 endfunction
 
 execute MyColors()
+
 " }}}
 
 " Highlights: {{{
@@ -185,7 +198,7 @@ syntax match lenght /lenght/
 highlight link lenght Error
 " }}}
 
-" Commands_and_Functions: {{{
+" Commands and Functions: {{{
 command W w
 command Q q
 command Wq wq
@@ -325,15 +338,16 @@ set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
 " }}}
 
-" Platform-specific options: {{{
+" Platform-specific and gui options: {{{
 if has('win64')
-    function Font()
-        Guifont Consolas:h10
-    endfunction
-    command Font execute Font()
-
     let g:tmp_path = 'E:\TEMP\'
-    let g:airline_extensions = ['tabline']
+    cd ~
+endif
+
+if has('gui')
+    set guifont=Terminus_(TTF):h12
+    set guioptions=''
+    set guicursor+=n-v-c-i:blinkon0
 endif
 " }}}
 

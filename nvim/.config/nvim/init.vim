@@ -215,10 +215,10 @@ let g:html_footer_font      = "Courier New"
 let g:html_footer_spacing   = 5
 let g:html_footer_line      = 1
 
-let g:html_header_left      = '%'
+let g:html_header_left      = '%:t'
 let g:html_header_right     = '[page]/[topage]'
 let g:html_header_center    = '%d.%m.%Y'
-let g:html_footer_left      = '%'
+let g:html_footer_left      = '%:t'
 let g:html_footer_right     = '[page]/[topage]'
 let g:html_footer_center    = '%d.%m.%Y'
 
@@ -243,7 +243,6 @@ function HTML2PDF(...)
     let l:footer_spacing    = string(get(g:, 'html_footer_spacing',     5))
     let l:footer_line       = string(get(g:, 'html_footer_line',        0))
 
-
     let l:header_left       = expand(strftime(g:html_header_left))
     let l:header_right      = expand(strftime(g:html_header_right))
     let l:header_center     = expand(strftime(g:html_header_center))
@@ -251,12 +250,14 @@ function HTML2PDF(...)
     let l:footer_right      = expand(strftime(g:html_footer_right))
     let l:footer_center     = expand(strftime(g:html_footer_center))
 
+    let l:tmp_path         = get(g:, 'tmp_path',  '/tmp/')
+
     "for var in [l:header_left, l:header_right, l:header_center, l:footer_left, l:footer_right, l:footer_center]
     "    let var = expand(strftime(var))
     "endfor
 
     let l:file_name = expand('%:t')
-    let l:html_path = '/tmp/' . expand('%:t') . '.html'
+    let l:html_path = l:tmp_path . expand('%:t') . '.html'
     let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
     let l:old_colors = g:colors_name
 
@@ -275,6 +276,8 @@ function HTML2PDF(...)
     let l:sed .= string(get(g:, 'html_font_size', l:font_size))
     let l:sed .= 'px;/g" '
     let l:sed .= l:html_path
+
+    "TODO fix sed not working on windows
 
 
     let l:wk  = '!wkhtmltopdf'
@@ -320,6 +323,18 @@ command HTML2PDF execute HTML2PDF()
 " Spelling: {{{
 set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
+" }}}
+
+" Platform-specific options: {{{
+if has('win64')
+    function Font()
+        Guifont Consolas:h10
+    endfunction
+    command Font execute Font()
+
+    let g:tmp_path = 'E:\TEMP\'
+    let g:airline_extensions = ['tabline']
+endif
 " }}}
 
 " execute printf("%s%s%s", '!cp',  l:file_a, l:file_b) l:file_c

@@ -20,6 +20,8 @@ _colorscheme-switch() {
 compctl -K _quotes quotes
 
 _quotes() {
+    local quotes
+
     quotes="$(quotes -l)"
     reply=("${(ps:\n:)quotes}")
 }

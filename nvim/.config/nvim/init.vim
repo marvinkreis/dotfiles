@@ -51,6 +51,8 @@ set ignorecase
 set scrolloff=8
 set lazyredraw
 set mouse=a
+
+set encoding=utf-8
 " }}}
 
 " Key Mappings: {{{

@@ -73,15 +73,22 @@ nnoremap <silent> <ESC> :nohlsearch<CR>
 " Clear Annoying Keys
 nnoremap Q <nop>
 noremap <PageUp> <nop>
-noremap <PageDown> <nop>
-noremap <F1> <nop>
 inoremap <PageUp> <nop>
+noremap <PageDown> <nop>
 inoremap <PageDown> <nop>
+noremap <F1> <nop>
 inoremap <F1> <nop>
 
 " Remap command history
 noremap q: <nop>
 noremap <leader>h q:
+
+" Deleting without overwriting registers
+nnoremap X "_d
+nnoremap XX "_dd
+vmap X "_d
+vmap x "_d
+nnoremap x "_x
 " }}}
 
 " Airline: {{{

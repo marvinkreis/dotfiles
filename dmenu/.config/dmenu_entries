@@ -4,6 +4,8 @@ cloud:synology-cloud-station-drive
 colors:dmenu_colorscheme
 bookmarks:dmenu_bookmarks
 d:dmenu_dict
+drename:dmenu_bspwm_desktop
+dadd:dmenu_bspwm_desktop -a
 eclipse:eclipse
 firefox:firefox
 s:search
@@ -22,7 +24,6 @@ trans:transset-df -c
 power:dmenu_power
 thunar:thunar
 urxvt:urxvtc
-urxvt_transparent:urxvtc -shading 25 -blr 40
 vlc:vlc
 volume:dmenu_volume
 zathura:zathura

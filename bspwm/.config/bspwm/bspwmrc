@@ -18,7 +18,7 @@ bspc config gapless_monocle     true
 
 bspc config click_to_focus      true
 
-bspc monitor -d "1" "2" "3" "4" "5"
+bspc monitor -d terminal terminal web stuff music garbage
 
 bspc config -d 5 boder_width 0
 

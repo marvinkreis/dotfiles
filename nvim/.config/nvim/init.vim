@@ -224,7 +224,9 @@ let g:html_number_lines     = 0                 " actual TOhtml variable
 let g:html_font             = "Courier New"     " actual TOhtml variable
 
 let g:html_colorscheme      = "lucius"
-let g:html_font_size        = 12 "TODO
+let g:html_font_size        = 12
+let g:html_margin_header    = 7
+let g:html_margin_footer    = 7
 let g:html_margin_left      = 15
 let g:html_margin_right     = 15
 let g:html_margin_bottom    = 15
@@ -253,6 +255,8 @@ function HTML2PDF(...)
     " Set defaults here:
     let l:colorscheme       =        get(g:, 'html_colorscheme',        'lucius')
     let l:font_size         = string(get(g:, 'html_font_size',          12))
+    let l:margin_header     = string(get(g:, 'html_margin_header',      7))
+    let l:margin_footer     = string(get(g:, 'html_margin_footer',      7))
     let l:margin_left       = string(get(g:, 'html_margin_left',        15))
     let l:margin_right      = string(get(g:, 'html_margin_right',       15))
     let l:margin_bottom     = string(get(g:, 'html_margin_bottom',      15))
@@ -275,11 +279,18 @@ function HTML2PDF(...)
     let l:footer_right      = expand(strftime(g:html_footer_right))
     let l:footer_center     = expand(strftime(g:html_footer_center))
 
-    let l:tmp_path         = get(g:, 'tmp_path',  '/tmp/')
-
     "for var in [l:header_left, l:header_right, l:header_center, l:footer_left, l:footer_right, l:footer_center]
     "    let var = expand(strftime(var))
     "endfor
+
+    if l:use_header
+        let l:margin_top += l:margin_header
+    endif
+    if l:use_footer
+        let l:margin_bottom += l:margin_footer
+    endif
+
+    let l:tmp_path         = get(g:, 'tmp_path',  '/tmp/')
 
     let l:file_name = expand('%:t')
     let l:html_path = l:tmp_path . expand('%:t') . '.html'
@@ -302,9 +313,6 @@ function HTML2PDF(...)
     let l:sed .= 'px;/g" '
     let l:sed .= l:html_path
 
-    "TODO fix sed not working on windows
-
-
     let l:wk  = '!wkhtmltopdf'
     let l:wk .= ' --no-background'
     let l:wk .= ' --margin-left '               . l:margin_left
@@ -312,7 +320,7 @@ function HTML2PDF(...)
     let l:wk .= ' --margin-bottom '             . l:margin_bottom
     let l:wk .= ' --margin-top '                . l:margin_top
 
-    if get(g:, 'html_use_header', l:use_header)
+    if l:use_header
         let l:wk .= ' --header-font-name  ' . '"' . l:header_font       . '"'
         let l:wk .= ' --header-font-size '  .       l:header_font_size
         let l:wk .= ' --header-spacing '    .       l:header_spacing
@@ -322,7 +330,7 @@ function HTML2PDF(...)
         let l:wk .= (l:header_line ? ' --header-line' : '--no-header-line')
     endif
 
-    if get(g:, 'html_use_footer', l:use_footer)
+    if l:use_footer
         let l:wk .= ' --footer-font-name '  . '"' . l:footer_font       . '"'
         let l:wk .= ' --footer-font-size '        . l:footer_font_size
         let l:wk .= ' --footer-spacing '          . l:footer_spacing

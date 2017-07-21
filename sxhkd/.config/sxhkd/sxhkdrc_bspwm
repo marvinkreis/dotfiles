@@ -66,6 +66,10 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
+# focus next or prev desktop
+ctrl + alt + {Left, Down, Right, Up}
+    bspc desktop -f {prev, prev, next, next}
+
 #
 # preselect
 #

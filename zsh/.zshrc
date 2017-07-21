@@ -24,27 +24,50 @@ bindkey -v
 # }}}
 
 # Antigen: {{{
-ADOTDIR=$HOME/git/antigen
-source $HOME/git/antigen/antigen/antigen.zsh
+ADOTDIR=$HOME/.antigen
+ANTIGEN_BUNDLES=$HOME/git/antigen/bundles
+ANTIGEN_AUTO_CONFIG=0
+ANTIGEN_CLONE_OPTS="--depth=1"
 
-antigen-use oh-my-zsh
+source $HOME/.antigen/antigen/antigen.zsh
 
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle jump
-antigen-bundle colored-man-pages
-antigen-bundle sudo
-antigen-bundle history
+antigen bundle robbyrussell/oh-my-zsh lib/clipboard.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/compfix.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/completion.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/directories.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh #TODO ?
+antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/prompt_info_functions.zsh
 
-antigen-theme $HOME/.config/zsh/themes myLambda
+antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+
+antigen bundle $HOME/.config/zsh/plugins
+antigen theme $HOME/.config/zsh/themes lambda
+
+#TODO plugin for printing colors
+
+antigen apply
 # }}}
 
 ZSH_CONFIG=$HOME/.config/zsh
 
 source $ZSH_CONFIG/zsh_aliases
-source $ZSH_CONFIG/zsh_functions
+source $ZSH_CONFIG/zsh_functions #TODO fpath
 source $ZSH_CONFIG/zsh_completions
 
-EDITOR=nvim
+# Environment Variables: {{{
+EDITOR=vim
+PAGER=less
+# }}}
+
+# Options: {{{
 setopt histignorespace
+setopt interactivecomments
+# }}}
 
 # vim: fdm=marker:

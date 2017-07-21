@@ -1,4 +1,5 @@
 bak () {
+    # TODO warn for folders and big files
     local file verbose
 
     if [[ $1 == "-v" ]]; then
@@ -11,14 +12,6 @@ bak () {
     for file in $@; do
         cp $verbose -r $file:A $file:A.bak;
     done
-}
-
-safe_stow() {
-    if [[ $(pwd) == "$HOME/dotfiles" ]]; then
-        \stow --verbose=2 $*
-    else
-        echo "Wrong directory!"
-    fi
 }
 
 buptime() {
@@ -113,6 +106,7 @@ screenshot() {
 }
 
 swap() {
+    # TODO check if files exist
     local file1 file2 swap_file verbose
 
     if [[ $1 == "-v" ]]; then
@@ -128,4 +122,21 @@ swap() {
     mv $verbose "$file1" "$swap_file"
     mv $verbose "$file2" "$file1"
     mv $verbose "$swap_file" "$file2"
+}
+
+scat() {
+    highlight --stdout --out-format=xterm256 -s my $@ || cat $@
+}
+
+take() {
+    mkdir $1
+    cd $1
+}
+
+color() {
+    if [[ "$1" == "reset" ]]; then
+        tput sgr0
+    else
+        tput setaf $1
+    fi
 }

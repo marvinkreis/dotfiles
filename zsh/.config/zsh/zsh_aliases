@@ -8,5 +8,10 @@ alias :q=exit
 alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
-alias stow=safe_stow
 alias swap="swap -v"
+
+# Don't use pip to install modules globally,
+# install with package manager instead
+alias -g pip="pip --user"
+alias -g pip2="pip2 --user"
+alias -g pip3="pip3 --user"

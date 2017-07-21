@@ -1,0 +1,22 @@
+
+Description="My Theme"
+
+Default        = { Colour="#b3b3b3" }
+Canvas         = { Colour="#000000" }
+Number         = { Colour="#3856f1" }
+String         = { Colour="#3856f1" }
+Escape         = { Colour="#e77d7d" }
+PreProcessor   = { Colour="#e77d7d" }
+StringPreProc  = { Colour="#eeeeee" }
+LineNum        = { Colour="#b2b2b2" }
+Operator       = { Colour="#909090" }
+Interpolation  = { Colour="#e5c280" }
+BlockComment   = { Colour="#969896" }
+LineComment = BlockComment
+
+Keywords = {
+  { Colour= "#e77d7d" },
+  { Colour= "#e5c280" },
+  { Colour= "#e5c280" },
+  { Colour= "#e5c280" },
+}

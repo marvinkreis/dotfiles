@@ -358,12 +358,14 @@ set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
 " }}}
 
-" Platform-specific and gui options: {{{
+" Platform-specific options: {{{
 if has('win64') || has('win32')
     let g:tmp_path = 'E:\TEMP\'
     cd ~
 endif
+" }}}
 
+" GUI options {{{
 if has('gui')
     set guifont=Terminus_(TTF):h12
     set guioptions=''
@@ -377,6 +379,12 @@ if has('gui')
     let g:airline_symbols.readonly = ''
     let g:airline_symbols.linenr = ''
     let g:airline_symbols.whitespace = ''
+endif
+" }}}
+
+" Neovim options {{{
+if has('nvim')
+    set inccommand=nosplit
 endif
 " }}}
 

@@ -17,6 +17,10 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 
 bspc config click_to_focus      true
+bspc config pointer_modifier    mod1
+bspc config pointer_action1     move
+bspc config pointer_action2     none
+bspc config pointer_action3     resize_side
 
 bspc monitor -d terminal terminal web stuff music garbage
 

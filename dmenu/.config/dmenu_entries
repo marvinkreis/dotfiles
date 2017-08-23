@@ -9,13 +9,13 @@ dadd:dmenu_bspwm_desktop -a
 eclipse:eclipse
 firefox:firefox
 s:search
-mixer:xfce4-mixer
 ncmpcpp:ncmpcpp_gui
 ncmpcpp_nocover:ncmpcpp_gui --nocover
 NetworkManager:dmenu_nm
 notes:dmenu_notes
 nvim:urxvtc -e nvim
 o:dmenu_open
+pavucontrol:pavucontrol
 pkill:dmenu_pkill
 ranger:urxvtc -e ranger
 settings:xfce4-settings-manager

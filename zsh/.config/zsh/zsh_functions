@@ -1,4 +1,4 @@
-bak () {
+bak() {
     # TODO warn for folders and big files
     local file verbose
 
@@ -75,7 +75,7 @@ rbecho() {
     fi
 
     echo
-    echo -e $input | sed "s/ /  /g" | figlet -t -f smslant | lolcat -F $freq $a
+    echo -e $input | sed "s/ /  /g" | figlet -t | lolcat -F $freq $a
     echo
 }
 
@@ -134,9 +134,11 @@ take() {
 }
 
 color() {
-    if [[ "$1" == "reset" ]]; then
-        tput sgr0
-    else
-        tput setaf $1
+    if [[ "$1" ]]; then
+        if [[ "$1" == "reset" ]]; then
+            tput sgr0
+        else
+            tput setaf $1
+        fi
     fi
 }

@@ -56,8 +56,8 @@ antigen apply
 
 ZSH_CONFIG=$HOME/.config/zsh
 
-source $ZSH_CONFIG/zsh_aliases
 source $ZSH_CONFIG/zsh_functions #TODO fpath
+source $ZSH_CONFIG/zsh_aliases
 source $ZSH_CONFIG/zsh_completions
 
 # Environment Variables: {{{

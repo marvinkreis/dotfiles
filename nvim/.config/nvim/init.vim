@@ -10,9 +10,7 @@ Plug 'altercation/vim-colors-solarized'
 " Appearance
 Plug 'vim-airline/vim-airline'
 "Plug 'mhinz/vim-startify'
-if !has('gui')
-    Plug 'Yggdroot/indentLine'
-endif
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }

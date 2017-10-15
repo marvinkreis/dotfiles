@@ -22,7 +22,7 @@ bspc config pointer_action1     move
 bspc config pointer_action2     none
 bspc config pointer_action3     resize_side
 
-bspc monitor -d terminal terminal web stuff music garbage
+bspc monitor -d terminal terminal web web stuff stuff garbage music chat
 
 bspc config -d 5 boder_width 0
 

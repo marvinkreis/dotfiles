@@ -4,7 +4,7 @@ alias bak="bak -v"
 alias c="clear; clear"
 alias cs="colorscheme-switch -s"
 alias j=jump
-alias ls="ls --color"
+alias ls="ls --color=auto"
 alias :q=exit
 alias rm="rm -vI"
 alias s=search

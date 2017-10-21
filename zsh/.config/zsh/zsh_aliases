@@ -1,4 +1,4 @@
-alias -g tobg="&> /dev/null &"
+alias -g tobg="&> /dev/null &; disown"
 
 alias bak="bak -v"
 alias c="clear; clear"

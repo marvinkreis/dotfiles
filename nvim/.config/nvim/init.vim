@@ -34,7 +34,7 @@ set softtabstop=4
 set tabstop=4
 
 " Appearance
-set colorcolumn=81,105
+"set colorcolumn=81,105
 set cursorline
 set number
 set wildmode=longest,full

@@ -142,3 +142,8 @@ color() {
         fi
     fi
 }
+
+nfind() {
+    #find $@ -print 2>/dev/null
+    find $@  2>&1 | grep -v "Permission denied"
+}

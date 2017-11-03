@@ -1,0 +1,3 @@
+set confirm_on_delete       always
+set preview_images          true
+set preview_images_method   w3m

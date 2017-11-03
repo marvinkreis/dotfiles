@@ -61,8 +61,9 @@ source $ZSH_CONFIG/zsh_aliases
 source $ZSH_CONFIG/zsh_completions
 
 # Environment Variables: {{{
-EDITOR=vim
-PAGER=less
+# EDITOR=vim
+# PAGER=less
+# -> set in .profile
 # }}}
 
 # Options: {{{

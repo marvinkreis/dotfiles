@@ -22,4 +22,4 @@ alias ga="git add"
 alias gc="git commit"
 alias gpl="git pull"
 alias gps="git push"
-
+alias gd="git diff"

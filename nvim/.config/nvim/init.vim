@@ -68,6 +68,8 @@ nnoremap <leader>k :bprev! <CR>
 nnoremap <leader>q :bw <CR>
 nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <silent> <ESC> :nohlsearch<CR>
+nnoremap <C-b> :CtrlPBuffer<CR>
+inoremap <C-a> <ESC>
 
 " Clear Annoying Keys
 nnoremap Q <nop>
@@ -204,8 +206,11 @@ execute MyColors()
 " }}}
 
 " Highlights: {{{
-syntax match lenght /lenght/
-highlight link lenght Error
+function HighlightSections()
+    syntax match section /^\d.*$/ containedin=Normal
+    highlight def section ctermfg=3
+endfunction
+command HighlightSections execute HighlightSections()
 " }}}
 
 " Commands and Functions: {{{
@@ -354,6 +359,7 @@ command HTML2PDF execute HTML2PDF()
 " Spelling: {{{
 set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
+set spell
 " }}}
 
 " Platform-specific options: {{{

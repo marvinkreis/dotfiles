@@ -2,8 +2,7 @@
 call plug#begin('~/git/vim-plug')
 
 " Themes
-Plug 'mkarmona/colorsbox'
-Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'morhetz/gruvbox'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'altercation/vim-colors-solarized'
 
@@ -164,10 +163,10 @@ let g:indentLine_showFirstIndentLevel = 1
 "}}}
 
 " Colors: {{{
-colorscheme colorsbox-stnight
+colorscheme gruvbox
 
 function MyColors()
-    set background=dark
+    " TODO if background==light
 
     " Normal Colors
     "highlight Normal ctermfg=07 ctermbg=234
@@ -176,19 +175,19 @@ function MyColors()
     "highlight CursorLine ctermbg=235
     highlight ColorColumn ctermbg=0
     highlight CursorLine ctermbg=0
+    highlight Folded ctermbg=0
     "highlight CursorLineNr ctermbg=236 ctermfg=214
     highlight CursorLineNr ctermbg=0 ctermfg=3
     highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
     highlight WildMenu ctermfg=214 ctermbg=236
-    highlight Folded ctermbg=0
 
 
     " Startify Colors
-    highlight StartifyHeader ctermfg=07
-    highlight StartifyFile ctermfg=07
-    highlight StartifyNumber ctermfg=01
-    highlight StartifySelect ctermfg=09
-    highlight StartifyPath ctermfg=11
+    "highlight StartifyHeader ctermfg=07
+    "highlight StartifyFile ctermfg=07
+    "highlight StartifyNumber ctermfg=01
+    "highlight StartifySelect ctermfg=09
+    "highlight StartifyPath ctermfg=11
 
     " EasyMotion Colors
     highlight EasyMotionIncSearch ctermfg=214
@@ -201,6 +200,7 @@ function MyColors()
     endif
 endfunction
 
+set background=dark
 execute MyColors()
 
 " }}}
@@ -359,6 +359,7 @@ command HTML2PDF execute HTML2PDF()
 " Spelling: {{{
 set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
+set spellcapcheck=
 set spell
 " }}}
 
@@ -393,5 +394,7 @@ endif
 " }}}
 
 " execute printf("%s%s%s", '!cp',  l:file_a, l:file_b) l:file_c
+
+set relativenumber
 
 " vim: fdm=marker:

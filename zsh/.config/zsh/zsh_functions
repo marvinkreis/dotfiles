@@ -125,7 +125,7 @@ swap() {
 }
 
 scat() {
-    highlight --stdout --out-format=xterm256 -s my $@ || cat $@
+    highlight --stdout --out-format=xterm256 -s my $@ 2&> /dev/null || cat $@
 }
 
 take() {

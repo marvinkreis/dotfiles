@@ -10,6 +10,7 @@ alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
 alias swap="swap -v"
+alias wallpaper="feh --bg-scale"
 
 # Don't use pip to install modules globally,
 # install with package manager instead
@@ -24,3 +25,5 @@ alias gpl="git pull"
 alias gps="git push"
 alias gd="git diff"
 alias gcd="git clone --depth=1"
+alias gr="git reset"
+alias gco="git checkout"

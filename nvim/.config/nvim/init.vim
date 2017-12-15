@@ -138,14 +138,6 @@ let g:startify_session_dir = "~/.local/share/nvim/sessions"
 let g:startify_change_to_dir = 0
 " }}}
 
-" Goyo: {{{
-function! s:goyo_leave()
-    highlight Normal ctermfg=07 ctermbg=234
-endfunction
-
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-" }}}
-
 " EasyMotion: {{{
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'

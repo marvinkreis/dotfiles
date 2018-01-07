@@ -43,8 +43,10 @@ antigen bundle robbyrussell/oh-my-zsh lib/prompt_info_functions.zsh
 
 antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
 
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zdharma/history-search-multi-word
 
 antigen bundle $HOME/.config/zsh/plugins
 antigen theme $HOME/.config/zsh/themes lambda

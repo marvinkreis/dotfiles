@@ -358,7 +358,6 @@ set spell
 " Platform-specific options: {{{
 if has('win64') || has('win32')
     let g:tmp_path = 'E:\TEMP\'
-    cd ~
 endif
 " }}}
 

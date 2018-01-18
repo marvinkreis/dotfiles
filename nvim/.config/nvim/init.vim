@@ -8,9 +8,7 @@ Plug 'altercation/vim-colors-solarized'
 
 " Appearance
 Plug 'vim-airline/vim-airline'
-"Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
@@ -20,6 +18,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 " }}}
@@ -33,13 +32,14 @@ set softtabstop=4
 set tabstop=4
 
 " Appearance
-"set colorcolumn=81,105
 set cursorline
 set number
 set wildmode=longest,full
 set wildmenu
 set laststatus=2
 set hlsearch
+set listchars=trail:•
+set list
 
 set backspace=indent,eol,start
 set foldmethod=manual
@@ -122,22 +122,6 @@ let g:airline_extensions = ['tabline', 'branch']
 set noshowmode
 " }}}
 
-" Startify: {{{
-let g:startify_custom_header = [
-            \"                         _           ",
-            \"                        (_)          ",
-            \"   _ __   ___  _____   ___ _ __ ___  ",
-            \"  | '_ \\ / _ \\/ _ \\ \\ / / | '_ ` _ \\ ",
-            \"  | | | |  __/ (_) \\ V /| | | | | | |",
-            \"  |_| |_|\\___|\\___/ \\_/ |_|_| |_| |_|",
-            \]
-
-let g:startify_list_order = [["Recent files:"], "files", ["Sessions:"], "sessions", ["Bookmarks:"], "bookmarks"]
-let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
-let g:startify_session_dir = "~/.local/share/nvim/sessions"
-let g:startify_change_to_dir = 0
-" }}}
-
 " EasyMotion: {{{
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
@@ -154,6 +138,12 @@ let g:indentLine_first_char = '▶'
 let g:indentLine_showFirstIndentLevel = 1
 "}}}
 
+" Other Plugin Settings: {{{
+set updatetime=1000
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_modified_removed = '•'
+"}}}
+
 " Colors: {{{
 colorscheme gruvbox
 
@@ -161,29 +151,24 @@ function MyColors()
     " TODO if background==light
 
     " Normal Colors
-    "highlight Normal ctermfg=07 ctermbg=234
-    highlight Normal ctermfg=NONE ctermbg=NONE
-    "highlight ColorColumn ctermbg=235
-    "highlight CursorLine ctermbg=235
-    highlight ColorColumn ctermbg=0
-    highlight CursorLine ctermbg=0
-    highlight Folded ctermbg=0
-    "highlight CursorLineNr ctermbg=236 ctermfg=214
-    highlight CursorLineNr ctermbg=0 ctermfg=3
-    highlight StatusLine ctermbg=236 ctermfg=245 cterm=NONE
-    highlight WildMenu ctermfg=214 ctermbg=236
-
-
-    " Startify Colors
-    "highlight StartifyHeader ctermfg=07
-    "highlight StartifyFile ctermfg=07
-    "highlight StartifyNumber ctermfg=01
-    "highlight StartifySelect ctermfg=09
-    "highlight StartifyPath ctermfg=11
+    hi Normal ctermfg=NONE ctermbg=NONE
+    hi ColorColumn ctermbg=0
+    hi CursorLine ctermbg=0
+    hi Folded ctermbg=0
+    hi CursorLineNr ctermbg=0 ctermfg=3
+    hi StatusLine ctermbg=236 ctermfg=245 cterm=NONE
+    hi WildMenu ctermfg=214 ctermbg=236
 
     " EasyMotion Colors
-    highlight EasyMotionIncSearch ctermfg=214
-    highlight EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+    hi EasyMotionIncSearch ctermfg=214
+    hi EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+
+    " Gutter Colors
+    hi SignColumn ctermbg=NONE
+    hi GitGutterAdd ctermbg=NONE ctermfg=2
+    hi GitGutterChange ctermbg=NONE ctermfg=3
+    hi GitGutterChangeDelete ctermbg=NONE ctermfg=3
+    hi GitGutterDelete ctermbg=NONE ctermfg=1
 
     " Gui Colors
     if has('gui')

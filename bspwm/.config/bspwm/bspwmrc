@@ -26,5 +26,6 @@ bspc monitor -d terminal terminal web web stuff stuff garbage garbage music chat
 
 bspc rule -a floating state=floating
 bspc rule -a Zathura state=tiled
+bspc rule -a Pqiv border=off
 
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc_bspwm

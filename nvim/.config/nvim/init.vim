@@ -40,6 +40,7 @@ set laststatus=2
 set hlsearch
 set listchars=trail:•
 set list
+set nowrap
 
 set backspace=indent,eol,start
 set foldmethod=manual

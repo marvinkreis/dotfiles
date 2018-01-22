@@ -12,6 +12,10 @@ alias s=search
 alias sc=systemctl
 alias swap="swap -v"
 alias wallpaper="feh --bg-scale"
+alias zp="zathura *.pdf tobg"
+
+alias dirs="dirs -v"
+alias popd="popd > /dev/null; dirs"
 
 # Don't use pip to install modules globally,
 # install with package manager instead

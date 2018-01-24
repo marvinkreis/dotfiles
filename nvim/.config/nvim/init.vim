@@ -8,7 +8,6 @@ Plug 'altercation/vim-colors-solarized'
 
 " Appearance
 Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
@@ -19,6 +18,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" Completion / Snippets
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'SirVer/ultisnips'
+
+Plug 'lervag/vimtex'
+Plug 'poppyschmo/deoplete-latex'
 
 call plug#end()
 " }}}
@@ -99,10 +105,6 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
 let g:airline_left_sep = '▌'
 let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = '▐'
@@ -111,13 +113,8 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
-"let g:airline#extensions#tabline#left_sep = ''
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline#extensions#tabline#right_sep = ''
-"let g:airline#extensions#tabline#right_alt_sep = '|'
 
 let g:airline_theme='mybase16'
-"let g:airline_extensions = ['tabline', 'whitespace', 'branch']
 let g:airline_extensions = ['tabline', 'branch']
 
 set noshowmode
@@ -132,18 +129,33 @@ map <leader>w <Plug>(easymotion-bd-w)
 map <leader>l <Plug>(easymotion-bd-jk)
 " }}}
 
-" IndentLine: {{{
-let g:indentLine_color_term = 8
-let g:indentLine_char = '▶'
-let g:indentLine_first_char = '▶'
-let g:indentLine_showFirstIndentLevel = 1
-"}}}
-
 " Other Plugin Settings: {{{
 set updatetime=1000
 let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•'
 "}}}
+
+" Completion Settings: {{{
+set pumheight=10
+set shortmess+=c
+set completeopt-=preview
+set completeopt+=noinsert
+
+"inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+let g:deoplete#enable_at_startup = 0
+let g:deoplete#disable_auto_complete = 0
+
+let g:UltiSnipsExpandTrigger = "<C-y>"
+let g:UltiSnipsJumpForwardTrigger = "<C-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
+
+command ToggleDeoplete call deoplete#toggle()
+" }}}
 
 " Colors: {{{
 colorscheme gruvbox
@@ -351,7 +363,7 @@ endif
 if has('gui')
     set guifont=Terminus_(TTF):h12
     set guioptions=''
-    set guicursor+=n-v-c-i:blinkon0
+"    set guicursor+=n-v-c-i:blinkon0
 
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''

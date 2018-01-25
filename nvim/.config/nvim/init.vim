@@ -239,8 +239,9 @@ command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
 " Printing: {{{
-let g:html_number_lines     = 0                 " actual TOhtml variable
-let g:html_font             = "Courier New"     " actual TOhtml variable
+" actual TOhtml variables
+let g:html_number_lines     = 0
+let g:html_font             = "Courier New"
 
 let g:html_colorscheme      = "lucius"
 let g:html_font_size        = 12
@@ -298,10 +299,6 @@ function HTML2PDF(...)
     let l:footer_right      = expand(strftime(g:html_footer_right))
     let l:footer_center     = expand(strftime(g:html_footer_center))
 
-    "for var in [l:header_left, l:header_right, l:header_center, l:footer_left, l:footer_right, l:footer_center]
-    "    let var = expand(strftime(var))
-    "endfor
-
     if l:use_header
         let l:margin_top += l:margin_header
     endif
@@ -319,7 +316,6 @@ function HTML2PDF(...)
     set background=light
     execute 'colorscheme' l:colorscheme
     highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
-    IndentLinesDisable
 
     TOhtml
     execute 'w!' l:html_path
@@ -364,7 +360,6 @@ function HTML2PDF(...)
     execute l:sed
     execute l:wk
 
-    IndentLinesEnable
     execute 'colorscheme' l:old_colors
     execute MyColors()
 endfunction

@@ -23,9 +23,14 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Completion / Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'lervag/vimtex', { 'for': 'plaintex,tex' }
 Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex' }
+Plug 'Shougo/neco-vim'
+
+" Hard mode
+Plug 'wikitopian/hardmode'
 
 call plug#end()
 " }}}
@@ -41,6 +46,7 @@ set tabstop=4
 " Appearance
 set cursorline
 set number
+set relativenumber
 set wildmenu
 set wildmode=longest:full,full
 set wildignorecase
@@ -162,14 +168,14 @@ set completeopt+=noinsert
 
 "inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0
 
-let g:UltiSnipsExpandTrigger = "<C-y>"
+let g:UltiSnipsExpandTrigger = "<S-Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<C-n>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
 
@@ -403,7 +409,5 @@ endif
 " }}}
 
 " execute printf("%s%s%s", '!cp',  l:file_a, l:file_b) l:file_c
-
-set relativenumber
 
 " vim: fdm=marker:

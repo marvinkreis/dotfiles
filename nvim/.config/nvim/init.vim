@@ -18,13 +18,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " Completion / Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 
-Plug 'lervag/vimtex'
-Plug 'poppyschmo/deoplete-latex'
+Plug 'lervag/vimtex', { 'for': 'plaintex,tex' }
+Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex' }
 
 call plug#end()
 " }}}
@@ -40,8 +41,9 @@ set tabstop=4
 " Appearance
 set cursorline
 set number
-set wildmode=longest,full
 set wildmenu
+set wildmode=longest:full,full
+set wildignorecase
 set laststatus=2
 set hlsearch
 set listchars=trail:•
@@ -135,6 +137,23 @@ let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•'
 "}}}
 
+" vimtex Settings: {{{
+let g:vimtex_compiler_method = 'latexrun'
+let g:vimtex_compiler_latexrun = {
+    \ 'backend' : 'nvim',
+    \ 'background' : 1,
+    \ 'build_dir' : '/tmp/latexrun',
+    \ 'options' : [
+    \ ]
+\}
+
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_latexlog = {
+    \ 'overfull' : 0,
+    \ 'underfull' : 0
+\}
+" }}}
+
 " Completion Settings: {{{
 set pumheight=10
 set shortmess+=c
@@ -147,14 +166,14 @@ inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0
 
 let g:UltiSnipsExpandTrigger = "<C-y>"
 let g:UltiSnipsJumpForwardTrigger = "<C-n>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
 
-command ToggleDeoplete call deoplete#toggle()
+command DeopleteToggle call deoplete#toggle()
 " }}}
 
 " Colors: {{{
@@ -162,6 +181,7 @@ colorscheme gruvbox
 
 function MyColors()
     " TODO if background==light
+    set background=dark
 
     " Normal Colors
     hi Normal ctermfg=NONE ctermbg=NONE

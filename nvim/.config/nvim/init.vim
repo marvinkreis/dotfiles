@@ -37,6 +37,7 @@ call plug#end()
 
 " Normal Settings: {{{
 filetype plugin indent on
+
 " Tabs
 set expandtab
 set shiftwidth=4
@@ -55,6 +56,7 @@ set hlsearch
 set listchars=trail:•
 set list
 set nowrap
+set noshowmode
 
 set backspace=indent,eol,start
 set foldmethod=manual
@@ -104,28 +106,86 @@ nnoremap XX "_dd
 vmap X "_d
 vmap x "_d
 nnoremap x "_x
+
+" Airline buffers
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
 " }}}
 
 " Airline: {{{
+let g:airline_extensions = ['tabline', 'branch', 'hunks']
+let g:airline_theme='mybase16'
 let g:airline_powerline_fonts = 1
+let g:airline_detect_spell = 0
+let g:airline_detect_spelllang = 0
+let g:airline_inactive_collapse = 0
+
+"let g:airline_left_sep = '▌'
+"let g:airline_left_alt_sep = '│'
+"let g:airline_right_sep = '▐'
+"let g:airline_right_alt_sep = '│'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
-let g:airline_left_sep = '▌'
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = '▐'
-let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.whitespace = 'Ξ'
 
-let g:airline_theme='mybase16'
-let g:airline_extensions = ['tabline', 'branch']
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#buffers_label = 'buffers'
+let g:airline#extensions#tabline#tabs_label = 'tabs'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_format = {
+    \ '0': ' [0] ',
+    \ '1': ' [1] ',
+    \ '2': ' [2] ',
+    \ '3': ' [3] ',
+    \ '4': ' [4] ',
+    \ '5': ' [5] ',
+    \ '6': ' [6] ',
+    \ '7': ' [7] ',
+    \ '8': ' [8] ',
+    \ '9': ' [9] '
+    \}
 
-set noshowmode
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#hunks#hunk_symbols = ['+', '•', '-']
+
+function FileFormat()
+    return &ff
+endfunction
+
+function Encoding()
+    return &fenc.(&l:bomb ? ' [BOM]' : '')
+endfunction
+
+function Branch()
+    return airline#extensions#branch#get_head()
+endfunction
+
+function Hunks()
+    " Remove leading and trailing whitespaces
+    return join(split(airline#extensions#hunks#get_hunks(), ' '), ' ')
+endfunction
+
+call airline#parts#define_function('ff', 'FileFormat')
+call airline#parts#define_function('enc', 'Encoding')
+call airline#parts#define_function('branch', 'Branch')
+call airline#parts#define_function('hunks', 'Hunks')
+call airline#parts#define('linenr', {
+    \ 'raw': '%2p%% of %L',
+    \ 'accent': 'bold'})
+
+let g:airline_section_b = airline#section#create_left(['branch', 'hunks'])
+let g:airline_section_y = airline#section#create_right(['enc', 'ff'])
+let g:airline_section_z = airline#section#create_right(['linenr', '%2v'])
 " }}}
 
 " EasyMotion: {{{

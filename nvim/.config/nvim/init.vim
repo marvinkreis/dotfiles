@@ -175,17 +175,20 @@ function Hunks()
     return join(split(airline#extensions#hunks#get_hunks(), ' '), ' ')
 endfunction
 
-call airline#parts#define_function('ff', 'FileFormat')
-call airline#parts#define_function('enc', 'Encoding')
-call airline#parts#define_function('branch', 'Branch')
-call airline#parts#define_function('hunks', 'Hunks')
-call airline#parts#define('linenr', {
-    \ 'raw': '%2p%% of %L',
-    \ 'accent': 'bold'})
+function! AirlineInit()
+    call airline#parts#define_function('ff', 'FileFormat')
+    call airline#parts#define_function('enc', 'Encoding')
+    call airline#parts#define_function('branch', 'Branch')
+    call airline#parts#define_function('hunks', 'Hunks')
+    call airline#parts#define('linenr', {
+        \ 'raw': '%2p%% of %L',
+        \ 'accent': 'bold'})
 
-let g:airline_section_b = airline#section#create_left(['branch', 'hunks'])
-let g:airline_section_y = airline#section#create_right(['enc', 'ff'])
-let g:airline_section_z = airline#section#create_right(['linenr', '%2v'])
+    let g:airline_section_b = airline#section#create_left(['branch', 'hunks'])
+    let g:airline_section_y = airline#section#create_right(['enc', 'ff'])
+    let g:airline_section_z = airline#section#create_right(['linenr', '%2v'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 " }}}
 
 " EasyMotion: {{{

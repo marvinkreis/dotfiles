@@ -122,21 +122,15 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " Airline: {{{
 let g:airline_extensions = ['tabline', 'branch', 'hunks']
 let g:airline_theme='mybase16'
-let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
 let g:airline_detect_spelllang = 0
 let g:airline_inactive_collapse = 0
 
+let g:airline_powerline_fonts = 1
 "let g:airline_left_sep = '▌'
 "let g:airline_left_alt_sep = '│'
 "let g:airline_right_sep = '▐'
 "let g:airline_right_alt_sep = '│'
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
 
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#buffers_label = 'buffers'
@@ -180,13 +174,12 @@ function! AirlineInit()
     call airline#parts#define_function('enc', 'Encoding')
     call airline#parts#define_function('branch', 'Branch')
     call airline#parts#define_function('hunks', 'Hunks')
-    call airline#parts#define('linenr', {
-        \ 'raw': '%2p%% of %L',
-        \ 'accent': 'bold'})
+    call airline#parts#define('linenr', { 'raw': '%2p%% of %L', 'accent': 'bold'})
+    call airline#parts#define('colnr', {'raw': '%2v'})
 
     let g:airline_section_b = airline#section#create_left(['branch', 'hunks'])
     let g:airline_section_y = airline#section#create_right(['enc', 'ff'])
-    let g:airline_section_z = airline#section#create_right(['linenr', '%2v'])
+    let g:airline_section_z = airline#section#create_right(['linenr', 'colnr'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 " }}}
@@ -234,6 +227,7 @@ set completeopt+=noinsert
 "inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<ESC>"
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0
@@ -246,40 +240,38 @@ command DeopleteToggle call deoplete#toggle()
 " }}}
 
 " Colors: {{{
+set background=dark
 colorscheme gruvbox
 
 function MyColors()
-    " TODO if background==light
-    set background=dark
+    let l:bg_col = (&background == 'dark') ? 0 : 7
 
     " Normal Colors
     hi Normal ctermfg=NONE ctermbg=NONE
-    hi ColorColumn ctermbg=0
-    hi CursorLine ctermbg=0
-    hi Folded ctermbg=0
-    hi CursorLineNr ctermbg=0 ctermfg=3
-    hi StatusLine ctermbg=236 ctermfg=245 cterm=NONE
-    hi WildMenu ctermfg=214 ctermbg=236
+    execute 'hi ColorColumn ctermbg='               .l:bg_col
+    execute 'hi CursorLine ctermbg='                .l:bg_col
+    execute 'hi Folded ctermbg='                    .l:bg_col
+    execute 'hi CursorLineNr ctermfg=3 ctermbg='    .l:bg_col
+    hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE
+    hi WildMenu ctermbg=NONE ctermfg=3
 
     " EasyMotion Colors
-    hi EasyMotionIncSearch ctermfg=214
-    hi EasyMotionTarget ctermbg=NONE ctermfg=214 cterm=bold
+    hi EasyMotionIncSearch ctermfg=3
+    hi EasyMotionTarget cterm=bold ctermfg=3 ctermbg=NONE
 
     " Gutter Colors
     hi SignColumn ctermbg=NONE
-    hi GitGutterAdd ctermbg=NONE ctermfg=2
-    hi GitGutterChange ctermbg=NONE ctermfg=3
-    hi GitGutterChangeDelete ctermbg=NONE ctermfg=3
-    hi GitGutterDelete ctermbg=NONE ctermfg=1
+    hi GitGutterAdd ctermfg=2 ctermbg=NONE
+    hi GitGutterChange ctermfg=3 ctermbg=NONE
+    hi GitGutterChangeDelete ctermfg=3 ctermbg=NONE
+    hi GitGutterDelete ctermfg=1 ctermbg=NONE
 
     " Gui Colors
     if has('gui')
-        highlight Normal guifg=#b3b3b3 guibg=#1c1c1c
         highlight Comment gui=NONE
     endif
 endfunction
 
-set background=dark
 execute MyColors()
 
 " }}}

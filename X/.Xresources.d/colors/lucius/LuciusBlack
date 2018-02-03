@@ -18,3 +18,4 @@
 *.color7:      #d7d7d7
 *.color15:     #d7d7d7
 
+! vim: set ft=xdefaults :

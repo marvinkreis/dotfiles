@@ -1,4 +1,4 @@
-*.background:  #ffffff
+*.background:  #eeeeee
 *.foreground:  #626262
 *.cursorColor: #87afd7
 *.color0:      #626262
@@ -15,6 +15,8 @@
 *.color13:     #af00af
 *.color6:      #00afaf
 *.color14:     #00afaf
-*.color7:      #ffffff
-*.color15:     #ffffff
+*.color7:      #eeeeee
+*.color15:     #eeeeee
 
+
+! vim: set ft=xdefaults :

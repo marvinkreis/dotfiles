@@ -1,10 +1,7 @@
-" vim-airline template by chartoin (http://github.com/chartoin)
+" based on vim-airline template by chartoin (http://github.com/chartoin)
+" layer 3 background is also tabbar background
 
 let g:airline#themes#mybase16#palette = {}
-
-" _mod is the color for when the file is modified
-" TODO make variants for all colors?
-
 
 
 " ========== GUI COLORS ==========
@@ -21,7 +18,7 @@ let s:gui_l2_bg             = "#4a5457"
 let s:gui_l2_fg             = "#cccaca"
 
 " Layer 3
-let s:gui_l3_bg             = "#364043"     " also tabbar bg
+let s:gui_l3_bg             = "#364043"
 let s:gui_l3_fg             = "#cccaca"
 let s:gui_l3_fg_mod         = "#e5c280"
 
@@ -45,7 +42,7 @@ let s:l2_bg             = 8
 let s:l2_fg             = 7
 
 " Layer 3
-let s:l3_bg             = 0     " also tabbar bg
+let s:l3_bg             = 0
 let s:l3_fg             = 7
 let s:l3_fg_mod         = 3
 
@@ -80,7 +77,7 @@ let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let g:airline#themes#mybase16#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
-" When file is modified (Only difference right now is layer 3 fg
+" when the buffer is modified
 
 let s:N1   = [ s:gui_l1_fg,       s:gui_l1_bg_normal,   s:l1_fg,        s:l1_bg_normal ]
 let s:N2   = [ s:gui_l2_fg,       s:gui_l2_bg,          s:l2_fg,        s:l2_bg ]
@@ -106,15 +103,3 @@ let s:IA1   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let s:IA2   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let s:IA3   = [ s:gui_i_fg, s:gui_i_bg, s:i_fg, s:i_bg ]
 let g:airline#themes#mybase16#palette.inactive_modified = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
-
-" Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp
-" variable so that related functionality is loaded iff the user is using
-" ctrlp. Note that this is optional, and if you do not define ctrlp colors
-" they will be chosen automatically from the existing palette.
-if !get(g:, 'loaded_ctrlp', 0)
-  finish
-endif
-let g:airline#themes#mybase16#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
-      \ [ '#000000', '#000000', 0, 0, '' ],
-      \ [ '#000000', '#000000', 0, 0, '' ],
-      \ [ '#000000', '#000000', 0, 0, 'bold' ])

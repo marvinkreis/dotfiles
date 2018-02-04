@@ -147,3 +147,16 @@ nfind() {
     #find $@ -print 2>/dev/null
     find $@  2>&1 | grep -v "Permission denied"
 }
+
+# bulk_rename() {
+#     if [ -z ${1} ] || [ -z ${2+x} ]; then
+#         echo "Invlid parameters."
+#     else
+#         while read -r file; do
+#             if [[ "$file" =~ "$1" ]]; then
+#                 echo mv "$file" "$(echo $file | sed s/$1/$2/g)"
+#                 mv "$file" "$(echo $file | sed s/$1/$2/g)"
+#             fi
+#         done
+#     fi
+# }

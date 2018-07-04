@@ -98,11 +98,11 @@ qr() {
 }
 
 snip() {
-    import "${1:-screenshot_$(date +%F-%H%M%S).png}"
+    import "${1:-screenshot_$(date +%F-%H%M%S).png}" ${@:2}
 }
 
 screenshot() {
-    scrot "${1:-screenshot_$(date +%F-%H%M%S).png}"
+    scrot "${1:-screenshot_$(date +%F-%H%M%S).png}" ${@:2}
 }
 
 swap() {
@@ -160,3 +160,7 @@ nfind() {
 #         done
 #     fi
 # }
+
+zp() {
+    zathura ${1-*.pdf} &> /dev/null &; disown
+}

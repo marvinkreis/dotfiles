@@ -1,8 +1,9 @@
 ! hard contrast: *.background: #1d2021
+! normal contrast: *.background: #282828
 ! soft contrast: *.background: #32302f
 
 ! special
-*.background:   #282828
+*.background:   #1d2021
 *.foreground:   #ebdbb2
 *.cursorColor:  #ebdbb2
 
@@ -37,5 +38,11 @@
 ! white
 *.color7:   #a89984
 *.color15:  #ebdbb2
+
+! rofi
+rofi.color-normal: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
+rofi.color-urgent: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
+rofi.color-active: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
+rofi.color-window: #1e2223,  #ebdbb2,  #ebdbb2
 
 ! vim: set ft=xdefaults :

@@ -276,7 +276,7 @@ visualizer_type = spectrum
 ##   not available.
 ##
 #
-song_columns_list_format = (47f)[white]{:  Cover} (20)[]{a} (6f)[green]{NE} (30)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (2f)[white]{: }(20)[]{a} (6f)[green]{NE} (30)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -284,7 +284,7 @@ song_columns_list_format = (47f)[white]{:  Cover} (20)[]{a} (6f)[green]{NE} (30)
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-#execute_on_song_change = "display_cover 0"
+#execute_on_song_change = "display_cover 1"
 #
 #playlist_show_mpd_host = no
 #

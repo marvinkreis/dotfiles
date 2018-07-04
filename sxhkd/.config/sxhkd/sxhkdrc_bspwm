@@ -128,19 +128,6 @@ super + {Left,Down,Up,Right}
 #super + @button{1-3}
 #    bspc pointer -u
 
-# change windowgap
-super + {plus, minus}
-    /home/marvin/bin/bspwm_change_windowgap {+,-} 1
-
-# change padding
-super + alt + {plus, minus}
-    /home/marvin/bin/bspwm_change_padding {+,-} 1
-
-# reset padding and windowgap
-super + r
-    /home/marvin/bin/bspwm_change_padding reset &&\
-    /home/marvin/bin/bspwm_change_windowgap reset
-
 #
 # wm independent hotkeys
 #

@@ -1,7 +1,7 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 bspc config border_width        4
-bspc config window_gap          8
+bspc config window_gap          0
 
 bspc config top_padding         27
 bspc config bottom_padding      0
@@ -28,4 +28,4 @@ bspc rule -a floating state=floating
 bspc rule -a Zathura state=tiled
 bspc rule -a Pqiv border=off
 
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc_bspwm
+sxhkd -c ${HOME}/.config/sxhkd/sxhkdrc_bspwm &

@@ -35,4 +35,10 @@
 *.color7:   #cccaca
 *.color15:  #e0dede
 
+! rofi
+rofi.color-normal: #20242c,  #b3b8c4,  #262a33,  #333c47,  #b3b8c4
+rofi.color-urgent: #20242c,  #b3b8c4,  #262a33,  #333c47,  #b3b8c4
+rofi.color-active: #20242c,  #b3b8c4,  #262a33,  #333c47,  #b3b8c4
+rofi.color-window: #22262e,  #b3b8c4,  #b3b8c4
+
 ! vim: set ft=xdefaults :

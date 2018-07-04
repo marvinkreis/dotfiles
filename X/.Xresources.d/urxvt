@@ -1,7 +1,7 @@
 URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
 
 !appearance
-URxvt.font: xft:Terminus:size=14
+URxvt.font: xft:Terminus:size=12
 !URxvt.font: xft:xos4 Terminus:style=Regular
 URxvt.internalBorder: 8
 URxvt.cursorBlink: 1
@@ -31,7 +31,7 @@ URxvt.keysym.Control-Down: perl:font-size:decrease
 URxvt.font-size.step: 1
 
 !icon
-URxvt*iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg
+URxvt.iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg
 
 !transparency
 !URxvt*transparent: true
@@ -39,3 +39,5 @@ URxvt*iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg
 
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
+
+! vim: set ft=xdefaults :

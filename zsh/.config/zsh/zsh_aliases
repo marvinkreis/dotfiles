@@ -3,25 +3,20 @@ alias -g tobg="&> /dev/null &; disown"
 alias bak="bak -v"
 alias c="clear; clear"
 alias cs="colorscheme-switch -s"
+alias grep="grep --color=auto"
 alias hop="htop -s CPU"
 alias j=jump
-alias ls="ls --color=auto"
+alias ls="ls --color=auto -1"
+alias o="exo-open"
 alias :q=exit
 alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
+alias svim="sudo -E vim"
 alias swap="swap -v"
 alias wallpaper="feh --bg-scale"
-alias zp="zathura *.pdf tobg"
 
 alias dirs="dirs -v"
-alias popd="popd > /dev/null; dirs"
-
-# Don't use pip to install modules globally,
-# install with package manager instead
-alias -g pip="pip --user"
-alias -g pip2="pip2 --user"
-alias -g pip3="pip3 --user"
 
 alias gs="git status"
 alias ga="git add"

@@ -54,7 +54,7 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = Wuncon Siji:style=Regular:pixelsize=10;1
 font-3 = Noto Sans CJK JP:style=Regular:pixelsize=10;1
 ;font-3 = IPAPMincho,IPA P明朝:style=Regular:pixelsize=10;1
 
@@ -122,16 +122,26 @@ label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
-ws-icon-0 = 0;０
-ws-icon-1 = 1;１
-ws-icon-2 = 2;２
-ws-icon-3 = 3;３
-ws-icon-4 = 4;４
-ws-icon-5 = 5;５
-ws-icon-6 = 6;６
-ws-icon-7 = 7;７
-ws-icon-8 = 8;８
-ws-icon-9 = 9;９
+;ws-icon-0 = 0;０
+;ws-icon-1 = 1;１
+;ws-icon-2 = 2;２
+;ws-icon-3 = 3;３
+;ws-icon-4 = 4;４
+;ws-icon-5 = 5;５
+;ws-icon-6 = 6;６
+;ws-icon-7 = 7;７
+;ws-icon-8 = 8;８
+;ws-icon-9 = 9;９
+ws-icon-0 = 0;0
+ws-icon-1 = 1;1
+ws-icon-2 = 2;2
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
+ws-icon-5 = 5;5
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
 
 ws-icon-10 = chat;
 ws-icon-11 = editor;
@@ -145,6 +155,18 @@ ws-icon-18 = stuff;
 ws-icon-19 = terminal;
 ws-icon-20 = web;
 ws-icon-default = 
+;ws-icon-10 = chat;o
+;ws-icon-11 = editor;o
+;ws-icon-12 = files;o
+;ws-icon-13 = garbage;o
+;ws-icon-14 = gui;o
+;ws-icon-15 = mail;o
+;ws-icon-16 = music;o
+;ws-icon-17 = none;o
+;ws-icon-18 = stuff;o
+;ws-icon-19 = terminal;o
+;ws-icon-20 = web;o
+;ws-icon-default = o
 
 [module/mpd]
 type = internal/mpd

@@ -36,10 +36,10 @@ antigen bundle robbyrussell/oh-my-zsh lib/compfix.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/completion.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/directories.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh #TODO ?
 antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/prompt_info_functions.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
 
 antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
 

@@ -53,10 +53,11 @@ set wildmode=longest:full,full
 set wildignorecase
 set laststatus=2
 set hlsearch
-set listchars=trail:•
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:>,precedes:<
 set list
 set nowrap
 set noshowmode
+set t_Co=256
 
 set backspace=indent,eol,start
 set foldmethod=manual
@@ -68,6 +69,7 @@ set mouse=a
 
 set encoding=utf-8
 set fileformat=unix
+set hidden
 " }}}
 
 " Key Mappings: {{{
@@ -81,31 +83,26 @@ inoremap <leader>p <ESC>"+pa
 " Normal Mappings
 nnoremap <leader>j :bnext! <CR>
 nnoremap <leader>k :bprev! <CR>
-nnoremap <leader>q :bw <CR>
+nnoremap <leader>q :bd <CR>
 nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <silent> <ESC> :nohlsearch<CR>
 nnoremap <C-b> :CtrlPBuffer<CR>
 inoremap <C-a> <ESC>
 
 " Clear Annoying Keys
-nnoremap Q <nop>
-noremap <PageUp> <nop>
-inoremap <PageUp> <nop>
-noremap <PageDown> <nop>
-inoremap <PageDown> <nop>
-noremap <F1> <nop>
-inoremap <F1> <nop>
+nmap Q <nop>
+map <PageUp> <nop>
+imap <PageUp> <nop>
+map <PageDown> <nop>
+imap <PageDown> <nop>
+map <F1> <nop>
+imap <F1> <nop>
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
 
 " Remap command history
 noremap q: <nop>
 noremap <leader>h q:
-
-" Deleting without overwriting registers
-nnoremap X "_d
-nnoremap XX "_dd
-vmap X "_d
-vmap x "_d
-nnoremap x "_x
 
 " Airline buffers
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -127,10 +124,15 @@ let g:airline_detect_spelllang = 0
 let g:airline_inactive_collapse = 0
 
 let g:airline_powerline_fonts = 1
-"let g:airline_left_sep = '▌'
-"let g:airline_left_alt_sep = '│'
-"let g:airline_right_sep = '▐'
-"let g:airline_right_alt_sep = '│'
+let g:airline_left_sep = '▌'
+let g:airline_left_alt_sep = '│'
+let g:airline_right_sep = '▐'
+let g:airline_right_alt_sep = '│'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.notexists = ' +'
 
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#buffers_label = 'buffers'
@@ -214,6 +216,8 @@ let g:vimtex_quickfix_latexlog = {
     \ 'overfull' : 0,
     \ 'underfull' : 0
 \}
+
+let g:tex_flavor = "latex"
 " }}}
 
 " Completion Settings: {{{
@@ -221,13 +225,19 @@ set pumheight=10
 set shortmess+=c
 set completeopt-=preview
 set completeopt+=noinsert
+set smartcase
 
 "inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
-inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<ESC>"
+
+"inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
+"inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<ESC>"
+
+inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-j>"
+inoremap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
+inoremap <expr><Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+inoremap <expr><CR>  pumvisible() ? "\<C-x><CR>" : "\<CR>"
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0
@@ -240,20 +250,20 @@ command DeopleteToggle call deoplete#toggle()
 " }}}
 
 " Colors: {{{
-set background=dark
 colorscheme gruvbox
+set background=dark
 
 function MyColors()
-    let l:bg_col = (&background == 'dark') ? 0 : 7
-
     " Normal Colors
     hi Normal ctermfg=NONE ctermbg=NONE
-    execute 'hi ColorColumn ctermbg='               .l:bg_col
-    execute 'hi CursorLine ctermbg='                .l:bg_col
-    execute 'hi Folded ctermbg='                    .l:bg_col
-    execute 'hi CursorLineNr ctermfg=3 ctermbg='    .l:bg_col
+    hi LineNr ctermbg=NONE
+    hi CursorLine ctermbg=0
+    hi ColorColumn ctermbg=0
+    hi Folded ctermbg=0
+    hi CursorLineNr ctermfg=3 ctermbg=0
     hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE
     hi WildMenu ctermbg=NONE ctermfg=3
+    hi Whitespace ctermfg=8
 
     " EasyMotion Colors
     hi EasyMotionIncSearch ctermfg=3
@@ -263,7 +273,7 @@ function MyColors()
     hi SignColumn ctermbg=NONE
     hi GitGutterAdd ctermfg=2 ctermbg=NONE
     hi GitGutterChange ctermfg=3 ctermbg=NONE
-    hi GitGutterChangeDelete ctermfg=3 ctermbg=NONE
+    hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
     hi GitGutterDelete ctermfg=1 ctermbg=NONE
 
     " Gui Colors
@@ -272,8 +282,8 @@ function MyColors()
     endif
 endfunction
 
+autocmd ColorScheme * call MyColors()
 execute MyColors()
-
 " }}}
 
 " Highlights: {{{

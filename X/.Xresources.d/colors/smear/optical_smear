@@ -1,7 +1,7 @@
 ! special
 *.background:    #1c1c1c
-*.foreground:    #b3b3b3
-*.cursorColor:   #b3b3b3
+*.foreground:    #d0d0d0
+*.cursorColor:   #d0d0d0
 
 ! black
 *.color0:   #292929
@@ -34,5 +34,11 @@
 ! white
 *.color7:   #cccaca
 *.color15:  #e0dede
+
+! rofi
+rofi.color-normal: #1c1c1c,  #d0d0d0,  #232323,  #424242,  #d0d0d0
+rofi.color-urgent: #1c1c1c,  #d0d0d0,  #232323,  #424242,  #d0d0d0
+rofi.color-active: #1c1c1c,  #d0d0d0,  #232323,  #424242,  #d0d0d0
+rofi.color-window: #1f1f1f,  #d0d0d0,  #d0d0d0
 
 ! vim: set ft=xdefaults :

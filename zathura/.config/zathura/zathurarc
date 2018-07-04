@@ -26,14 +26,18 @@ set notification-bg             "#a9c88f"
 set notification-fg             "#1c1c1c"
 
 set recolor-lightcolor          "#1c1c1c"
-set recolor-darkcolor           "#b3b3b3"
-set recolor                     "false"
+set recolor-darkcolor           "#c0c0c0"
 
-set recolor-keephue             "true"
-set recolor                     "true"
+set recolor-keephue             true
+set recolor-reverse-video       false
+set recolor                     false
 
 set guioptions                  ""
 set window-icon                 acroread
 set font                        "Terminus 12"
 
 set zoom-step                   5
+
+#solarized
+#set recolor-darkcolor           "#839496"
+#set recolor-lightcolor          "#002b36"

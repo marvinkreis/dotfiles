@@ -1,10 +1,7 @@
 alias -g tobg="&> /dev/null &; disown"
 
 alias bak="bak -v"
-alias c="clear; clear"
-alias cs="colorscheme-switch -s"
 alias grep="grep --color=auto"
-alias hop="htop -s CPU"
 alias j=jump
 alias ls="ls --color=auto -1"
 alias o="exo-open"

@@ -18,32 +18,6 @@ buptime() {
     echo "Buptime: ( •ᴗ•) days, ( •ᴗ•), hours, ( •ᴗ•) minutes, ( •ᴗ•) seconds."
 }
 
-extract() {
-   if [[ -z "$1" ]] ; then
-       print -P "usage: \e[1;36mextract\e[1;0m < filename >"
-       print -P "       Extract the file specified based on the extension"
-   elif [[ -f $1 ]] ; then
-       case ${(L)1} in
-           *.tar.xz)   tar -Jxf $1 ;;
-           *.tar.bz2)  tar -jxvf $1 ;;
-           *.tar.gz)   tar -zxvf $1 ;;
-           *.bz2)      bunzip2 $1 ;;
-           *.gz)       gunzip $1 ;;
-           *.jar)      unzip $1 ;;
-           *.rar)      unrar x $1 ;;
-           *.tar)      tar -xvf $1 ;;
-           *.tbz2)     tar -jxvf $1 ;;
-           *.tgz)      tar -zxvf $1 ;;
-           *.zip)      unzip $1 -d ${1%.*};;
-           *.Z)        uncompress $1 ;;
-           *.7z)       7z x $1 ;;
-           *)          echo "Unable to extract '$1' :: Unknown extension"
-       esac
-   else
-       echo "File ('$1') does not exist!"
-   fi
-}
-
 set_background() {
     if [ $1 ]; then
         printf "\e]20;$1;\a"
@@ -124,10 +98,6 @@ swap() {
     mv $verbose "$swap_file" "$file2"
 }
 
-scat() {
-    highlight --stdout --out-format=xterm256 -s my $@ 2&> /dev/null || cat $@
-}
-
 take() {
     mkdir $1
     cd $1
@@ -145,7 +115,7 @@ color() {
 
 nfind() {
     #find $@ -print 2>/dev/null
-    find $@  2>&1 | grep -v "Permission denied"
+    find $@ 2>&1 | grep -v "Permission denied"
 }
 
 # bulk_rename() {
@@ -162,5 +132,32 @@ nfind() {
 # }
 
 zp() {
-    zathura ${1-*.pdf} &> /dev/null &; disown
+    if [ -z ${1+x} ]; then
+        zathura *.pdf &> /dev/null &; disown
+    else
+        zathura ${@} &> /dev/null &; disown
+    fi
+}
+
+git_status_nth() {
+    awkstr='{gsub(/^\s*(D|M|\?\?)\s*/,"")} '
+
+    if [ -z ${1+x} ]; then
+        awkstr+="1"
+    else
+        for nth in $@; do
+            awkstr+="NR==${nth}||"
+        done
+        awkstr=$awkstr[0,-3]
+    fi
+
+    git status -s | awk "$awkstr"
+}
+
+git_add_nth() {
+    git add $(git_status_nth ${@})
+}
+
+git_diff_nth() {
+    git diff $(git_status_nth ${@})
 }

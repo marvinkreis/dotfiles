@@ -35,9 +35,9 @@
 *.color15:  #c5c8c6
 
 ! rofi
-rofi.color-normal: #000000,  #eaeaea,  #222222,  #444444,  #eaeaea
-rofi.color-urgent: #000000,  #eaeaea,  #222222,  #444444,  #eaeaea
-rofi.color-active: #000000,  #eaeaea,  #222222,  #444444,  #eaeaea
+rofi.color-normal: #000000,  #eaeaea,  #202020,  #444444,  #eaeaea
+rofi.color-urgent: #000000,  #eaeaea,  #202020,  #444444,  #eaeaea
+rofi.color-active: #000000,  #eaeaea,  #202020,  #444444,  #eaeaea
 rofi.color-window: #000000,  #eaeaea,  #eaeaea
 
 ! vim: set ft=xdefaults :

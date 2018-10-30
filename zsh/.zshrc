@@ -41,8 +41,6 @@ antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/prompt_info_functions.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
 
-antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
-
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zdharma/history-search-multi-word
@@ -54,11 +52,13 @@ antigen apply
 # }}}
 
 ZSH_CONFIG=$HOME/.config/zsh
+PAGER='nvimpager -p'
+MANPAGER='nvimpager -p'
 
-source $ZSH_CONFIG/zsh_functions #TODO fpath
-source $ZSH_CONFIG/zsh_aliases
-source $ZSH_CONFIG/zsh_completions
-source $ZSH_CONFIG/zsh_highlighting
+source $ZSH_CONFIG/zsh-functions #TODO fpath
+source $ZSH_CONFIG/zsh-aliases
+source $ZSH_CONFIG/zsh-completions
+source $ZSH_CONFIG/zsh-highlighting
 
 # Options: {{{
 setopt histignorespace

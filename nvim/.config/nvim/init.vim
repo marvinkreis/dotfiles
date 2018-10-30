@@ -19,15 +19,16 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mileszs/ack.vim'
 
 " Completion / Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-Plug 'lervag/vimtex', { 'for': 'plaintex,tex' }
-Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex' }
 Plug 'Shougo/neco-vim'
+Plug 'lervag/vimtex', { 'for': 'plaintex,tex,bib' }
+"Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex,bib' }
 
 " Hard mode
 Plug 'wikitopian/hardmode'
@@ -51,6 +52,7 @@ set relativenumber
 set wildmenu
 set wildmode=longest:full,full
 set wildignorecase
+set wildignore+=*.pdf
 set laststatus=2
 set hlsearch
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:>,precedes:<
@@ -78,9 +80,15 @@ let mapleader= ","
 " System Clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
+noremap <leader>Y "+Y
+noremap <leader>P "+P
 inoremap <leader>p <ESC>"+pa
 
 " Normal Mappings
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
 nnoremap <leader>j :bnext! <CR>
 nnoremap <leader>k :bprev! <CR>
 nnoremap <leader>q :bd <CR>
@@ -114,6 +122,13 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+
+" EasyMotion
+map <leader>f <Plug>(easymotion-sn)
+
+" Vimtex
+map <leader>l :VimtexView<CR>
+map mm :w<CR>:VimtexCompile<CR>
 " }}}
 
 " Airline: {{{
@@ -189,25 +204,24 @@ autocmd User AirlineAfterInit call AirlineInit()
 " EasyMotion: {{{
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
-
-map <leader>f <Plug>(easymotion-sn)
-map <leader>w <Plug>(easymotion-bd-w)
-map <leader>l <Plug>(easymotion-bd-jk)
 " }}}
 
 " Other Plugin Settings: {{{
 set updatetime=1000
 let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•'
+
+let g:ctrlp_working_path_mode = '0'
 "}}}
 
-" vimtex Settings: {{{
+" Vimtex Settings: {{{
 let g:vimtex_compiler_method = 'latexrun'
 let g:vimtex_compiler_latexrun = {
     \ 'backend' : 'nvim',
     \ 'background' : 1,
     \ 'build_dir' : '/tmp/latexrun',
     \ 'options' : [
+    \   '--latex-args="--shell-escape -synctex=1"'
     \ ]
 \}
 
@@ -217,7 +231,9 @@ let g:vimtex_quickfix_latexlog = {
     \ 'underfull' : 0
 \}
 
-let g:tex_flavor = "latex"
+let g:vimtex_view_method = 'zathura'
+
+let g:tex_flavor = 'latex'
 " }}}
 
 " Completion Settings: {{{

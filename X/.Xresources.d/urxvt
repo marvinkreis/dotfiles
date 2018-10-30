@@ -1,7 +1,7 @@
 URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
 
 !appearance
-URxvt.font: xft:Terminus:size=12
+URxvt.font: xft:Terminus:size=14
 !URxvt.font: xft:xos4 Terminus:style=Regular
 URxvt.internalBorder: 8
 URxvt.cursorBlink: 1
@@ -26,8 +26,12 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 Urxvt.clipboard.autocopy: false
 
 !font-size
-URxvt.keysym.Control-Up: perl:font-size:increase
-URxvt.keysym.Control-Down: perl:font-size:decrease
+URxvt.keysym.Control-plus: perl:font-size:increase
+URxvt.keysym.Control-minus: perl:font-size:decrease
+URxvt.keysym.Control-KP_Add: perl:font-size:increase
+URxvt.keysym.Control-KP_Subtract: perl:font-size:decrease
+URxvt.keysym.Control-0: perl:font-size:reset
+URxvt.keysym.Control-KP_0: perl:font-size:reset
 URxvt.font-size.step: 1
 
 !icon

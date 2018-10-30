@@ -1,16 +1,22 @@
 alias -g tobg="&> /dev/null &; disown"
 
 alias bak="bak -v"
-alias grep="grep --color=auto"
+alias grep="echo Use ack! #"
 alias j=jump
-alias ls="ls --color=auto -1"
+alias latexrun='latexrun -O /tmp/latexrun --latex-args="--shell-escape -synctex=1"'
+alias ls="ls --color=auto --group-directories-first -1"
+alias mkdir="mkdir -p"
+alias n="urxvt &> /dev/null &; disown"
 alias o="exo-open"
 alias :q=exit
+alias r="echo disabled"
 alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
+alias scat=pygmentize
 alias svim="sudo -E vim"
 alias swap="swap -v"
+alias syn="pkill synergy; synergyc 192.168.1.11; setxkbmap"
 alias wallpaper="feh --bg-scale"
 
 alias dirs="dirs -v"
@@ -24,3 +30,6 @@ alias gd="git diff"
 alias gcd="git clone --depth=1"
 alias gr="git reset"
 alias gco="git checkout"
+alias gsn="git_status_nth"
+alias gan="git_add_nth"
+alias gdn="git_diff_nth"

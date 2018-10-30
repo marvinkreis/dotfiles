@@ -1,25 +1,51 @@
-snippet itemb "Itemize without spacing" b
+snippet p "Par" w
+\par
+endsnippet
+
+snippet pb "Par" w
+\par\bigskip
+endsnippet
+
+snippet pm "Par" w
+\par\medskip
+endsnippet
+
+snippet ps "Par" w
+\par\smallskip
+endsnippet
+
+snippet itema "Itemize without item spacing" b
+\begin{itemize}[nolistsep]
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet itemb "Itemize without item and list spacing" b
 \begin{itemize}[nolistsep, noitemsep]
 	\item $0
 \end{itemize}
 endsnippet
 
-snippet itemc "Itemize without spacing and margin" b
-\begin{itemize}[nolistsep, noitemsep, leftmargin=1em]
-	\item $0
-\end{itemize}
-endsnippet
-
-snippet descb "Description without spacing" b
-\begin{description}[nolistsep, noitemsep]
-	\item $0
-\end{description}
+snippet it "Item" w
+\item
 endsnippet
 
 snippet ra "Right arrow" w
 $\rightarrow$
 endsnippet
 
-snippet it "Item" w
-\item
+snippet ii "Italic text" w
+\textit{
+endsnippet
+
+snippet bf "Bold face text" w
+\textbf{
+endsnippet
+
+snippet tt "Typewriter (monospace) text" w
+\texttt{
+endsnippet
+
+snippet ig "Typewriter (monospace) text" w
+\includegraphics[width=\textwidth]{}
 endsnippet

@@ -13,8 +13,8 @@ set notification-error-fg       "#1c1c1c"
 set notification-warning-bg     "#bf616a"
 set notification-warning-fg     "#1c1c1c"
 
-set highlight-color             "#d64937"
-set highlight-active-color      "#d64937"
+set highlight-color             "#f2c5c0"
+set highlight-active-color      "#f2c5c0"
 
 set completion-highlight-bg     "#bbbbbb"
 set completion-highlight-fg     "#1c1c1c"
@@ -26,7 +26,7 @@ set notification-bg             "#a9c88f"
 set notification-fg             "#1c1c1c"
 
 set recolor-lightcolor          "#1c1c1c"
-set recolor-darkcolor           "#c0c0c0"
+set recolor-darkcolor           "#c6c6c6"
 
 set recolor-keephue             true
 set recolor-reverse-video       false

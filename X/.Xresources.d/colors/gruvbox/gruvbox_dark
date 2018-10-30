@@ -45,4 +45,8 @@ rofi.color-urgent: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
 rofi.color-active: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
 rofi.color-window: #1e2223,  #ebdbb2,  #ebdbb2
 
+! window manager
+wm.border_active: #a89984
+wm.border_inactive: #444444
+
 ! vim: set ft=xdefaults :

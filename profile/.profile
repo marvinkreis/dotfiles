@@ -1,3 +1,4 @@
+export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
 export XDG_CONFIG_HOME=${HOME}/.config

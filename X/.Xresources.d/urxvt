@@ -2,7 +2,6 @@ URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
 
 !appearance
 URxvt.font: xft:Terminus:size=14
-!URxvt.font: xft:xos4 Terminus:style=Regular
 URxvt.internalBorder: 8
 URxvt.cursorBlink: 1
 URxvt.scrollBar: false

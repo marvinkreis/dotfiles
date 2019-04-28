@@ -1,88 +1,88 @@
+[settings]
+screenchange-reload = true
+compositing-background = source
+
+
+
 [colors]
 background = #1c1c1c
-background-alt = #463636
+background-alt = #4D3A3A
+background-alt2 = #463F3F
 foreground = #EEEEEE
 foreground-alt = #555555
 primary = #F2A5A1
+primary-alt = #D1C2C1
 secondary = #EFB7CD
 alert = #D64937
 icon = #999999
 i3 = #285577
 
+
+
 [bar/main]
-monitor = eDP1
 height = 22
 offset-x = 0
 offset-y = 0
 radius = 0.0
 fixed-center = true
 
-padding-left = 0
-padding-right = 2
+padding-left = 8
+padding-right = 4
 module-margin-right = 3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-border-size = 0
 border-color = ${xrdb:color8:#b3b3b3}
 
+border-size = 0
+line-size = 2
+
 font-0 = fixed:pixelsize=10;1
-font-1 = Wuncon Siji:style=Regular:pixelsize=10;1
+font-1 = Siji:style=Regular:pixelsize=10;1
 font-2 = Noto Sans CJK JP:style=Regular:pixelsize=10;1
 
-line-size = 2
-line-color = #f00
 
-override-redirect = false
 
-[bar/main-i3]
+[bar/notebook-eDP1]
 monitor = eDP1
-inherit = bar/main
-modules-left = spacing i3
+modules-left = i3
 modules-center =
 modules-right = volume brightness memory cpu battery snd_battery temperature date wifi lan
 tray-position = right
 
-[bar/hdmi-i3]
+[bar/notebook-HDMI1]
 monitor = HDMI1
 inherit = bar/main
-modules-left = spacing i3
+modules-left = i3
 modules-center =
 modules-right = volume memory cpu battery snd_battery temperature date wifi lan
 tray-position = right
 
-[bar/dp-i3]
+[bar/notebook-DP1]
 monitor = DP1
 inherit = bar/main
-modules-left = spacing i3
+modules-left = i3
 modules-center =
 modules-right = volume memory cpu battery snd_battery temperature date wifi lan
 tray-position = right
 
-[bar/main-bspwm]
-monitor = eDP1
+[bar/desktop-DP-0]
+monitor = DP-0
 inherit = bar/main
-modules-left = spacing bspwm
+modules-left = i3
 modules-center =
-modules-right = volume brightness memory cpu battery snd_battery temperature date wifi lan
+modules-right = volume memory cpu cputemp gputemp date
 tray-position = right
 
-[bar/hdmi-bspwm]
-monitor = HDMI1
+[bar/desktop-HDMI-0]
+monitor = HDMI-0
 inherit = bar/main
-modules-left = spacing bspwm
+modules-left = i3
 modules-center =
-modules-right = volume memory cpu battery snd_battery temperature date wifi lan
+modules-right = volume memory cpu cputemp gputemp date
 tray-position = right
 
-[bar/dp-bspwm]
-monitor = DP1
-inherit = bar/main
-modules-left = spacing bspwm
-modules-center =
-modules-right = volume memory cpu battery snd_battery temperature date wifi lan
-tray-position = right
+
 
 [module/workspaces]
 ws-icon-0 = 0;0
@@ -96,19 +96,6 @@ ws-icon-7 = 7;7
 ws-icon-8 = 8;8
 ws-icon-9 = 9;9
 ws-icon-10 = 10;0
-
-ws-icon-11 = chat;
-ws-icon-12 = editor;
-ws-icon-13 = files;
-ws-icon-14 = garbage;
-ws-icon-15 = gui;
-ws-icon-16 = mail;
-ws-icon-17 = music;
-ws-icon-18 = none;
-ws-icon-19 = stuff;
-ws-icon-20 = terminal;
-ws-icon-21 = web;
-ws-icon-default = 
 
 [module/bspwm]
 type = internal/bspwm
@@ -144,18 +131,21 @@ label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
+label-visible = %icon%
+label-visible-background = ${colors.background-alt2}
+label-visible-underline= ${colors.primary-alt}
+label-visible-padding = 2
+
 label-unfocused = %icon%
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = 2
-
-label-visible = %icon%
-label-visible-background = ${colors.background-alt}
-label-visible-padding = 2
 
 pin-workspaces = true
 strip-wsnumbers = false
 enable-click = true
 enable-scroll = false
+
+
 
 [module/mpd]
 type = internal/mpd
@@ -181,6 +171,8 @@ bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
 
+
+
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -194,6 +186,8 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.icon}
 label = %percentage_used%%
+
+
 
 [module/wifi]
 type = internal/network
@@ -235,6 +229,8 @@ format-prefix-foreground = ${colors.icon}
 
 label = %date% %time%
 
+
+
 [module/volume]
 type = internal/pulseaudio
 
@@ -261,6 +257,8 @@ bar-volume-indicator = |
 bar-volume-fill = ─
 bar-volume-empty = ─
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
 
 [module/brightness]
 type = internal/xbacklight
@@ -329,41 +327,27 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.icon}
 
-[module/powermenu]
-type = custom/menu
 
-format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+[module/gputemp]
+type = custom/script
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+exec = gputemp
+tail = false
+interval = 30
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+label = %output%°C
+format-prefix = 
 
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+[module/cputemp]
+type = custom/script
 
-[module/spacing]
-type = custom/text
+exec = cputemp
+tail = false
+interval = 30
 
-content = ██
-content-foreground = ${colors.background}
-
-[settings]
-screenchange-reload = true
-compositing-background = source
+label = %output%°C
+format-prefix = 
 
 ; vim:ft=dosini
+

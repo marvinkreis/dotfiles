@@ -243,13 +243,6 @@ set completeopt-=preview
 set completeopt+=noinsert
 set smartcase
 
-"inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-
-"inoremap <expr><Tab> pumvisible() ? "\<Down>" : "\<Tab>"
-"inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<ESC>"
-
 inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-j>"
 inoremap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
 inoremap <expr><Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
@@ -483,7 +476,5 @@ if has('nvim')
     set inccommand=nosplit
 endif
 " }}}
-
-" execute printf("%s%s%s", '!cp',  l:file_a, l:file_b) l:file_c
 
 " vim: fdm=marker:

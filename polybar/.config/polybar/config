@@ -4,6 +4,8 @@ compositing-background = source
 
 
 
+
+
 [colors]
 background = #1c1c1c
 background-alt = #4D3A3A
@@ -19,6 +21,8 @@ i3 = #285577
 
 
 
+
+
 [bar/main]
 height = 22
 offset-x = 0
@@ -28,7 +32,7 @@ fixed-center = true
 
 padding-left = 8
 padding-right = 4
-module-margin-right = 3
+module-margin-right = 4
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -37,17 +41,19 @@ border-color = ${xrdb:color8:#b3b3b3}
 border-size = 0
 line-size = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = DejaVu Sans:style=Regular:pixelsize=10;1
 font-1 = Siji:style=Regular:pixelsize=10;1
-font-2 = Noto Sans CJK JP:style=Regular:pixelsize=10;1
+
+
 
 
 
 [bar/notebook-eDP1]
 monitor = eDP1
+inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume brightness memory cpu battery snd_battery temperature date wifi lan
+modules-right = volume notebook-brightness memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
 tray-position = right
 
 [bar/notebook-HDMI1]
@@ -55,7 +61,7 @@ monitor = HDMI1
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu battery snd_battery temperature date wifi lan
+modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
 tray-position = right
 
 [bar/notebook-DP1]
@@ -63,15 +69,19 @@ monitor = DP1
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu battery snd_battery temperature date wifi lan
+modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
 tray-position = right
+
+
+
+
 
 [bar/desktop-DP-0]
 monitor = DP-0
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu cputemp gputemp date
+modules-right = volume memory cpu desktop-cputemp desktop-gputemp time date
 tray-position = right
 
 [bar/desktop-HDMI-0]
@@ -79,64 +89,51 @@ monitor = HDMI-0
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu cputemp gputemp date
+modules-right = volume memory cpu desktop-cputemp desktop-gputemp time date
 tray-position = right
 
 
 
-[module/workspaces]
-ws-icon-0 = 0;0
-ws-icon-1 = 1;1
-ws-icon-2 = 2;2
-ws-icon-3 = 3;3
-ws-icon-4 = 4;4
-ws-icon-5 = 5;5
-ws-icon-6 = 6;6
-ws-icon-7 = 7;7
-ws-icon-8 = 8;8
-ws-icon-9 = 9;9
-ws-icon-10 = 10;0
+
 
 [module/bspwm]
 type = internal/bspwm
-inherit = module/workspaces
 
 format= <label-state>
 
-label-focused = %icon%
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-occupied = %icon%
+label-occupied = %index%
 label-occupied-padding = 2
 label-occupied-underline= ${colors.foreground-alt}
 
-label-urgent = %icon%
+label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %icon%
+label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
-inherit = module/workspaces
 
 format= <label-state>
 
-label-focused = %icon%
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-visible = %icon%
+label-visible = %index%
 label-visible-background = ${colors.background-alt2}
 label-visible-underline= ${colors.primary-alt}
 label-visible-padding = 2
 
-label-unfocused = %icon%
+label-unfocused = %index%
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = 2
 
@@ -144,6 +141,8 @@ pin-workspaces = true
 strip-wsnumbers = false
 enable-click = true
 enable-scroll = false
+
+
 
 
 
@@ -173,62 +172,6 @@ bar-progress-empty = ─
 
 
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.icon}
-label = %percentage%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.icon}
-label = %percentage_used%%
-
-
-
-[module/wifi]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-disconnected =
-
-label-connected = %essid% (%signal%%)
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-foreground = ${colors.icon}
-
-[module/lan]
-type = internal/network
-interface = enp0s25
-interval = 3.0
-
-format-connected = <label-connected>
-format-disconnected =
-
-label-connected = LAN
-
-[module/date]
-type = internal/date
-interval = 5
-
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.icon}
-
-label = %date% %time%
-
 
 
 [module/volume]
@@ -244,23 +187,47 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-fill = ─
-bar-volume-empty = ─
-bar-volume-empty-foreground = ${colors.foreground-alt}
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 5
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+label = %percentage_used%%
+
+[module/time]
+type = internal/date
+interval = 5
+
+time = %H:%M
+
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+
+label = %time%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %d.%m.%Y%
+
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+
+label = %date%
 
 
 
-[module/brightness]
+
+
+[module/notebook-brightness]
 type = internal/xbacklight
 
 card = intel_backlight
@@ -271,19 +238,30 @@ format-prefix-foreground = ${colors.icon}
 
 label = %percentage%%
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+[module/notebook-temperature]
+type = internal/temperature
+interval = 5
 
-[module/battery]
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.icon}
+
+[module/notebook-battery]
 type = internal/battery
+
+poll-interval = 5
+
 battery = BAT0
 adapter = AC
 full-at = 98
@@ -306,48 +284,62 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.icon}
 animation-charging-framerate = 750
 
-[module/snd_battery]
-inherit = module/battery
+[module/notebook-snd-battery]
+inherit = module/notebook-battery
 battery = BAT1
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+[module/notebook-wifi]
+type = internal/network
+interval = 5
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+interface = wlp3s0
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+format-connected = <ramp-signal> <label-connected>
+format-disconnected =
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.icon}
+label-connected = %essid% (%signal%%)
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-foreground = ${colors.icon}
+
+[module/notebook-lan]
+type = internal/network
+interval = 5
+
+interface = enp0s25
+
+format-connected = <label-connected>
+format-disconnected =
+
+label-connected = LAN
 
 
 
-[module/gputemp]
+
+
+[module/desktop-gputemp]
 type = custom/script
+interval = 5
 
 exec = gputemp
 tail = false
-interval = 30
 
 label = %output%°C
 format-prefix = 
+format-prefix-foreground = ${colors.icon}
 
-[module/cputemp]
+[module/desktop-cputemp]
 type = custom/script
+interval = 5
 
 exec = cputemp
 tail = false
-interval = 30
 
 label = %output%°C
 format-prefix = 
+format-prefix-foreground = ${colors.icon}
 
 ; vim:ft=dosini
 

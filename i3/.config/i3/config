@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -181,19 +181,32 @@ default_border pixel 3
 default_floating_border normal 1
 hide_edge_borders smart
 
-set_from_resource $border_active wm.border_active #b3b3b3
+set_from_resource $border_active   wm.border_active   #b3b3b3
 set_from_resource $border_inactive wm.border_inactive #4d4d4d
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff $border_active  $border_active
+# class                 border  backgr. text    indicator         child_border
+client.focused          #4c7899 #285577 #ffffff $border_active    $border_active
 client.focused_inactive #333333 #5f676a #ffffff $border_inactive  $border_inactive
 client.unfocused        #333333 #222222 #888888 $border_inactive  $border_inactive
-client.urgent           #2f343a #900000 #ffffff #900000  #900000
-client.placeholder      #000000 #0c0c0c #ffffff #0c0c0c  #0c0c0c
-# TODO different color for focused_inactive
+client.urgent           #333333 #222222 #888888 #border_inactive  $border_inactive
+client.placeholder      #000000 #0c0c0c #ffffff #0c0c0c           #0c0c0c
 
 popup_during_fullscreen smart
 focus_wrapping yes
 workspace_auto_back_and_forth no
 force_display_urgency_hint 500 ms
 show_marks yes
+
+# assign [class="Thunderbird"] → 10
+# workspace $ws10 output HDMI-0
+
+assign [class="Franz"] → 10
+assign [class="Thunderbird"] → 10
+assign [class="discord"] → 9
+assign [class="Steam"] → 9
+assign [class="Deadbeef"] → 8
+
+workspace $ws7 output HDMI-0
+workspace $ws8 output HDMI-0
+workspace $ws9 output HDMI-0
+workspace $ws10 output HDMI-0

@@ -7,18 +7,21 @@ compositing-background = source
 
 
 [colors]
-background = #1c1c1c
-background-alt = #4D3A3A
-background-alt2 = #463F3F
-foreground = #EEEEEE
-foreground-alt = #555555
 primary = #F2A5A1
-primary-alt = #D1C2C1
-secondary = #EFB7CD
+secondary = #D1C2C1
 alert = #D64937
 icon = #999999
+
+background = #1C1C1C
+background-focused = #4D3A3A
+background-visible = #463F3F
+
+foreground = #EEEEEE
+foreground-dark = #555555
+
 i3 = #285577
 
+# ${xrdb:color8:#b3b3b3}
 
 
 
@@ -36,7 +39,7 @@ module-margin-right = 4
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-border-color = ${xrdb:color8:#b3b3b3}
+
 
 border-size = 0
 line-size = 2
@@ -96,46 +99,30 @@ tray-position = right
 
 
 
-[module/bspwm]
-type = internal/bspwm
-
-format= <label-state>
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-label-occupied-underline= ${colors.foreground-alt}
-
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
 
 format= <label-state>
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused = %name%
+label-focused-background = ${colors.background-focused}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-visible = %index%
-label-visible-background = ${colors.background-alt2}
-label-visible-underline= ${colors.primary-alt}
+label-visible = %name%
+label-visible-background = ${colors.background-visible}
+label-visible-underline= ${colors.secondary}
 label-visible-padding = 2
 
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = 2
+
+label-urgent = %name%
+# label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2
 
 pin-workspaces = true
 strip-wsnumbers = false
@@ -184,7 +171,7 @@ format-volume-prefix-foreground = ${colors.icon}
 label-volume = %percentage%%
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = ${colors.foreground-dark}
 label-muted = sound muted
 
 [module/cpu]
@@ -250,7 +237,7 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
 ramp-1 = 
@@ -327,7 +314,7 @@ exec = gputemp
 tail = false
 
 label = %output%°C
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.icon}
 
 [module/desktop-cputemp]
@@ -338,7 +325,7 @@ exec = cputemp
 tail = false
 
 label = %output%°C
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.icon}
 
 ; vim:ft=dosini

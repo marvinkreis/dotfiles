@@ -4,8 +4,8 @@
 
 ! special
 *.background:   #1d2021
-*.foreground:   #ebdbb2
-*.cursorColor:  #ebdbb2
+*.foreground:   #d0d0d0
+*.cursorColor:  #d0d0d0
 
 ! black
 *.color0:   #323232
@@ -40,13 +40,13 @@
 *.color15:  #ebdbb2
 
 ! rofi
-rofi.color-normal: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
-rofi.color-urgent: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
-rofi.color-active: #1d2021,  #ebdbb2,  #282828,  #504945,  #ebdbb2
-rofi.color-window: #1e2223,  #ebdbb2,  #ebdbb2
+rofi.color-normal: #1d2021,  #d0d0d0,  #252525,  #443f3b,  #ebdbb2
+rofi.color-urgent: #1d2021,  #d0d0d0,  #252525,  #443f3b,  #ebdbb2
+rofi.color-active: #1d2021,  #d0d0d0,  #252525,  #443f3b,  #ebdbb2
+rofi.color-window: #1e2223,  #d0d0d0,  #ebdbb2
 
 ! window manager
-wm.border_active: #a89984
+wm.border_active:   #a89984
 wm.border_inactive: #444444
 
 ! vim: set ft=xdefaults :

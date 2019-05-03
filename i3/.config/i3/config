@@ -202,10 +202,16 @@ show_marks yes
 
 assign [class="Franz"] → 10
 assign [class="Thunderbird"] → 10
-assign [class="discord"] → 9
-assign [class="Steam"] → 9
-assign [class="Deadbeef"] → 8
+assign [class="discord"] → 10
+assign [class="Steam"] → 10
+assign [class="Deadbeef"] → 9
 
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0
+workspace $ws3 output DP-0
+workspace $ws4 output DP-0
+workspace $ws5 output DP-0
+workspace $ws6 output DP-0
 workspace $ws7 output HDMI-0
 workspace $ws8 output HDMI-0
 workspace $ws9 output HDMI-0

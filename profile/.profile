@@ -1,7 +1,7 @@
 export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
-export XDG_CONFIG_HOME=${HOME}/.config
+export QT_QPA_PLATFORMTHEME=gtk2
 
 if [ -f ~/.profile+ ]; then
     source ~/.profile+

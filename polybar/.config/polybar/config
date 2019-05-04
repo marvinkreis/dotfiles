@@ -56,7 +56,7 @@ monitor = eDP1
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume notebook-brightness memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
+modules-right = volume notebook-brightness memory cpu notebook-battery notebook-snd-battery notebook-temperature date time notebook-wifi notebook-lan
 tray-position = right
 
 [bar/notebook-HDMI1]
@@ -64,7 +64,7 @@ monitor = HDMI1
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
+modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature date time notebook-wifi notebook-lan
 tray-position = right
 
 [bar/notebook-DP1]
@@ -72,7 +72,7 @@ monitor = DP1
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature time date notebook-wifi notebook-lan
+modules-right = volume memory cpu notebook-battery notebook-snd-battery notebook-temperature date time notebook-wifi notebook-lan
 tray-position = right
 
 
@@ -84,7 +84,7 @@ monitor = DP-0
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu desktop-cputemp desktop-gputemp time date
+modules-right = volume memory cpu desktop-cputemp desktop-gputemp date time
 tray-position = right
 
 [bar/desktop-HDMI-0]
@@ -92,8 +92,8 @@ monitor = HDMI-0
 inherit = bar/main
 modules-left = i3
 modules-center =
-modules-right = volume memory cpu desktop-cputemp desktop-gputemp time date
-tray-position = right
+modules-right = date time
+tray-position = none
 
 
 
@@ -203,7 +203,7 @@ label = %time%
 type = internal/date
 interval = 5
 
-date = %d.%m.%Y%
+date = %a %d.%m.%Y%
 
 format-prefix = " "
 format-prefix-foreground = ${colors.icon}

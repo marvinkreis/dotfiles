@@ -1,0 +1,152 @@
+{
+    "all": {
+        "cmd":          "rofi-all",
+        "terminal":     false,
+        "icon":         "terminix"
+    },
+    "calc": {
+        "cmd":          "rofi -show calc -modi calc -no-show-match -no-sort",
+        "terminal":     false,
+        "icon":         "gnome-calculator"
+    },
+    "chromium": {
+        "cmd":          "chromium",
+        "terminal":     false,
+        "icon":         "chromium"
+    },
+    "cloud": {
+        "cmd":          "synology-cloud-station-drive",
+        "terminal":     false,
+        "icon":         "onedrive"
+    },
+    "clion": {
+        "cmd":          "clion",
+        "terminal":     false,
+        "icon":         "clion"
+    },
+    "colors": {
+        "description":  "color schemes",
+        "cmd":          "rofi-colorscheme",
+        "terminal":     false,
+        "icon":         "cs-cat-appearance"
+    },
+    "d": {
+        "description":  "dictionary",
+        "cmd":          "rofi-json-dict",
+        "terminal":     false,
+        "icon":         "goldendict"
+    },
+    "deadbeef": {
+        "cmd":          "deadbeef",
+        "terminal":     false,
+        "icon":         "deadbeef"
+    },
+    "discord": {
+        "cmd":          "discord",
+        "terminal":     false,
+        "icon":         "discord"
+    },
+    "drun": {
+        "cmd":          "rofi -show drun -modi drun",
+        "terminal":     false,
+        "icon":         "codeblocks"
+    },
+    "firefox": {
+        "cmd":          "firefox",
+        "terminal":     false,
+        "icon":         "firefox"
+    },
+    "franz": {
+        "cmd":          "franz",
+        "terminal":     false,
+        "icon":         "franz"
+    },
+    "htop": {
+        "cmd":          "htop",
+        "terminal":     true,
+        "icon":         "htop"
+    },
+    "idea": {
+        "cmd":          "intellij-idea-ultimate-edition",
+        "terminal":     false,
+        "icon":         "intellij-idea"
+    },
+    "o": {
+        "description":  "file browser",
+        "cmd":          "rofi-file-browser",
+        "terminal":     false,
+        "icon":         "fileopen"
+    },
+    "pavucontrol": {
+        "cmd":          "pavucontrol",
+        "terminal":     false,
+        "icon":         "multimedia-volume-control"
+    },
+    "ranger": {
+        "cmd":          "ranger",
+        "terminal":     true,
+        "icon":         "nautilus"
+    },
+    "s": {
+        "description": "search",
+        "cmd":          "search",
+        "terminal":     false,
+        "icon":         "internet"
+    },
+    "settings": {
+        "cmd":          "xfce4-settings-manager",
+        "terminal":     false,
+        "icon":         "open-menu"
+    },
+    "ssh": {
+        "cmd":          "dmenu_ssh",
+        "terminal":     false,
+        "icon":         "hotwire-openssh"
+    },
+    "trans": {
+        "description": "set window transparency",
+        "cmd":          "transset-df -c",
+        "terminal":     false,
+        "icon":         "window-manager"
+    },
+    "power": {
+        "cmd":          "rofi-power",
+        "terminal":     false,
+        "icon":         "session-properties"
+    },
+    "thunar": {
+        "cmd":          "thunar",
+        "terminal":     false,
+        "icon":         "thunar"
+    },
+    "thunderbird": {
+        "cmd":          "thunderbird",
+        "terminal":     false,
+        "icon":         "thunderbird"
+    },
+    "urxvt": {
+        "cmd":          "urxvt",
+        "terminal":     false,
+        "icon":         "terminal"
+    },
+    "vim": {
+        "cmd":          "vim",
+        "terminal":     true,
+        "icon":         "gvim"
+    },
+    "vlc": {
+        "cmd":          "vlc",
+        "terminal":     false,
+        "icon":         "vlc"
+    },
+    "webstorm": {
+        "cmd":          "webstorm",
+        "terminal":     false,
+        "icon":         "webstorm"
+    },
+    "zathura": {
+        "cmd":          "zathura",
+        "terminal":     false,
+        "icon":         "acroread"
+    }
+}

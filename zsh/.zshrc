@@ -31,15 +31,9 @@ ANTIGEN_CLONE_OPTS="--depth=1"
 
 source $HOME/.antigen/antigen/antigen.zsh
 
-antigen bundle robbyrussell/oh-my-zsh lib/clipboard.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/compfix.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/completion.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/directories.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/prompt_info_functions.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma/fast-syntax-highlighting
@@ -58,7 +52,6 @@ MANPAGER='nvimpager -p'
 source $ZSH_CONFIG/zsh-functions #TODO fpath
 source $ZSH_CONFIG/zsh-aliases
 source $ZSH_CONFIG/zsh-completions
-source $ZSH_CONFIG/zsh-highlighting
 
 # Options: {{{
 setopt histignorespace
@@ -66,3 +59,5 @@ setopt interactivecomments
 # }}}
 
 # vim: fdm=marker:
+
+

@@ -1,56 +1,13 @@
 bak() {
-    # TODO warn for folders and big files
     local file verbose
 
-    if [[ $1 == "-v" ]]; then
-        verbose="-v"
-        shift 1
-    else
-        verbose=""
-    fi
-
     for file in $@; do
-        cp $verbose -r $file:A $file:A.bak;
+        cp -v -r $file:A $file:A.bak;
     done
 }
 
 buptime() {
     echo "Buptime: ( •ᴗ•) days, ( •ᴗ•), hours, ( •ᴗ•) minutes, ( •ᴗ•) seconds."
-}
-
-set_background() {
-    if [ $1 ]; then
-        printf "\e]20;$1;\a"
-    else
-        printf "\e]20;;100x100+1000+1000\a"
-    fi
-}
-
-rbecho() {
-    local input length freq a
-
-    if [ "$1" == "-a" ]; then
-        a="-a"
-        shift
-    fi
-
-    if [ "$1" ]; then
-        input=$@
-    else
-        read -d '' input
-    fi
-
-    length=$(echo -e $input | wc -L)
-
-    if (( $length > 20 )); then
-        freq=0.1
-    else
-        freq=0.2
-    fi
-
-    echo
-    echo -e $input | sed "s/ /  /g" | figlet -t | lolcat -F $freq $a
-    echo
 }
 
 wttr() {
@@ -80,63 +37,31 @@ screenshot() {
 }
 
 swap() {
-    # TODO check if files exist
-    local file1 file2 swap_file verbose
+    local file1 file2 swap_file
 
-    if [[ $1 == "-v" ]]; then
-        verbose="-v"
-        shift 1
-    else
-        verbose=""
-    fi
-
-    file1="$1:A"
-    file2="$2:A"
-    swap_file="swap_tmp_$(echo "$file1" | md5sum | cut -d ' ' -f 1)"
-    mv $verbose "$file1" "$swap_file"
-    mv $verbose "$file2" "$file1"
-    mv $verbose "$swap_file" "$file2"
+    f1="${1:A}"
+    f2="${2:A}"
+    fs="swap-${RANDOM}${RANDOM}${RANDOM}${RANDOM}"
+    mv -v "${f1}" "${fs}" &&
+    mv -v "${f2}" "${f1}" &&
+    mv -v "${fs}" "${f2}"
 }
 
 take() {
-    mkdir $1
+    mkdir -p $1 &&
     cd $1
 }
 
 color() {
     if [[ "$1" ]]; then
-        if [[ "$1" == "reset" ]]; then
-            tput sgr0
-        else
-            tput setaf $1
-        fi
+        tput setaf $1
+    else
+        tput sgr0
     fi
 }
 
 nfind() {
-    #find $@ -print 2>/dev/null
-    find $@ 2>&1 | grep -v "Permission denied"
-}
-
-# bulk_rename() {
-#     if [ -z ${1} ] || [ -z ${2+x} ]; then
-#         echo "Invlid parameters."
-#     else
-#         while read -r file; do
-#             if [[ "$file" =~ "$1" ]]; then
-#                 echo mv "$file" "$(echo $file | sed s/$1/$2/g)"
-#                 mv "$file" "$(echo $file | sed s/$1/$2/g)"
-#             fi
-#         done
-#     fi
-# }
-
-zp() {
-    if [ -z ${1+x} ]; then
-        zathura *.pdf &> /dev/null &; disown
-    else
-        zathura ${@} &> /dev/null &; disown
-    fi
+    find . -iname ${@} 2>&1 | grep -v "Permission denied"
 }
 
 git_status_nth() {

@@ -1,6 +1,6 @@
 alias -g tobg="&> /dev/null &; disown"
 
-alias bak="bak -v"
+alias dirs="dirs -v"
 alias grep="echo Use ack! #"
 alias j=jump
 alias latexrun='latexrun -O /tmp/latexrun --latex-args="--shell-escape -synctex=1"'
@@ -8,18 +8,15 @@ alias ls="ls --color=auto --group-directories-first -1"
 alias mkdir="mkdir -p"
 alias n="urxvt &> /dev/null &; disown"
 alias o="exo-open"
-alias :q=exit
 alias r="echo disabled"
 alias rm="rm -vI"
 alias s=search
 alias sc=systemctl
 alias scat=pygmentize
 alias svim="sudo -E vim"
-alias swap="swap -v"
-alias syn="pkill synergy; synergyc 192.168.1.11; setxkbmap"
-alias wallpaper="feh --bg-scale"
 
-alias dirs="dirs -v"
+alias copy="xclip -in -selection clipboard"
+alias paste="xclip -out -selection clipboard"
 
 alias gs="git status"
 alias ga="git add"

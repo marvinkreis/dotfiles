@@ -1,6 +1,7 @@
 alsa_soundcard default
 ape.write_apev2 1
 artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
+chip.voices 0
 cli_add_playlist_name Default
 cli_add_to_specific_playlist 1
 deadbeef_version 0.7.2
@@ -12,7 +13,6 @@ filebrowser.coverart_scale 0
 filebrowser.coverart_size 24
 filebrowser.defaultpath /home/marvin/data/Music
 filebrowser.enabled 1
-filebrowser.expanded_rows 
 filebrowser.extra_bookmarks $HOME/.config/deadbeef/bookmarks
 filebrowser.fgcolor #000000
 filebrowser.fgcolor_selected #000000
@@ -37,13 +37,14 @@ filebrowser.treelines 1
 gtkui.action_separators 1
 gtkui.autoresize_columns 0
 gtkui.color.bar_background 11822 13364 13878
-gtkui.color.bar_foreground 61680 21588 19532
+gtkui.color.bar_foreground 47802 48573 46774
 gtkui.color.listview_cursor 21845 22359 21331
 gtkui.color.listview_even_row 13107 13107 13107
 gtkui.color.listview_odd_row 11051 11051 11051
 gtkui.color.listview_playing_text 65535 65535 65535
 gtkui.color.listview_selected_text 65535 65535 65535
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"","size":"36","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","size":"423","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","size":"300","align":"0","color_override":"0","color":"#ffdddddd"},{"title":"Album","id":"-1","format":"%album%","size":"320","align":"0","color_override":"0","color":"#ffdddddd"},{"title":"Year","id":"-1","format":"%year%","size":"94","align":"0","color_override":"0","color":"#ffdddddd"},{"title":"Genre","id":"9","format":"%genre%","size":"182","align":"1","color_override":"0","color":"#ffdddddd"},{"title":"Duration","id":"-1","format":"%length%","size":"74","align":"1","color_override":"0","color":"#ff000000"}]
+gtkui.conf_dsp_preset NONE
 gtkui.custom_tray_icon deadbeef_tray_icon
 gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
@@ -53,11 +54,12 @@ gtkui.eq.visible 0
 gtkui.font.listview_text DejaVu Sans Semi-Condensed 10
 gtkui.hide_remove_from_disk 1
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vsplitter pos=874 locked=0 {hsplitter pos=479 locked=0 {vsplitter pos=764 locked=0 {filebrowser {} vsplitter pos=70 locked=0 {pltbrowser {} hsplitter pos=192 locked=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,prev|0|media-skip-backward,next|0|media-skip-forward,playback_random|0|image-missing" {} volumebar {} } } } vsplitter pos=234 locked=0 {hsplitter pos=231 locked=0 {coverart {} selproperties {} } playlist hideheaders=1 width=1440 {} } } waveform_seekbar {} } 
+gtkui.layout.0.6.2 vsplitter pos=874 locked=0 {hsplitter pos=479 locked=0 {vsplitter pos=835 locked=0 {filebrowser {} hsplitter pos=192 locked=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,prev|0|media-skip-backward,next|0|media-skip-forward,playback_random|0|image-missing" {} volumebar {} } } vsplitter pos=234 locked=0 {hsplitter pos=261 locked=0 {coverart {} selproperties {} } playlist hideheaders=1 width=1440 {} } } waveform_seekbar {} } 
 gtkui.mmb_delete_playlist 1
 gtkui.name_playlist_from_folder 1
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 1
+gtkui.override_tabstrip_colors 0
 gtkui.playlist.group_by_tf "%album artist% - ['['%year%']' ]%album%"
 gtkui.pltbrowser.show_headers 0
 gtkui.refresh_rate 30
@@ -113,10 +115,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 35
 logwindow.geometry.y 40
-mainwin.geometry.h 1058
+mainwin.geometry.h 1040
 mainwin.geometry.w 1920
 mainwin.geometry.x 2560
-mainwin.geometry.y 202
+mainwin.geometry.y 220
 mp3.id3v1_encoding iso8859-1
 mp3.id3v2_version 3
 mp3.write_id3v1 1
@@ -150,21 +152,27 @@ musical_spectrum.num_bars 132
 musical_spectrum.num_colors 6
 musical_spectrum.peak_delay 500
 musical_spectrum.peak_falloff 90
-musical_spectrum.refresh_interval 25
+musical_spectrum.refresh_interval 10
 musical_spectrum.window 0
 network.http_user_agent deadbeef
+network.proxy 0
 network.proxy.port 8080
 network.proxy.type HTTP
+notify.albumart 1
+notify.albumart_size 32
+notify.enable 1
+notify.format_content_tf %artist% - %album%
+notify.format_title_tf %title%
 output_plugin PulseAudio output plugin
 playback.loop 0
 playback.order 0
-playback.volume -31.00000
+playback.volume -21.00000
 playlist.current 0
-playlist.cursor.0 5
+playlist.cursor.0 131
 playlist.cursor.1 0
 playlist.groups.spacing 0
 playlist.pin.groups 0
-playlist.scroll.0 0
+playlist.scroll.0 2832
 playlist.scroll.1 0
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_album_reset 1
@@ -173,8 +181,8 @@ playlist.stop_after_current_reset 1
 playlist.tab.00000 Default
 prefwin.geometry.h 504
 prefwin.geometry.w 649
-prefwin.geometry.x 3375
-prefwin.geometry.y 477
+prefwin.geometry.x 3326
+prefwin.geometry.y 637
 replaygain_mode 1
 replaygain_scale 1
 resume.paused 0
@@ -194,8 +202,8 @@ streamer.samplerate_mult_44 44100
 streamer.samplerate_mult_48 48000
 trkproperties.geometry.h 400
 trkproperties.geometry.w 400
-trkproperties.geometry.x 900
-trkproperties.geometry.y 887
+trkproperties.geometry.x 3184
+trkproperties.geometry.y 793
 waveform.bg_alpha 65535
 waveform.bg_color_b 11051
 waveform.bg_color_g 11051

@@ -91,6 +91,8 @@ nnoremap k gk
 vnoremap k gk
 nnoremap <leader>j :bnext! <CR>
 nnoremap <leader>k :bprev! <CR>
+nnoremap <C-j> :bnext! <CR>
+nnoremap <C-k> :bprev! <CR>
 nnoremap <leader>q :bd <CR>
 nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <silent> <ESC> :nohlsearch<CR>

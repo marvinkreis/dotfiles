@@ -64,7 +64,7 @@ nfind() {
     find . -iname ${@} 2>&1 | grep -v "Permission denied"
 }
 
-git_status_nth() {
+git-status-nth() {
     awkstr='{gsub(/^\s*(D|M|\?\?)\s*/,"")} '
 
     if [ -z ${1+x} ]; then
@@ -79,10 +79,18 @@ git_status_nth() {
     git status -s | awk "$awkstr"
 }
 
-git_add_nth() {
-    git add $(git_status_nth ${@})
+git-add-nth() {
+    git add $(git-status-nth ${@})
 }
 
-git_diff_nth() {
-    git diff $(git_status_nth ${@})
+git-diff-nth() {
+    git diff $(git-status-nth ${@})
+}
+
+start-in-background() {
+    if [[ -z ${1} ]]; then
+        start-in-background urxvt
+    else
+        (${@} &> /dev/null &)
+    fi
 }

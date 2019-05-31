@@ -1,3 +1,5 @@
+# http://zsh.sourceforge.net/Doc/Release/Completion-Using-compctl.html
+
 compctl -K _colorscheme-switch colorscheme-switch
 
 _colorscheme-switch() {
@@ -16,3 +18,5 @@ _colorscheme-switch() {
     esac
   fi
 }
+
+compctl -m start-in-background

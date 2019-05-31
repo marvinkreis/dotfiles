@@ -114,6 +114,12 @@
         "terminal":     false,
         "icon":         "session-properties"
     },
+    "steam": {
+        "description":  "runtime",
+        "cmd":          "steam-runtime",
+        "terminal":     false,
+        "icon":         "steam"
+    },
     "thunar": {
         "cmd":          "thunar",
         "terminal":     false,

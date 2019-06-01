@@ -20,18 +20,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mileszs/ack.vim'
+Plug 'vim-scripts/DrawIt', { 'on': 'DIsngl' }
+Plug 'lervag/vimtex', { 'for': 'plaintex,tex,bib' }
 
 " Completion / Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/neco-vim'
-Plug 'lervag/vimtex', { 'for': 'plaintex,tex,bib' }
+"Plug 'Shougo/neco-vim'
 "Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex,bib' }
-
-" Hard mode
-Plug 'wikitopian/hardmode'
 
 call plug#end()
 " }}}
@@ -101,6 +98,7 @@ inoremap <C-a> <ESC>
 
 " Clear Annoying Keys
 nmap Q <nop>
+noremap q: <nop>
 map <PageUp> <nop>
 imap <PageUp> <nop>
 map <PageDown> <nop>
@@ -109,10 +107,6 @@ map <F1> <nop>
 imap <F1> <nop>
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
-
-" Remap command history
-noremap q: <nop>
-noremap <leader>h q:
 
 " Airline buffers
 nmap <leader>1 <Plug>AirlineSelectTab1

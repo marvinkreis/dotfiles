@@ -1,17 +1,7 @@
-snippet p "Par" w
-\par
-endsnippet
-
-snippet pb "Par" w
-\par\bigskip
-endsnippet
-
-snippet pm "Par" w
-\par\medskip
-endsnippet
-
-snippet ps "Par" w
-\par\smallskip
+snippet item "Itemize" b
+\begin{itemize}
+	\item $0
+\end{itemize}
 endsnippet
 
 snippet itema "Itemize without item spacing" b
@@ -20,7 +10,13 @@ snippet itema "Itemize without item spacing" b
 \end{itemize}
 endsnippet
 
-snippet itemb "Itemize without item and list spacing" b
+snippet itemb "Itemize without list spacing" b
+\begin{itemize}[noitemsep]
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet itemc "Itemize without item and list spacing" b
 \begin{itemize}[nolistsep, noitemsep]
 	\item $0
 \end{itemize}
@@ -46,6 +42,63 @@ snippet tt "Typewriter (monospace) text" w
 \texttt{
 endsnippet
 
-snippet ig "Typewriter (monospace) text" w
+snippet ig "Include graphics" w
 \includegraphics[width=\textwidth]{}
+endsnippet
+
+
+snippet sec "Section" b
+\section{
+endsnippet
+
+snippet sec* "Section*" b
+\section*{
+endsnippet
+
+snippet sub "Subsection" b
+\subsection{
+endsnippet
+
+snippet sub* "Subsection*" b
+\subsection*{
+endsnippet
+
+snippet ssub "Subsubsection" b
+\subsubsection{
+endsnippet
+
+snippet ssub* "Subsubsection*" b
+\subsubsection*{
+endsnippet
+
+snippet par "Paragraph" b
+\paragraph{
+endsnippet
+
+snippet subp "Subparagraph" b
+\subparagraph{
+endsnippet
+
+snippet tcode "Text code (minted)" b
+\begin{textcode}
+	$0
+\end{textcode}
+endsnippet
+
+snippet jcode "Java code (minted)" b
+\begin{javacode}
+	$0
+\end{javacode}
+endsnippet
+
+snippet ccode "CPP code (minted)" b
+\begin{cppcode}
+	$0
+\end{cppcode}
+endsnippet
+
+snippet pcode "Python code (minted)" b
+\begin{pythoncode}
+	$0
+\end{pythoncode}
 endsnippet

@@ -39,7 +39,7 @@ rofi.show-icons:                        true
 ! "Window fields to match in window mode" Set from: Default
 ! rofi.window-match-fields:            all
 ! "Theme to use to look for icons" Set from: Default
-rofi.drun-icon-theme:                   Numix-Circle
+rofi.icon-theme:                   Numix-Circle
 ! "Desktop entry fields to match in drun" Set from: Default
 ! rofi.drun-match-fields:              name,generic,exec,categories
 ! "Disable history in run/ssh" Set from: Default
@@ -65,7 +65,7 @@ rofi.cycle:                             false
 ! "Set the modi to combine in combi mode" Set from: Default
 ! rofi.combi-modi:                     window,run
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
-rofi.matching:                          normal
+rofi.matching:                          glob
 ! "Tokenize input string" Set from: Default
 ! rofi.tokenize:                       true
 ! "Monitor id to show on" Set from: Default
@@ -169,7 +169,7 @@ rofi.display-json-dict:                 dict
 ! "Accept entry" Set from: Default
 ! rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
 ! "Use entered text as command (in ssh/run modi)" Set from: Default
-! rofi.kb-accept-custom:               Control+Return
+rofi.kb-accept-custom:               Alt+exclam
 ! "Use alternate accept command." Set from: Default
 ! rofi.kb-accept-alt:                  Shift+Return
 ! "Delete entry from history" Set from: Default
@@ -227,7 +227,7 @@ rofi.display-json-dict:                 dict
 ! "Custom keybinding 10" Set from: Default
 ! rofi.kb-custom-10:                   Alt+0
 ! "Custom keybinding 11" Set from: Default
-! rofi.kb-custom-11:                   Alt+exclam
+rofi.kb-custom-11:                   Control+Return
 ! "Custom keybinding 12" Set from: Default
 ! rofi.kb-custom-12:                   Alt+at
 ! "Csutom keybinding 13" Set from: Default

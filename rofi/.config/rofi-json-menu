@@ -61,11 +61,6 @@
         "terminal":     false,
         "icon":         "franz"
     },
-    "htop": {
-        "cmd":          "htop",
-        "terminal":     true,
-        "icon":         "htop"
-    },
     "idea": {
         "cmd":          "intellij-idea-ultimate-edition",
         "terminal":     false,
@@ -73,7 +68,13 @@
     },
     "o": {
         "description":  "file browser",
-        "cmd":          "rofi-file-browser",
+        "cmd":          "rofi-file-browser-home",
+        "terminal":     false,
+        "icon":         "fileopen"
+    },
+    "ou": {
+        "description":  "uni files",
+        "cmd":          "rofi-file-browser-uni",
         "terminal":     false,
         "icon":         "fileopen"
     },
@@ -103,6 +104,11 @@
         "terminal":     false,
         "icon":         "hotwire-openssh"
     },
+    "teamspeak": {
+        "cmd":          "teamspeak3",
+        "terminal":     false,
+        "icon":         "teamspeak3"
+    },
     "trans": {
         "description": "set window transparency",
         "cmd":          "transset-df -c",
@@ -130,29 +136,9 @@
         "terminal":     false,
         "icon":         "thunderbird"
     },
-    "urxvt": {
-        "cmd":          "urxvt",
-        "terminal":     false,
-        "icon":         "terminal"
-    },
-    "vim": {
-        "cmd":          "vim",
-        "terminal":     true,
-        "icon":         "gvim"
-    },
-    "vlc": {
-        "cmd":          "vlc",
-        "terminal":     false,
-        "icon":         "vlc"
-    },
     "webstorm": {
         "cmd":          "webstorm",
         "terminal":     false,
         "icon":         "webstorm"
-    },
-    "zathura": {
-        "cmd":          "zathura",
-        "terminal":     false,
-        "icon":         "acroread"
     }
 }

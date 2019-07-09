@@ -1,4 +1,4 @@
-URxvt.perl-ext-common: default,tabbedex,clipboard,font-size
+URxvt.perl-ext-common: default,tabbedex,clipboard,font-size,new-window
 
 !appearance
 URxvt.font: xft:Terminus:size=14
@@ -33,8 +33,9 @@ URxvt.keysym.Control-0: perl:font-size:reset
 URxvt.keysym.Control-KP_0: perl:font-size:reset
 URxvt.font-size.step: 1
 
-!icon
-URxvt.iconFile: /usr/share/icons/Numix-Circle/48/apps/gnome-term.svg
+!commands
+URxvt.keysym.C-n: perl:new-window
+URxvt.keysym.C-N: perl:new-window
 
 !transparency
 !URxvt*transparent: true

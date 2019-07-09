@@ -1,0 +1,8 @@
+local/rxvt-unicode-terminfo 9.22-9
+    Terminfo files for urxvt
+local/rxvt-unicode-truecolor 9.22-7
+    Unicode enabled rxvt-clone terminal emulator (urxvt) with true color patch (24bit colors support). That enables vim 24-bit true color colorshemes
+local/urxvt-font-size-git 21-1
+    On-the-fly URxvt font size adjustments
+local/urxvt-tabbedex 0.4-3
+    A tabbed extension for rxvt-unicode with several enhancements

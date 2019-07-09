@@ -64,6 +64,7 @@ set ignorecase
 set scrolloff=8
 set lazyredraw
 set mouse=a
+set clipboard^=unnamed
 
 set encoding=utf-8
 set fileformat=unix
@@ -78,7 +79,6 @@ noremap <leader>y "+y
 noremap <leader>p "+p
 noremap <leader>Y "+Y
 noremap <leader>P "+P
-inoremap <leader>p <ESC>"+pa
 
 " Normal Mappings
 nnoremap j gj
@@ -87,8 +87,10 @@ nnoremap k gk
 vnoremap k gk
 nnoremap <leader>j :bnext! <CR>
 nnoremap <leader>k :bprev! <CR>
+nnoremap <C-h> :bprev! <CR>
 nnoremap <C-j> :bnext! <CR>
 nnoremap <C-k> :bprev! <CR>
+nnoremap <C-l> :bnext! <CR>
 nnoremap <leader>q :bd <CR>
 nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <silent> <ESC> :nohlsearch<CR>
@@ -196,12 +198,10 @@ endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 " }}}
 
-" EasyMotion: {{{
+" Other Plugin Settings: {{{
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
-" }}}
 
-" Other Plugin Settings: {{{
 set updatetime=1000
 let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•'
@@ -299,146 +299,11 @@ command WQ wq
 command -range QR <line1>,<line2>!curl -s -F-=\<- qrenco.de
 " }}}
 
-" Printing: {{{
-" actual TOhtml variables
-let g:html_number_lines     = 0
-let g:html_font             = "Courier New"
-
-let g:html_colorscheme      = "lucius"
-let g:html_font_size        = 12
-let g:html_margin_header    = 7
-let g:html_margin_footer    = 7
-let g:html_margin_left      = 15
-let g:html_margin_right     = 15
-let g:html_margin_bottom    = 15
-let g:html_margin_top       = 15
-let g:html_use_header       = 0
-let g:html_header_font_size = 9
-let g:html_header_font      = "Courier New"
-let g:html_header_spacing   = 5
-let g:html_header_line      = 1
-let g:html_use_footer       = 0
-let g:html_footer_font_size = 9
-let g:html_footer_font      = "Courier New"
-let g:html_footer_spacing   = 5
-let g:html_footer_line      = 1
-
-let g:html_header_left      = '%:t'
-let g:html_header_right     = '[page]/[topage]'
-let g:html_header_center    = '%d.%m.%Y'
-let g:html_footer_left      = '%:t'
-let g:html_footer_right     = '[page]/[topage]'
-let g:html_footer_center    = '%d.%m.%Y'
-
-function HTML2PDF(...)
-    "Requires wkhtmltopdf-static from AUR
-
-    " Set defaults here:
-    let l:colorscheme       =        get(g:, 'html_colorscheme',        'lucius')
-    let l:font_size         = string(get(g:, 'html_font_size',          12))
-    let l:margin_header     = string(get(g:, 'html_margin_header',      7))
-    let l:margin_footer     = string(get(g:, 'html_margin_footer',      7))
-    let l:margin_left       = string(get(g:, 'html_margin_left',        15))
-    let l:margin_right      = string(get(g:, 'html_margin_right',       15))
-    let l:margin_bottom     = string(get(g:, 'html_margin_bottom',      15))
-    let l:margin_top        = string(get(g:, 'html_margin_top',         15))
-    let l:use_header        = string(get(g:, 'html_use_header',         0))
-    let l:header_font_size  = string(get(g:, 'html_header_font_size',   9))
-    let l:header_font       =        get(g:, 'html_header_font',        'Courier New')
-    let l:header_spacing    = string(get(g:, 'html_header_spacing',     5))
-    let l:header_line       = string(get(g:, 'html_header_line',        0))
-    let l:use_footer        = string(get(g:, 'html_use_footer',         0))
-    let l:footer_font_size  = string(get(g:, 'html_footer_font_size',   9))
-    let l:footer_font       =        get(g:, 'html_footer_font',        'Courier New')
-    let l:footer_spacing    = string(get(g:, 'html_footer_spacing',     5))
-    let l:footer_line       = string(get(g:, 'html_footer_line',        0))
-
-    let l:header_left       = expand(strftime(g:html_header_left))
-    let l:header_right      = expand(strftime(g:html_header_right))
-    let l:header_center     = expand(strftime(g:html_header_center))
-    let l:footer_left       = expand(strftime(g:html_footer_left))
-    let l:footer_right      = expand(strftime(g:html_footer_right))
-    let l:footer_center     = expand(strftime(g:html_footer_center))
-
-    if l:use_header
-        let l:margin_top += l:margin_header
-    endif
-    if l:use_footer
-        let l:margin_bottom += l:margin_footer
-    endif
-
-    let l:tmp_path         = get(g:, 'tmp_path',  '/tmp/')
-
-    let l:file_name = expand('%:t')
-    let l:html_path = l:tmp_path . expand('%:t') . '.html'
-    let l:pdf_path = get(a:, '2', expand('%:t') . '.pdf')
-    let l:old_colors = g:colors_name
-
-    set background=light
-    execute 'colorscheme' l:colorscheme
-    highlight Normal guifg=#000000 guibg=#FFFFFF ctermfg=16 ctermbg=15
-
-    TOhtml
-    execute 'w!' l:html_path
-    q!
-
-    let l:sed  = '!sed -i "s/body {/body { font-size: '
-    let l:sed .= string(get(g:, 'html_font_size', l:font_size))
-    let l:sed .= 'px;/g; s/pre {/pre { font-size: '
-    let l:sed .= string(get(g:, 'html_font_size', l:font_size))
-    let l:sed .= 'px;/g" '
-    let l:sed .= l:html_path
-
-    let l:wk  = '!wkhtmltopdf'
-    let l:wk .= ' --no-background'
-    let l:wk .= ' --margin-left '               . l:margin_left
-    let l:wk .= ' --margin-right '              . l:margin_right
-    let l:wk .= ' --margin-bottom '             . l:margin_bottom
-    let l:wk .= ' --margin-top '                . l:margin_top
-
-    if l:use_header
-        let l:wk .= ' --header-font-name  ' . '"' . l:header_font       . '"'
-        let l:wk .= ' --header-font-size '  .       l:header_font_size
-        let l:wk .= ' --header-spacing '    .       l:header_spacing
-        let l:wk .= ' --header-left '       . '"' . l:header_left       . '"'
-        let l:wk .= ' --header-right '      . '"' . l:header_right      . '"'
-        let l:wk .= ' --header-center '     . '"' . l:header_center     . '"'
-        let l:wk .= (l:header_line ? ' --header-line' : '--no-header-line')
-    endif
-
-    if l:use_footer
-        let l:wk .= ' --footer-font-name '  . '"' . l:footer_font       . '"'
-        let l:wk .= ' --footer-font-size '        . l:footer_font_size
-        let l:wk .= ' --footer-spacing '          . l:footer_spacing
-        let l:wk .= ' --footer-left '       . '"' . l:footer_left       . '"'
-        let l:wk .= ' --footer-right '      . '"' . l:footer_right      . '"'
-        let l:wk .= ' --footer-center '     . '"' . l:footer_center     . '"'
-        let l:wk .= (l:footer_line ? ' --footer-line' : '--no-footer-line')
-    endif
-
-    let l:wk .= ' "' . l:html_path . '" "' . l:pdf_path . '"'
-
-    execute l:sed
-    execute l:wk
-
-    execute 'colorscheme' l:old_colors
-    execute MyColors()
-endfunction
-
-command HTML2PDF execute HTML2PDF()
-" }}}
-
 " Spelling: {{{
 set spellfile=~/.config/nvim/spell/additions.add
 set spelllang=de_de,en_us,umlauts
 set spellcapcheck=
 set spell
-" }}}
-
-" Platform-specific options: {{{
-if has('win64') || has('win32')
-    let g:tmp_path = 'E:\TEMP\'
-endif
 " }}}
 
 " GUI options {{{

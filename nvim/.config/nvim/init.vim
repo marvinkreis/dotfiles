@@ -56,7 +56,6 @@ set listchars=tab:→\ ,nbsp:␣,trail:•,extends:>,precedes:<
 set list
 set nowrap
 set noshowmode
-set t_Co=256
 
 set backspace=indent,eol,start
 set foldmethod=manual
@@ -289,14 +288,6 @@ endfunction
 
 autocmd ColorScheme * call MyColors()
 execute MyColors()
-" }}}
-
-" Highlights: {{{
-function HighlightSections()
-    syntax match section /^\d.*$/ containedin=Normal
-    highlight def section ctermfg=3
-endfunction
-command HighlightSections execute HighlightSections()
 " }}}
 
 " Commands and Functions: {{{

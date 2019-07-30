@@ -33,9 +33,12 @@ URxvt.keysym.Control-0: perl:font-size:reset
 URxvt.keysym.Control-KP_0: perl:font-size:reset
 URxvt.font-size.step: 1
 
-!commands
+!new-window
 URxvt.keysym.C-n: perl:new-window
 URxvt.keysym.C-N: perl:new-window
+
+!disable print screen
+URxvt.keysym.Print: perl:nop
 
 !transparency
 !URxvt*transparent: true

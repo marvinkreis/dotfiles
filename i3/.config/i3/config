@@ -188,7 +188,7 @@ set_from_resource $border_inactive wm.border_inactive #4d4d4d
 client.focused          #4c7899 #285577 #ffffff $border_active    $border_active
 client.focused_inactive #333333 #5f676a #ffffff $border_inactive  $border_inactive
 client.unfocused        #333333 #222222 #888888 $border_inactive  $border_inactive
-client.urgent           #333333 #222222 #888888 #border_inactive  $border_inactive
+client.urgent           #333333 #222222 #888888 $border_inactive  $border_inactive
 client.placeholder      #000000 #0c0c0c #ffffff #0c0c0c           #0c0c0c
 
 popup_during_fullscreen smart
@@ -198,6 +198,7 @@ force_display_urgency_hint 500 ms
 show_marks yes
 
 for_window [class=".*"] title_format " %title"
+for_window [title="TomatoTimer"] floating enable
 
 # assign [class="Thunderbird"] → 10
 # workspace $ws10 output HDMI-0

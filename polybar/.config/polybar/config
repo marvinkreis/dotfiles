@@ -34,12 +34,11 @@ radius = 0.0
 fixed-center = true
 
 padding-left = 8
-padding-right = 4
+padding-right = 8
 module-margin-right = 4
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 
 border-size = 0
 line-size = 2

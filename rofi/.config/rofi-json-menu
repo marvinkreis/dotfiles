@@ -61,6 +61,11 @@
         "terminal":     false,
         "icon":         "franz"
     },
+    "gimp": {
+        "cmd":          "gimp",
+        "terminal":     false,
+        "icon":         "gimp"
+    },
     "idea": {
         "cmd":          "intellij-idea-ultimate-edition",
         "terminal":     false,
@@ -136,9 +141,19 @@
         "terminal":     false,
         "icon":         "thunderbird"
     },
+    "tomato-timer": {
+        "cmd":          "tomato-timer",
+        "terminal":     false,
+        "icon":         "tomato"
+    },
     "webstorm": {
         "cmd":          "webstorm",
         "terminal":     false,
         "icon":         "webstorm"
+    },
+    "zeal": {
+        "cmd":          "zeal",
+        "terminal":     false,
+        "icon":         "zeal"
     }
 }

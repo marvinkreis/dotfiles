@@ -60,10 +60,6 @@ color() {
     fi
 }
 
-nfind() {
-    find . -iname ${@} 2>&1 | grep -v "Permission denied"
-}
-
 git-status-nth() {
     awkstr='{gsub(/^\s*(D|M|\?\?)\s*/,"")} '
 

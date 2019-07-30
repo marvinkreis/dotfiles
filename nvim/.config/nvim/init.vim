@@ -64,7 +64,6 @@ set ignorecase
 set scrolloff=8
 set lazyredraw
 set mouse=a
-set clipboard^=unnamed
 
 set encoding=utf-8
 set fileformat=unix

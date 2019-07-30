@@ -12,4 +12,5 @@ xkb_symbols "dev-de" {
     key <AD03> { [ e, E, EuroSign, cent ] };
 
     include "level3(ralt_switch)"
+    include "ctrl(nocaps)"
 };

@@ -1,6 +1,6 @@
 partial alphanumeric_keys
 
-xkb_symbols "dev-de" {
+xkb_symbols "de-us" {
     name[Group1]= "ISO US with umlauts";
     include "us(basic)"
 

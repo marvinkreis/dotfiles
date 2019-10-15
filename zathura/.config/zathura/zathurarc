@@ -1,7 +1,7 @@
-set default-bg                  "#1c1c1c"
+set default-bg                  "#151515"
 set default-fg                  "#b3b3b3"
 
-set statusbar-bg                "#1c1c1c"
+set statusbar-bg                "#151515"
 set statusbar-fg                "#bbbbbb"
 
 set inputbar-bg                 "#1c1c1c"

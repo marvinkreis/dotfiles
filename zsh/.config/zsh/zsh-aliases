@@ -1,16 +1,16 @@
 alias -g tobg="&> /dev/null &; disown"
 
 alias dirs="dirs -v"
-alias grep="echo Use ack! #"
 alias j=jump
 alias latexrun='latexrun -O /tmp/latexrun --latex-args="--shell-escape -synctex=1"'
 alias ls="ls --color=auto --group-directories-first -1"
 alias mkdir="mkdir -p"
 alias n="start-in-background"
 alias o="exo-open"
+alias pdfgrep="pdfgrep -Ri"
 alias r="echo disabled"
 alias rm="rm -vI"
-alias s=search
+alias rg="rg -S"
 alias sc=systemctl
 alias scat=pygmentize
 alias svim="sudo -E vim"

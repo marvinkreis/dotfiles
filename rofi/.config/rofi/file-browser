@@ -1,0 +1,18 @@
+icon-theme "Numix-Circle"
+
+cmd        "exo-open"
+
+oc-cmd     "evince;icon:evince"
+oc-cmd     "gimp;icon:gimp"
+oc-cmd     "kid3-qt;icon:kid3;name:kid3"
+oc-cmd     "gvim;icon:vim;name:vim"
+oc-cmd     "deadbeef --queue;icon:deadbeef;name:deadbeef <span alpha='75%'>(queue)</span>"
+oc-cmd     "thunar;icon:thunar"
+oc-cmd     "pcmanfm-qt;icon:system-file-manager;name:pcmanfm"
+
+use-mode-keys
+open-parent-as-self
+
+# oc-cmd        "urxvt -cd %d;name:terminal <span alpha='75%'>(current directory)</span>;icon:gnome-terminal"
+# oc-cmd        "urxvt -cd %f;name:terminal <span alpha='75%'>(selection)</span>;icon:gnome-terminal"
+# oc-cmd        "urxvt -cd %c;name:terminal <span alpha='75%'>(parent of selection)</span>;icon:gnome-terminal"

@@ -16,8 +16,8 @@ compinit
 
 # zsh-newuser-install: {{{
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=25000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt appendhistory extendedglob notify
 unsetopt autocd beep nomatch
 bindkey -v

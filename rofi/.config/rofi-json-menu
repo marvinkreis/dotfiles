@@ -78,10 +78,21 @@
         "icon":         "fileopen"
     },
     "ou": {
-        "description":  "uni files",
+        "description":  "uni file browser",
         "cmd":          "rofi-file-browser-uni",
         "terminal":     false,
         "icon":         "fileopen"
+    },
+    "om": {
+        "description":  "music file browser",
+        "cmd":          "rofi-file-browser-music",
+        "terminal":     false,
+        "icon":         "fileopen"
+    },
+    "nvidia-settings": {
+        "cmd":          "nvidia-settings",
+        "terminal":     false,
+        "icon":         "nvidia-settings"
     },
     "pavucontrol": {
         "cmd":          "pavucontrol",
@@ -119,6 +130,11 @@
         "cmd":          "transset-df -c",
         "terminal":     false,
         "icon":         "window-manager"
+    },
+    "pcmanfm": {
+        "cmd":          "pcmanfm-qt",
+        "terminal":     false,
+        "icon":         "system-file-manager"
     },
     "power": {
         "cmd":          "rofi-power",

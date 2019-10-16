@@ -77,6 +77,12 @@
         "terminal":     false,
         "icon":         "fileopen"
     },
+    "os": {
+        "description":  "studip file browser",
+        "cmd":          "rofi-file-browser-studip",
+        "terminal":     false,
+        "icon":         "fileopen"
+    },
     "ou": {
         "description":  "uni file browser",
         "cmd":          "rofi-file-browser-uni",

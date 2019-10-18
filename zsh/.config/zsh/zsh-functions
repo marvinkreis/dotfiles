@@ -61,6 +61,8 @@ color() {
 }
 
 git-status-nth() {
+    local awkstr
+
     awkstr='{gsub(/^\s*(D|M|\?\?)\s*/,"")} '
 
     if [ -z ${1+x} ]; then
@@ -84,9 +86,7 @@ git-diff-nth() {
 }
 
 start-in-background() {
-    if [[ -z ${1} ]]; then
-        start-in-background urxvt
-    else
+    if [[ -v ${1} ]]; then
         (${@} &> /dev/null &)
     fi
 }

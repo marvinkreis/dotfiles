@@ -45,13 +45,40 @@ antigen theme $HOME/.config/zsh/themes lambda
 antigen apply
 # }}}
 
-ZSH_CONFIG=$HOME/.config/zsh
+# Environment: {{{
 PAGER='nvimpager -p'
 MANPAGER='nvimpager -p'
+ZSH_CONFIG=$HOME/.config/zsh
+# }}}
 
 source $ZSH_CONFIG/zsh-functions #TODO fpath
 source $ZSH_CONFIG/zsh-aliases
 source $ZSH_CONFIG/zsh-completions
+
+# Rofi file browser: {{{
+function _rofi_file_browser() {
+    local dir file
+
+    if [ -d "${BUFFER##* }" ]; then
+        dir="${BUFFER##* }"
+        BUFFER="${BUFFER% *} "
+    else
+        dir="${PWD}"
+    fi
+
+    rofi -show file-browser         \
+         -file-browser-dir "${dir}" \
+         -file-browser-depth 10     \
+         -file-browser-stdout |
+    while read line; do
+        file=$(realpath --relative-to "${PWD}" "${line}")
+        zle -U "\"${file}\" "
+    done
+}
+
+zle -N rofi_file_browser_widget _rofi_file_browser
+bindkey '^p' rofi_file_browser_widget
+# }}}
 
 # Options: {{{
 setopt histignorespace

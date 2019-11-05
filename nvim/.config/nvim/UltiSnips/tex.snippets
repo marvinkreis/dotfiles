@@ -1,24 +1,24 @@
 snippet item "Itemize" b
 \begin{itemize}
-	\item $0
+	\item$0
 \end{itemize}
 endsnippet
 
 snippet itema "Itemize without item spacing" b
-\begin{itemize}[nolistsep]
-	\item $0
+\begin{itemize}[noitemsep]
+	\item$0
 \end{itemize}
 endsnippet
 
 snippet itemb "Itemize without list spacing" b
-\begin{itemize}[noitemsep]
-	\item $0
+\begin{itemize}[nolistsep]
+	\item$0
 \end{itemize}
 endsnippet
 
 snippet itemc "Itemize without item and list spacing" b
 \begin{itemize}[nolistsep, noitemsep]
-	\item $0
+	\item$0
 \end{itemize}
 endsnippet
 
@@ -28,6 +28,10 @@ endsnippet
 
 snippet ra "Right arrow" w
 $\rightarrow$
+endsnippet
+
+snippet lra "Leftright arrow" w
+$\leftrightarrow$
 endsnippet
 
 snippet ii "Italic text" w
@@ -45,7 +49,6 @@ endsnippet
 snippet ig "Include graphics" w
 \includegraphics[width=\textwidth]{}
 endsnippet
-
 
 snippet sec "Section" b
 \section{
@@ -101,4 +104,52 @@ snippet pcode "Python code (minted)" b
 \begin{pythoncode}
 	$0
 \end{pythoncode}
+endsnippet
+
+snippet mini "Minipage" b
+\begin{minipage}{\textwidth}
+	$0
+\end{minipage}
+endsnippet
+
+snippet minit "Top-aligned minipage" b
+\begin{minipage}[t]{\textwidth}\vspace{0pt}%
+	$0
+\end{minipage}
+endsnippet
+
+snippet bs "Big skip" w
+\bigskip
+endsnippet
+
+snippet ms "Med skip" w
+\medskip
+endsnippet
+
+snippet ss "Small skip" w
+\smallskip
+endsnippet
+
+snippet bsa "Big skip amount" w
+\bigskipamount
+endsnippet
+
+snippet msa "Med skip amount" w
+\medskipamount
+endsnippet
+
+snippet ssa "Small skip amount" w
+\smallskipamount
+endsnippet
+
+snippet vs "Vertical space" w
+\vspace{
+endsnippet
+
+snippet hs "Horizontal space" w
+\hspace{
+endsnippet
+
+snippet tw "Text width" w
+\textwidth
 endsnippet

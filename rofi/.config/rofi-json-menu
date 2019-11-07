@@ -153,6 +153,12 @@
         "terminal":     false,
         "icon":         "steam"
     },
+    "t": {
+        "description":  "set window title",
+        "cmd":          "title",
+        "terminal":     false,
+        "icon":         "preferences-system-windows"
+    },
     "thunar": {
         "cmd":          "thunar",
         "terminal":     false,

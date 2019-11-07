@@ -12,7 +12,7 @@ alias r="echo disabled"
 alias rm="rm -vI"
 alias rg="rg -S"
 alias sc=systemctl
-alias scat=pygmentize
+alias scat="nvimpager -c"
 alias svim="sudo -E vim"
 
 alias copy="xclip -in -selection clipboard"

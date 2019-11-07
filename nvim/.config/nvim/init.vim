@@ -8,7 +8,7 @@ Plug 'altercation/vim-colors-solarized'
 
 " Appearance
 Plug 'vim-airline/vim-airline'
-Plug 'lilydjwg/colorizer'
+Plug 'lilydjwg/colorizer', { 'for': 'html,css' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Utility
@@ -334,7 +334,9 @@ function RofiFB()
                             \ -file-browser-dir \"" . getcwd() . "\"
                             \ -file-browser-depth 10
                             \ -file-browser-only-files
-                            \ -file-browser-stdout")
+                            \ -file-browser-stdout
+                            \ -file-browser-exclude '*.class'
+                            \ -file-browser-exclude '*.pdf'")
     let l:file = substitute(l:file, " ", "\\ ", "")
     if (len(l:file) > 0)
         execute("edit " . l:file)

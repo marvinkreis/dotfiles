@@ -31,6 +31,7 @@ ANTIGEN_CLONE_OPTS="--depth=1"
 
 source $HOME/.antigen/antigen/antigen.zsh
 
+antigen bundle robbyrussell/oh-my-zsh lib/completion.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/directories.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh

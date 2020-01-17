@@ -1,6 +1,7 @@
 alsa_soundcard default
 ape.write_apev2 1
 artwork.cache.period 48
+artwork.cache_reset_time 1575804999
 artwork.enable_albumartorg 0
 artwork.enable_embedded 1
 artwork.enable_lastfm 0
@@ -10,12 +11,13 @@ artwork.enable_wos 0
 artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
 artwork.missing_artwork 0
 artwork.nocover_path 
-artwork.scale_towards_longer 1
+artwork.scale_towards_longer 0
+artwork.scaled.cache_reset_time 1575804999
 chip.voices 0
 cli_add_playlist_name Default
 cli_add_to_specific_playlist 1
 deadbeef_version 1.8.2
-discord_presence.enable 1
+discord_presence.enable 0
 discord_presence.end_timestamp 0
 discord_presence.icon_script 'Song: ' %title%
 discord_presence.paused_icon 1
@@ -72,7 +74,7 @@ gtkui.eq.visible 0
 gtkui.font.listview_text DejaVu Sans Semi-Condensed 9
 gtkui.hide_remove_from_disk 1
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.951472 pos=1353 size2=0 {hsplitter locked=0 ratio=0.237037 pos=264 size2=0 {vsplitter locked=0 ratio=0.979862 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,prev|0|media-skip-backward,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.014458 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.311736 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=818 {} } } waveform_seekbar {} } 
+gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.948746 pos=1353 size2=0 {hsplitter locked=0 ratio=0.237037 pos=264 size2=0 {vsplitter locked=0 ratio=0.979862 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle,toggle_eq|0|format-justify-fill" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.014458 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.310513 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=818 {} } } waveform_seekbar {} } 
 gtkui.mmb_delete_playlist 1
 gtkui.name_playlist_from_folder 1
 gtkui.override_bar_colors 1
@@ -131,7 +133,7 @@ junk.enable_cp936_detection 1
 junk.enable_shift_jis_detection 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
-logwindow.geometry.x 2923
+logwindow.geometry.x 2920
 logwindow.geometry.y 498
 mainwin.geometry.h 1898
 mainwin.geometry.w 1080
@@ -153,10 +155,10 @@ notify.format_title_tf %title%
 output_plugin pulseaudio
 playback.loop 1
 playback.order 0
-playback.volume 0.0000000
+playback.volume -10.00000
 playlist.current 0
-playlist.cursor.0 46
-playlist.cursor.1 123
+playlist.cursor.0 212
+playlist.cursor.1 80
 playlist.cursor.2 42
 playlist.cursor.3 42
 playlist.cursor.4 42
@@ -166,8 +168,8 @@ playlist.cursor.7 0
 playlist.cursor.8 0
 playlist.groups.spacing 0
 playlist.pin.groups 0
-playlist.scroll.0 -46
-playlist.scroll.1 0
+playlist.scroll.0 3653
+playlist.scroll.1 1472
 playlist.scroll.2 653
 playlist.scroll.3 653
 playlist.scroll.4 653
@@ -183,8 +185,8 @@ playlist.tab.00000 Default
 playlist.tab.00001 Medicine
 prefwin.geometry.h 676
 prefwin.geometry.w 953
-prefwin.geometry.x 617
-prefwin.geometry.y 541
+prefwin.geometry.x 2635
+prefwin.geometry.y 540
 replaygain.processing_flags 3
 replaygain_mode 1
 replaygain_scale 1

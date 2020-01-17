@@ -7,6 +7,7 @@ oc-cmd      "gimp;icon:gimp"
 oc-cmd      "kid3-qt;icon:kid3;name:kid3"
 oc-cmd      "gvim;icon:vim;name:vim"
 oc-cmd      "deadbeef --queue;icon:deadbeef;name:deadbeef <span alpha='75%'>(queue)</span>"
+oc-cmd      "deadbeef;icon:deadbeef;name:deadbeef <span alpha='75%'>(play)</span>"
 oc-cmd      "thunar;icon:thunar"
 oc-cmd      "pcmanfm-qt;icon:system-file-manager;name:pcmanfm"
 
@@ -14,6 +15,7 @@ use-mode-keys
 open-parent-as-self
 
 exclude     "*.class"
+exclude     "node_modules"
 
 # oc-cmd        "urxvt -cd %d;name:terminal <span alpha='75%'>(current directory)</span>;icon:gnome-terminal"
 # oc-cmd        "urxvt -cd %f;name:terminal <span alpha='75%'>(selection)</span>;icon:gnome-terminal"

@@ -51,7 +51,7 @@ snippet tt "Typewriter (monospace) text" w
 endsnippet
 
 snippet ig "Include graphics" w
-\includegraphics[width=\textwidth]{}
+\includegraphics[width=\textwidth]{
 endsnippet
 
 snippet sec "Section" b
@@ -98,6 +98,12 @@ snippet jcode "Java code (minted)" b
 \end{javacode}
 endsnippet
 
+snippet jscode "JavaScript code (minted)" b
+\begin{javascriptcode}
+	$0
+\end{javascriptcode}
+endsnippet
+
 snippet ccode "CPP code (minted)" b
 \begin{cppcode}
 	$0
@@ -125,6 +131,44 @@ endsnippet
 snippet minit "Top-aligned minipage" b
 \begin{minipage}[t]{\textwidth}\vspace{0pt}%
 	$0
+\end{minipage}
+endsnippet
+
+snippet mini2 "50:50 minipages" b
+\begin{minipage}{.5\textwidth}
+	$0
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+	$1
+\end{minipage}
+endsnippet
+
+snippet mini2s "50:50 minipages with spacing" b
+\begin{minipage}{.49\textwidth}
+	$0
+\end{minipage}%
+\hspace{.02\textwidth}%
+\begin{minipage}{.49\textwidth}
+	$1
+\end{minipage}
+endsnippet
+
+snippet minit2 "Top-aligned 50:50 minipages" b
+\begin{minipage}[t]{.5\textwidth}\vspace{0pt}%
+	$0
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+	$1
+\end{minipage}
+endsnippet
+
+snippet minit2s "Top-aligned 50:50 minipages with spacing" b
+\begin{minipage}[t]{.49\textwidth}\vspace{0pt}%
+	$0
+\end{minipage}%
+\hspace{.02\textwidth}%
+\begin{minipage}{.49\textwidth}
+	$1
 \end{minipage}
 endsnippet
 
@@ -166,4 +210,16 @@ endsnippet
 
 snippet em "emph" w
 \emph{
+endsnippet
+
+
+
+# https://castel.dev/post/lecture-notes-1/
+
+snippet '_(\S*)' "Subscript" wr
+_{`!p snip.rv = match.group(1)`$0}
+endsnippet
+
+snippet '\^(\S*)' "Superscript" wr
+^{`!p snip.rv = match.group(1)`$0}
 endsnippet

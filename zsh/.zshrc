@@ -31,10 +31,11 @@ ANTIGEN_CLONE_OPTS="--depth=1"
 
 source $HOME/.antigen/antigen/antigen.zsh
 
-antigen bundle robbyrussell/oh-my-zsh lib/completion.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/directories.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/key-bindings.zsh
+antigen bundle ohmyzsh/ohmyzsh lib/completion.zsh
+antigen bundle ohmyzsh/ohmyzsh lib/directories.zsh
+antigen bundle ohmyzsh/ohmyzsh lib/git.zsh
+antigen bundle ohmyzsh/ohmyzsh lib/key-bindings.zsh
+antigen bundle ohmyzsh/ohmyzsh plugins/safe-paste
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma/fast-syntax-highlighting
@@ -87,5 +88,3 @@ setopt interactivecomments
 # }}}
 
 # vim: fdm=marker:
-
-

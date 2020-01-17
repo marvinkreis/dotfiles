@@ -1,7 +1,7 @@
 URxvt.perl-ext-common: default,tabbedex,clipboard,font-size,new-window
 
 !appearance
-URxvt.font: xft:Terminus:size=14
+URxvt.font: xft:JetBrains Mono for Powerline:pixelsize=15
 URxvt.internalBorder: 8
 URxvt.cursorBlink: 1
 URxvt.scrollBar: false
@@ -31,7 +31,7 @@ URxvt.keysym.Control-KP_Add: perl:font-size:increase
 URxvt.keysym.Control-KP_Subtract: perl:font-size:decrease
 URxvt.keysym.Control-0: perl:font-size:reset
 URxvt.keysym.Control-KP_0: perl:font-size:reset
-URxvt.font-size.step: 1
+URxvt.font-size.step: 2
 
 !new-window
 URxvt.keysym.C-n: perl:new-window

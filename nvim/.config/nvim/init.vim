@@ -3,7 +3,6 @@ call plug#begin('~/git/vim-plug')
 
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'jonathanfilip/vim-lucius'
 Plug 'altercation/vim-colors-solarized'
 
 " Appearance
@@ -26,8 +25,6 @@ Plug 'lervag/vimtex', { 'for': 'plaintex,tex,bib' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'Shougo/neco-vim'
-"Plug 'poppyschmo/deoplete-latex', { 'for': 'plaintex,tex,bib' }
 
 call plug#end()
 " }}}

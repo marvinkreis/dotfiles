@@ -68,7 +68,8 @@ function _rofi_file_browser() {
         dir="${PWD}"
     fi
 
-    rofi -show file-browser         \
+    rofi -modi file-browser         \
+         -show file-browser         \
          -file-browser-dir "${dir}" \
          -file-browser-depth 10     \
          -file-browser-stdout |
@@ -80,6 +81,24 @@ function _rofi_file_browser() {
 
 zle -N rofi_file_browser_widget _rofi_file_browser
 bindkey '^p' rofi_file_browser_widget
+
+function _rofi_file_browser_open() {
+    local dir
+
+    if [ -d "${BUFFER##* }" ]; then
+        dir="${BUFFER##* }"
+    else
+        dir="${PWD}"
+    fi
+
+    rofi -modi file-browser         \
+         -show file-browser         \
+         -file-browser-dir "${dir}" \
+         -file-browser-depth 10     \
+}
+
+zle -N rofi_file_browser_open_widget _rofi_file_browser_open
+bindkey '^o' rofi_file_browser_open_widget
 # }}}
 
 # Options: {{{

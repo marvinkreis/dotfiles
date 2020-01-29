@@ -34,7 +34,7 @@ set recolor                     false
 
 set guioptions                  ""
 set window-icon                 acroread
-set font                        "Terminus 12"
+set font                        "JetBrains Mono 10"
 
 set zoom-step                   5
 

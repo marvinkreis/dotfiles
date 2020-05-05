@@ -1,22 +1,22 @@
 alsa_soundcard default
 ape.write_apev2 1
 artwork.cache.period 48
-artwork.cache_reset_time 1575804999
+artwork.cache_reset_time 1582497028
 artwork.enable_albumartorg 0
 artwork.enable_embedded 1
 artwork.enable_lastfm 0
 artwork.enable_localfolder 1
 artwork.enable_musicbrainz 0
 artwork.enable_wos 0
-artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
+artwork.filemask cover.jpg;cover.png;*cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
 artwork.missing_artwork 0
 artwork.nocover_path 
 artwork.scale_towards_longer 0
-artwork.scaled.cache_reset_time 1575804999
+artwork.scaled.cache_reset_time 1582497028
 chip.voices 0
 cli_add_playlist_name Default
 cli_add_to_specific_playlist 1
-deadbeef_version 1.8.2
+deadbeef_version 1.8.3
 discord_presence.enable 0
 discord_presence.end_timestamp 0
 discord_presence.icon_script 'Song: ' %title%
@@ -74,7 +74,7 @@ gtkui.eq.visible 0
 gtkui.font.listview_text DejaVu Sans Semi-Condensed 9
 gtkui.hide_remove_from_disk 1
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.948746 pos=1353 size2=0 {hsplitter locked=0 ratio=0.237037 pos=264 size2=0 {vsplitter locked=0 ratio=0.979862 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle,toggle_eq|0|format-justify-fill" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.014458 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.310513 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=818 {} } } waveform_seekbar {} } 
+gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.947110 pos=1353 size2=0 {hsplitter locked=0 ratio=0.237037 pos=264 size2=0 {vsplitter locked=0 ratio=0.979862 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle,toggle_eq|0|format-justify-fill" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.014458 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.310513 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=1947 {} } } waveform_seekbar {} } 
 gtkui.mmb_delete_playlist 1
 gtkui.name_playlist_from_folder 1
 gtkui.override_bar_colors 1
@@ -86,7 +86,7 @@ gtkui.refresh_rate 60
 gtkui.selection_properties.show_headers 0
 gtkui.statusbar.visible 1
 gtkui.sync 0
-gtkui.tabscroll 107
+gtkui.tabscroll 0
 gtkui.titlebar_playing_tf %artist% - %title% - DeaDBeeF-%_deadbeef_version%
 gtkui.titlebar_stopped_tf DeaDBeeF-%_deadbeef_version%
 gtkui.tray_volume_sensitivity 1
@@ -133,8 +133,8 @@ junk.enable_cp936_detection 1
 junk.enable_shift_jis_detection 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
-logwindow.geometry.x 2920
-logwindow.geometry.y 498
+logwindow.geometry.x 1078
+logwindow.geometry.y 624
 mainwin.geometry.h 1898
 mainwin.geometry.w 1080
 mainwin.geometry.x 2560
@@ -155,10 +155,10 @@ notify.format_title_tf %title%
 output_plugin pulseaudio
 playback.loop 1
 playback.order 0
-playback.volume -10.00000
+playback.volume -20.00000
 playlist.current 0
-playlist.cursor.0 212
-playlist.cursor.1 80
+playlist.cursor.0 33
+playlist.cursor.1 49
 playlist.cursor.2 42
 playlist.cursor.3 42
 playlist.cursor.4 42
@@ -168,8 +168,8 @@ playlist.cursor.7 0
 playlist.cursor.8 0
 playlist.groups.spacing 0
 playlist.pin.groups 0
-playlist.scroll.0 3653
-playlist.scroll.1 1472
+playlist.scroll.0 -33
+playlist.scroll.1 -49
 playlist.scroll.2 653
 playlist.scroll.3 653
 playlist.scroll.4 653
@@ -185,19 +185,19 @@ playlist.tab.00000 Default
 playlist.tab.00001 Medicine
 prefwin.geometry.h 676
 prefwin.geometry.w 953
-prefwin.geometry.x 2635
-prefwin.geometry.y 540
+prefwin.geometry.x -1467
+prefwin.geometry.y 689
 replaygain.processing_flags 3
 replaygain_mode 1
 replaygain_scale 1
-resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.paused 1
+resume.playlist 0
+resume.position 140.48161
+resume.track 33
 resume_last_session 0
 searchwin.geometry.h 411
 searchwin.geometry.w 582
-searchwin.geometry.x 2808
+searchwin.geometry.x 248
 searchwin.geometry.y 758
 streamer.16_to_24 1
 streamer.8_to_16 1
@@ -207,8 +207,8 @@ streamer.samplerate_mult_44 44100
 streamer.samplerate_mult_48 48000
 trkproperties.geometry.h 558
 trkproperties.geometry.w 582
-trkproperties.geometry.x 3002
-trkproperties.geometry.y 635
+trkproperties.geometry.x 248
+trkproperties.geometry.y 685
 waveform.bg_alpha 65535
 waveform.bg_color_b 11051
 waveform.bg_color_g 11051
@@ -238,6 +238,10 @@ waveform.pb_color_g 24884
 waveform.pb_color_r 58107
 waveform.refresh_interval 10
 waveform.render_method 2
+waveform.rlr_alpha 65535
+waveform.rlr_color_b 0
+waveform.rlr_color_g 0
+waveform.rlr_color_r 0
 waveform.scroll_enabled 1
 waveform.shade_waveform 0
 waveform.soundcloud_style 0

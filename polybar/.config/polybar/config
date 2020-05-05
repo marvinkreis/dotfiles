@@ -163,6 +163,8 @@ bar-progress-empty = ─
 [module/volume]
 type = internal/pulseaudio
 
+use-ui-max = false
+
 format-volume = <label-volume>
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.icon}

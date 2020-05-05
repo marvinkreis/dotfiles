@@ -83,3 +83,6 @@ namespaces
 vertices
 heatmaps
 metadata
+indices
+ciphertext
+plaintext

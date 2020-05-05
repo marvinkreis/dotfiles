@@ -10,6 +10,7 @@ oc-cmd      "deadbeef --queue;icon:deadbeef;name:deadbeef <span alpha='75%'>(que
 oc-cmd      "deadbeef;icon:deadbeef;name:deadbeef <span alpha='75%'>(play)</span>"
 oc-cmd      "thunar;icon:thunar"
 oc-cmd      "pcmanfm-qt;icon:system-file-manager;name:pcmanfm"
+oc-cmd      "ahoviewer;icon:ahoviewer"
 
 use-mode-keys
 open-parent-as-self

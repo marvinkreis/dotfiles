@@ -4,20 +4,14 @@ snippet item "Itemize" b
 \end{itemize}
 endsnippet
 
-snippet itema "Itemize without item spacing" b
-\begin{itemize}[noitemsep]
+snippet itema "Itemize without top spacing" b
+\begin{itemize}[topsep=0pt]
 	\item $0
 \end{itemize}
 endsnippet
 
 snippet itemb "Itemize without list spacing" b
 \begin{itemize}[nolistsep]
-	\item $0
-\end{itemize}
-endsnippet
-
-snippet itemc "Itemize without item and list spacing" b
-\begin{itemize}[nolistsep, noitemsep]
 	\item $0
 \end{itemize}
 endsnippet
@@ -167,7 +161,7 @@ snippet minit2 "Top-aligned 50:50 minipages" b
 \begin{minipage}[t]{.5\textwidth}\vspace{0pt}%
 	$0
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\begin{minipage}[t]{.5\textwidth}\vspace{0pt}%
 	$1
 \end{minipage}
 endsnippet
@@ -177,7 +171,7 @@ snippet minit2s "Top-aligned 50:50 minipages with spacing" b
 	$0
 \end{minipage}%
 \hspace{.02\textwidth}%
-\begin{minipage}{.49\textwidth}
+\begin{minipage}[t]{.49\textwidth}\vspace{0pt}%
 	$1
 \end{minipage}
 endsnippet

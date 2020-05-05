@@ -1,4 +1,9 @@
 {
+    "ahoviewer": {
+        "cmd":          "ahoviewer",
+        "terminal":     false,
+        "icon":         "ahoviewer"
+    },
     "all": {
         "cmd":          "rofi-all",
         "terminal":     false,

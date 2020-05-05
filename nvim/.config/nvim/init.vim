@@ -122,6 +122,12 @@ map mm :w<CR>:VimtexCompile<CR>
 
 " Rofi file browser
 nnoremap <silent> <C-p> :call RofiFB()<CR>
+
+" Open file under cursor
+nnoremap <leader>o "ayiW:!exo-open "<C-r>a"<CR><CR>
+
+" Faster macros
+nnoremap <F1> @q
 " }}}
 
 " Airline: {{{

@@ -1,0 +1,9 @@
+keycode 25 = Up Up
+keycode 38 = Left Left
+keycode 39 = Down Down
+keycode 40 = Right Right
+
+keycode 90 = Shift_L
+keycode 91 = z Z
+
+keycode 65 = Shift_R

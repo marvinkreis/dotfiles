@@ -1,0 +1,9 @@
+keycode 25 = w W
+keycode 38 = a A
+keycode 39 = s S
+keycode 40 = d D
+
+keycode 90 = KP_0
+keycode 91 = KP_Decimal
+
+keycode 65 = space

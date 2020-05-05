@@ -229,8 +229,8 @@ let g:vimtex_quickfix_latexlog = {
 \}
 
 let g:vimtex_view_method = 'zathura'
-
 let g:tex_flavor = 'latex'
+let g:vimtex_imaps_enabled = 0
 " }}}
 
 " Completion Settings: {{{

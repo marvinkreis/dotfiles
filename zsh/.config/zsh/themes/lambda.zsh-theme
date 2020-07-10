@@ -10,19 +10,63 @@ function short_pwd {
     echo $_short_pwd
 }
 
+function trunc_pwd {
+    local pwd="${PWD/#${HOME}/~}"
+    local prefix=''
+    local old_pwd=""
+
+    while (( ${#pwd} > $(( ${COLUMNS} / 3 )) )) && [[ "${old_pwd}" != "${pwd}" ]]; do
+        old_pwd="${pwd}"
+        pwd="${pwd#*/}"
+        prefix='../'
+    done
+
+    echo "${prefix}${pwd}"
+}
+
+function inc_ncmds {
+    NCMDS=$(( ${NCMDS} + 1 ))
+}
+
+function get_retval {
+    RETVAL="${?}"
+    if [[ "${RETVAL}" -ne "0" ]] && [[ "${NCMDS}" -ne "${PREV_NCMDS}" ]]; then
+        PREV_NCMDS="${NCMDS}"
+    else
+        RETVAL=0
+    fi
+}
+
+function exit_symbol {
+    if [[ "${RETVAL}" -ne "0" ]]; then
+        echo "[${RETVAL}] "
+    fi
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec inc_ncmds
+add-zsh-hook precmd get_retval
+
+# Colors
 reset_color="%{[00m%}"
 prompt_color_name="%{[38;5;001m%}"
 prompt_color_git="%{[38;5;004m%}"
 prompt_color_pwd="%{[38;5;245m%}"
 prompt_color_time="%{[38;5;242m%}"
+prompt_color_false="%{[38;5;001m%}"
 
-PROMPT=""
+# OMZ settings
+ZSH_THEME_GIT_PROMPT_PREFIX=''
+ZSH_THEME_GIT_PROMPT_SUFFIX=' '
+
+# Prompt
+PROMPT=''
 PROMPT+='${prompt_color_name}%n${reset_color} '
-PROMPT+='${prompt_color_pwd}$(short_pwd)${reset_color} '
+PROMPT+='${prompt_color_pwd}$(trunc_pwd)${reset_color} '
 PROMPT+='${prompt_color_git}$(git_prompt_info)${reset_color}'
 PROMPT+='λ '
 
-RPROMPT='${prompt_color_time}%*${reset_color}'
-
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=" "
+# Right-side prompt
+RPROMPT=''
+RPROMPT+='${prompt_color_false}$(exit_symbol)${reset_color}'
+RPROMPT+='${prompt_color_time}%*${reset_color}'

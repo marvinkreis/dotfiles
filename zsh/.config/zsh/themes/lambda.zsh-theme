@@ -24,6 +24,17 @@ function trunc_pwd {
     echo "${prefix}${pwd}"
 }
 
+function trunc_git_branch {
+    branch="$(git branch --show-current 2> /dev/null)"
+
+    if [ $? -eq 0 ]; then
+        if (( ${#branch} > $(( ${COLUMNS} / 3 )) )); then
+            branch="${branch:0:$(( ${COLUMNS} / 3 ))}.."
+        fi
+        echo "${branch} "
+    fi
+}
+
 function inc_ncmds {
     NCMDS=$(( ${NCMDS} + 1 ))
 }
@@ -64,7 +75,7 @@ PROMPT=''
 PROMPT+='${prompt_color_name}%n${reset_color} '
 PROMPT+='${prompt_color_time}[%*]${reset_color} '
 PROMPT+='${prompt_color_pwd}$(trunc_pwd)${reset_color} '
-PROMPT+='${prompt_color_git}$(git_prompt_info)${reset_color}'
+PROMPT+='${prompt_color_git}$(trunc_git_branch)${reset_color}'
 PROMPT+='${prompt_color_false}$(exit_symbol)${reset_color}'
 PROMPT+='λ '
 

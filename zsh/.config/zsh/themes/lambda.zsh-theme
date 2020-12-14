@@ -59,13 +59,13 @@ add-zsh-hook preexec inc_ncmds
 add-zsh-hook precmd get_retval
 
 # Colors
-reset_fg="%{[39m%}"
+reset_fg="%{[39;22m%}"
 reset_bg="%{[49m%}"
 # bgcolor_bg="%{[48;5;233m%}"
 # bgcolor_fg="%{[38;5;233m%}"
 color_time="%{[38;5;7m%}"
 color_name="%{[38;5;1m%}"
-color_pwd="%{[38;5;12m%}"
+color_pwd="%{[1;38;5;12m%}"
 color_git="%{[38;5;4m%}"
 color_false="%{[38;5;1m%}"
 

@@ -72,7 +72,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  title: Alacritty
+  title: Terminal
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: false
@@ -147,14 +147,14 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 11.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -177,7 +177,7 @@ colors:
   # Default colors
   primary:
     background: '#1c1c1c'
-    foreground: '#d5d5c5'
+    foreground: '#d0d0c0'
 
     # Bright and dim foreground colors
     #
@@ -237,25 +237,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#2a2a29'
+    black:   '#323232'
     red:     '#cc241d'
     green:   '#98971a'
     yellow:  '#d79921'
     blue:    '#458588'
     magenta: '#b16286'
     cyan:    '#689d6a'
-    white:   '#757065'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black:   '#3d3d3a'
+    black:   '#444444'
     red:     '#fb4934'
     green:   '#b8bb26'
     yellow:  '#fabd2f'
     blue:    '#83a598'
     magenta: '#d3869b'
     cyan:    '#8ec07c'
-    white:   '#fbebd2'
+    white:   '#ebdbb2'
 
   # Dim colors
   #
@@ -326,7 +326,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.97
+background_opacity: 0.95
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -336,14 +336,14 @@ background_opacity: 0.97
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
   #
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  #style: Block
+  style: Block
 
   # Vi mode cursor style
   #
@@ -355,11 +355,11 @@ background_opacity: 0.97
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  #thickness: 0.15
+  thickness: 0.2
 
 # Live config reload (changes require restart)
 #live_config_reload: true

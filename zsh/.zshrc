@@ -34,6 +34,7 @@ source $HOME/.antigen/antigen.zsh
 antigen bundle ohmyzsh/ohmyzsh lib/completion.zsh
 antigen bundle ohmyzsh/ohmyzsh lib/key-bindings.zsh
 antigen bundle ohmyzsh/ohmyzsh plugins/safe-paste/safe-paste-plugin.zsh
+antigen bundle ohmyzsh/ohmyzsh plugins/jump/jump.plugin.zsh
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma/fast-syntax-highlighting
@@ -50,8 +51,8 @@ PAGER='nvimpager -p'
 MANPAGER='nvimpager -p'
 ZSH_CONFIG=$HOME/.config/zsh
 
-export LS_COLORS="di=1;38;5;12:ex=1;38;5;10:fi=0:pi=38;5;3:so=1;38;5;5:bd=1;38;5;3:cd=1;38;5;3:ln=1;38;5;4:or=38;5;1"
-export EXA_COLORS="reset:di=1;38;5;12:ex=1;38;5;10:fi=0:pi=38;5;3:so=1;38;5;5:bd=1;38;5;3:cd=1;38;5;3:ln=1;38;5;4:or=38;5;1:ur=38;5;2:uw=38;5;3:ux=38;5;1:ue=38;5;1:gr=38;5;2:gw=38;5;3:gx=38;5;1:tr=38;5;2:tw=38;5;3:tx=38;5;1:su=1;38;5;1:sf=1;38;5;1:xa=1;38;5;1:sn=38;5;5:sb=38;5;5:df=0:ds=0:uu=38;5;2:un=38;5;2:lc=0:lm=0:ga=38;5;2:gm=38;5;4:gd=38;5;1:gv=38;5;5:gt=38;5;6:xx=38;5;8:da=38;5;7:in=0:bl=0:hd=0:lp=1;38;5;12:cc=1;38;5;3:bO=0"
+export LS_COLORS="di=1;38;5;12:ex=1;38;5;10:fi=0:pi=38;5;3:so=38;5;5:bd=1;38;5;11:cd=38;5;3:ln=38;5;4:or=38;5;1"
+export EXA_COLORS="reset:di=1;38;5;12:ex=1;38;5;10:fi=0:pi=38;5;3:so=38;5;5:bd=1;38;5;11:cd=38;5;3:ln=38;5;4:or=38;5;1:ur=38;5;2:uw=38;5;3:ux=38;5;1:ue=38;5;1:gr=38;5;2:gw=38;5;3:gx=38;5;1:tr=38;5;2:tw=38;5;3:tx=38;5;1:su=1;38;5;1:sf=1;38;5;1:xa=1;38;5;1:sn=38;5;5:sb=38;5;5:df=0:ds=0:uu=38;5;2:un=38;5;2:lc=0:lm=0:ga=38;5;2:gm=38;5;4:gd=38;5;1:gv=38;5;5:gt=38;5;6:xx=38;5;8:da=38;5;7:in=0:bl=0:hd=0:lp=1;38;5;12:cc=1;38;5;3:bO=0"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # }}}
 

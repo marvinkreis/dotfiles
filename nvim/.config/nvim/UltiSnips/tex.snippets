@@ -10,8 +10,14 @@ snippet itema "Itemize without top spacing" b
 \end{itemize}
 endsnippet
 
-snippet itemb "Itemize without list spacing" b
-\begin{itemize}[nolistsep]
+snippet itemb "Itemize without item spacing" b
+\begin{itemize}[noitemsep]
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet itemc "Itemize without top and item spacing" b
+\begin{itemize}[topsep=0pt, noitemsep]
 	\item $0
 \end{itemize}
 endsnippet
@@ -90,10 +96,22 @@ snippet tcode "Text code (minted)" b
 \end{textcode}
 endsnippet
 
+snippet tcode* "Text code alt (minted)" b
+\begin{textcode*}{escapeinside=||}
+	$0
+\end{textcode*}
+endsnippet
+
 snippet jcode "Java code (minted)" b
 \begin{javacode}
 	$0
 \end{javacode}
+endsnippet
+
+snippet jcode* "Java code alt (minted)" b
+\begin{javacode*}{escapeinside=||}
+	$0
+\end{javacode*}
 endsnippet
 
 snippet jscode "JavaScript code (minted)" b
@@ -102,10 +120,22 @@ snippet jscode "JavaScript code (minted)" b
 \end{javascriptcode}
 endsnippet
 
+snippet jscode* "JavaScript code alt (minted)" b
+\begin{javascriptcode*}{escapeinside=||}
+	$0
+\end{javascriptcode*}
+endsnippet
+
 snippet jocode "JSON code (minted)" b
 \begin{jsoncode}
 	$0
 \end{jsoncode}
+endsnippet
+
+snippet jocode* "JSON code alt (minted)" b
+\begin{jsoncode*}{escapeinside=||}
+	$0
+\end{jsoncode*}
 endsnippet
 
 snippet ccode "CPP code (minted)" b
@@ -114,10 +144,22 @@ snippet ccode "CPP code (minted)" b
 \end{cppcode}
 endsnippet
 
+snippet ccode* "CPP code alt (minted)" b
+\begin{cppcode*}{escapeinside=||}
+	$0
+\end{cppcode*}
+endsnippet
+
 snippet pcode "Python code (minted)" b
 \begin{pythoncode}
 	$0
 \end{pythoncode}
+endsnippet
+
+snippet pcode* "Python code alt (minted)" b
+\begin{pythoncode*}{escapeinside=||}
+	$0
+\end{pythoncode*}
 endsnippet
 
 snippet dcode "Diff code (minted)" b
@@ -126,16 +168,34 @@ snippet dcode "Diff code (minted)" b
 \end{diffcode}
 endsnippet
 
+snippet dcode* "Diff code alt (minted)" b
+\begin{diffcode*}{escapeinside=||}
+	$0
+\end{diffcode*}
+endsnippet
+
 snippet scode "SQL code (minted)" b
 \begin{sqlcode}
 	$0
 \end{sqlcode}
 endsnippet
 
+snippet scode* "SQL code alt (minted)" b
+\begin{sqlcode*}{escapeinside=||}
+	$0
+\end{sqlcode*}
+endsnippet
+
 snippet xcode "XML code (minted)" b
 \begin{xmlcode}
 	$0
 \end{xmlcode}
+endsnippet
+
+snippet xcode* "XML code alt (minted)" b
+\begin{xmlcode*}{escapeinside=||}
+	$0
+\end{xmlcode*}
 endsnippet
 
 snippet mini "Minipage" b
@@ -224,8 +284,12 @@ snippet tw "Text width" w
 \textwidth
 endsnippet
 
-snippet em "emph" w
+snippet em "Emphasize" w
 \emph{
+endsnippet
+
+snippet m "Mute" w
+\mute{
 endsnippet
 
 

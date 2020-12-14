@@ -1,4 +1,5 @@
-URxvt.perl-ext-common: default,tabbedex,clipboard,font-size,new-window
+! URxvt.perl-ext-common: default,tabbedex,clipboard,font-size,new-window
+URxvt.perl-ext-common: default,clipboard,font-size,new-window
 
 !appearance
 URxvt.font: xft:JetBrains Mono for Powerline:pixelsize=15
@@ -38,6 +39,7 @@ URxvt.keysym.C-n: perl:new-window
 URxvt.keysym.C-N: perl:new-window
 
 !disable print screen
+URxvt.print-pipe: "cat > /dev/null"
 URxvt.keysym.Print: perl:nop
 
 !transparency

@@ -32,8 +32,8 @@
 *.color14:  #8ec07c
 
 ! white
-*.color7:   #a89984
-*.color15:  #ebdbb2
+*.color7:   #757065
+*.color15:  #fbebd2
 
 ! rofi
 rofi.color-normal: #1c1c1c,  #d0d0d0,  #232323,  #424242,  #d0d0d0

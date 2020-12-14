@@ -4,6 +4,7 @@ keycode 39 = Down Down
 keycode 40 = Right Right
 
 keycode 90 = Shift_L
+keycode 65 = Shift_R
 keycode 91 = z Z
 
-keycode 65 = Shift_R
+keycode 24 = s S

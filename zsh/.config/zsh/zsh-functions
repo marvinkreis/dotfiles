@@ -29,11 +29,7 @@ qr() {
 }
 
 snip() {
-    import "${1:-screenshot_$(date +%F-%H%M%S).png}" ${@:2}
-}
-
-screenshot() {
-    scrot "${1:-screenshot_$(date +%F-%H%M%S).png}" ${@:2}
+    import "${1:-screenshot-$(date +%F-%H%M%S).png}" ${@:2}
 }
 
 swap() {
@@ -89,4 +85,12 @@ start-in-background() {
     if [[ -v ${1} ]]; then
         (${@} &> /dev/null &)
     fi
+}
+
+my-pandoc() {
+    pandoc \
+        -V 'papersize: a4' \
+        "${@}"
+
+        # -V 'geometry: top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm' \
 }

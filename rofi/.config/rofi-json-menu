@@ -1,9 +1,4 @@
 {
-    "ahoviewer": {
-        "cmd":          "ahoviewer",
-        "terminal":     false,
-        "icon":         "ahoviewer"
-    },
     "all": {
         "cmd":          "rofi-all",
         "terminal":     false,
@@ -82,12 +77,6 @@
         "terminal":     false,
         "icon":         "fileopen"
     },
-    "os": {
-        "description":  "studip file browser",
-        "cmd":          "rofi-file-browser-studip",
-        "terminal":     false,
-        "icon":         "fileopen"
-    },
     "ou": {
         "description":  "uni file browser",
         "cmd":          "rofi-file-browser-uni",
@@ -125,11 +114,6 @@
         "cmd":          "xfce4-settings-manager",
         "terminal":     false,
         "icon":         "open-menu"
-    },
-    "ssh": {
-        "cmd":          "dmenu_ssh",
-        "terminal":     false,
-        "icon":         "hotwire-openssh"
     },
     "teamspeak": {
         "cmd":          "teamspeak3",
@@ -188,5 +172,10 @@
         "cmd":          "zeal",
         "terminal":     false,
         "icon":         "zeal"
+    },
+    "ahoviewer": {
+        "cmd":          "ahoviewer",
+        "terminal":     false,
+        "icon":         "ahoviewer"
     }
 }

@@ -1,12 +1,19 @@
 alias -g tobg="&> /dev/null &; disown"
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 alias dirs="dirs -v"
 alias j=jump
 alias latexrun='latexrun -O /tmp/latexrun --latex-args="--shell-escape -synctex=1"'
 alias ls="ls --color=auto --group-directories-first -1"
+alias lss="exa --group-directories-first -l -@ --git"
 alias mkdir="mkdir -p"
+alias mv="mv -i"
 alias n="start-in-background"
 alias o="exo-open"
+alias pandoc=my-pandoc
 alias pdfgrep="pdfgrep -Ri"
 alias r="echo disabled"
 alias rm="rm -vI"

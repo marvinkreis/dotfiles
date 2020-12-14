@@ -51,8 +51,8 @@ add-zsh-hook precmd get_retval
 reset_color="%{[00m%}"
 prompt_color_name="%{[38;5;001m%}"
 prompt_color_git="%{[38;5;004m%}"
-prompt_color_pwd="%{[38;5;245m%}"
-prompt_color_time="%{[38;5;242m%}"
+prompt_color_pwd="%{[38;5;007m%}"
+prompt_color_time="%{[38;5;007m%}"
 prompt_color_false="%{[38;5;001m%}"
 
 # OMZ settings
@@ -62,11 +62,13 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=' '
 # Prompt
 PROMPT=''
 PROMPT+='${prompt_color_name}%n${reset_color} '
+PROMPT+='${prompt_color_time}[%*]${reset_color} '
 PROMPT+='${prompt_color_pwd}$(trunc_pwd)${reset_color} '
 PROMPT+='${prompt_color_git}$(git_prompt_info)${reset_color}'
+PROMPT+='${prompt_color_false}$(exit_symbol)${reset_color}'
 PROMPT+='λ '
 
 # Right-side prompt
-RPROMPT=''
-RPROMPT+='${prompt_color_false}$(exit_symbol)${reset_color}'
-RPROMPT+='${prompt_color_time}%*${reset_color}'
+# RPROMPT=''
+# RPROMPT+='${prompt_color_false}$(exit_symbol)${reset_color}'
+# RPROMPT+='${prompt_color_time}%*${reset_color}'

@@ -60,6 +60,7 @@ set ignorecase
 set scrolloff=8
 set lazyredraw
 set mouse=a
+set linebreak
 
 set encoding=utf-8
 set fileformat=unix
@@ -82,25 +83,56 @@ nnoremap k gk
 vnoremap k gk
 nnoremap <leader>j :bnext! <CR>
 nnoremap <leader>k :bprev! <CR>
-nnoremap <C-j> :bnext! <CR>
-nnoremap <C-k> :bprev! <CR>
 nnoremap <leader>q :bd <CR>
 nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <silent> <ESC> :nohlsearch<CR>
 nnoremap <C-b> :CtrlPBuffer<CR>
 inoremap <C-a> <ESC>
+nnoremap <silent> <C-j> :m .+1<CR>==
+nnoremap <silent> <C-k> :m .-2<CR>==
 
-" Clear Annoying Keys
+" Unmap Annoying Keys
 nmap Q <nop>
-noremap q: <nop>
+nmap q: <nop>
 map <PageUp> <nop>
 imap <PageUp> <nop>
 map <PageDown> <nop>
 imap <PageDown> <nop>
 map <F1> <nop>
 imap <F1> <nop>
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
+map <MiddleMouse> <nop>
+imap <MiddleMouse> <nop>
+
+" Unmap Keys that break Deoplete
+imap <F1> <nop>
+imap <F2> <nop>
+imap <F3> <nop>
+imap <F4> <nop>
+imap <F5> <nop>
+imap <F6> <nop>
+imap <F7> <nop>
+imap <F8> <nop>
+imap <F9> <nop>
+imap <F10> <nop>
+imap <F11> <nop>
+imap <F12> <nop>
+imap <F13> <nop>
+imap <F14> <nop>
+imap <F15> <nop>
+imap <F16> <nop>
+imap <F17> <nop>
+imap <F18> <nop>
+imap <F19> <nop>
+imap <F20> <nop>
+imap <F21> <nop>
+imap <F22> <nop>
+imap <F23> <nop>
+imap <F24> <nop>
+imap <kLeft> <nop>
+imap <kRight> <nop>
+imap <kDown> <nop>
+imap <kUp> <nop>
+imap <kOrigin> <nop>
 
 " Airline buffers
 nmap <leader>1 <Plug>AirlineSelectTab1

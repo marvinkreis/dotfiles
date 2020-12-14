@@ -28,7 +28,7 @@ window:
   # fall back to the window manager's recommended size.
   dimensions:
     columns: 100
-    lines: 40
+    lines: 25
 
   # Window position (changes require restart)
   #
@@ -177,7 +177,7 @@ colors:
   # Default colors
   primary:
     background: '#1c1c1c'
-    foreground: '#d0d0d0'
+    foreground: '#d5d5c5'
 
     # Bright and dim foreground colors
     #
@@ -237,7 +237,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#323232'
+    black:   '#2a2a29'
     red:     '#cc241d'
     green:   '#98971a'
     yellow:  '#d79921'
@@ -248,7 +248,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#444444'
+    black:   '#3d3d3a'
     red:     '#fb4934'
     green:   '#b8bb26'
     yellow:  '#fabd2f'

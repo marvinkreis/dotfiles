@@ -27,7 +27,7 @@ window:
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
   dimensions:
-    columns: 100
+    columns: 90
     lines: 25
 
   # Window position (changes require restart)
@@ -194,9 +194,9 @@ colors:
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+    text: '#1c1c1c'
+    cursor: '#d0d0c0'
 
   # Vi mode cursor colors
   #
@@ -326,7 +326,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 0.9
 
 #selection:
   # This string contains all characters that are used as separators for

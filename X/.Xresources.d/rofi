@@ -1,27 +1,27 @@
 ! "Enabled modi" Set from: Default
 rofi.modi:
 ! "Window width" Set from: Default
-rofi.width:                             50
+rofi.width:                            50
 ! "Number of lines" Set from: Default
-rofi.lines:                             25
+rofi.lines:                            25
 ! "Number of columns" Set from: Default
-rofi.columns:                           1
+rofi.columns:                          1
 ! "Font to use" Set from: Default
-rofi.font:                              JetBrains Mono 10
+rofi.font:                             JetBrains Mono 10
 ! "Border width" Set from: Default
-rofi.bw:                                1
+rofi.bw:                               1
 ! "Location on screen" Set from: Default
-rofi.location:                          1
+rofi.location:                         1
 ! "Padding" Set from: Default
-rofi.padding:                           4
+rofi.padding:                          4
 ! "Y-offset relative to location" Set from: Default
 ! rofi.yoffset:                        0
 ! "X-offset relative to location" Set from: Default
-rofi.xoffset:                           290
+rofi.xoffset:                          290
 ! "Always show number of lines" Set from: Default
 ! rofi.fixed-num-lines:                true
 ! "Whether to load and show icons" Set from: Default
-rofi.show-icons:                        true
+rofi.show-icons:                       true
 ! "Terminal to use" Set from: Default
 ! rofi.terminal:                       rofi-sensible-terminal
 ! "Ssh client to use" Set from: Default
@@ -39,7 +39,7 @@ rofi.show-icons:                        true
 ! "Window fields to match in window mode" Set from: Default
 ! rofi.window-match-fields:            all
 ! "Theme to use to look for icons" Set from: Default
-rofi.icon-theme:                   Numix-Circle
+rofi.icon-theme:                       Numix-Circle
 ! "Desktop entry fields to match in drun" Set from: Default
 ! rofi.drun-match-fields:              name,generic,exec,categories
 ! "Disable history in run/ssh" Set from: Default
@@ -49,9 +49,9 @@ rofi.icon-theme:                   Numix-Circle
 ! "Use levenshtein sorting also for fuzzy matching" Set from: Default
 ! rofi.levenshtein-sort:               false
 ! "Set case-sensitivity" Set from: Default
-rofi.case-sensitive:                    false
+rofi.case-sensitive:                   false
 ! "Cycle through the results list" Set from: Default
-rofi.cycle:                             false
+rofi.cycle:                            true
 ! "Enable sidebar-mode" Set from: Default
 ! rofi.sidebar-mode:                   false
 ! "Row height (in chars)" Set from: Default
@@ -65,15 +65,15 @@ rofi.cycle:                             false
 ! "Set the modi to combine in combi mode" Set from: Default
 ! rofi.combi-modi:                     window,run
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
-rofi.matching:                          glob
+rofi.matching:                         glob
 ! "Tokenize input string" Set from: Default
 ! rofi.tokenize:                       true
 ! "Monitor id to show on" Set from: Default
 rofi.m:                                -1
 ! "Margin between rows *DEPRECATED*" Set from: Default
-rofi.line-margin:                       1
+rofi.line-margin:                      1
 ! "Padding within rows *DEPRECATED*" Set from: Default
-rofi.line-padding:                      2
+rofi.line-padding:                     2
 ! "Pre-set filter" Set from: Default
 ! rofi.filter:
 ! "Separator style (none, dash, solid) *DEPRECATED*" Set from: Default
@@ -125,17 +125,17 @@ rofi.theme:                             xres
 ! "The display name of this browser" Set from: Default
 ! rofi.display-ssh:                       ssh:
 ! "The display name of this browser" Set from: Default
-rofi.display-drun:                      run
+rofi.display-drun:                     run
 ! "The display name of this browser" Set from: Default
 ! rofi.display-combi:                     combi:
 ! "The display name of this browser" Set from: Default
 ! rofi.display-keys:                      keys:
 ! "The display name of this browser" Set from: Default
-rofi.display-file-browser:              open
+rofi.display-file-browser-extended:    open
 ! "The display name of this browser" Set from: Default
-rofi.display-json-menu:                 prompt
+rofi.display-json-menu:                prompt
 ! "The display name of this browser" Set from: Default
-rofi.display-json-dict:                 dict
+rofi.display-json-dict:                dict
 ! "Paste primary selection" Set from: Default
 ! rofi.kb-primary-paste:               Control+V,Shift+Insert
 ! "Paste clipboard" Set from: Default
@@ -169,7 +169,7 @@ rofi.display-json-dict:                 dict
 ! "Accept entry" Set from: Default
 ! rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
 ! "Use entered text as command (in ssh/run modi)" Set from: Default
-rofi.kb-accept-custom:               Alt+exclam
+rofi.kb-accept-custom:                 Alt+exclam
 ! "Use alternate accept command." Set from: Default
 ! rofi.kb-accept-alt:                  Shift+Return
 ! "Delete entry from history" Set from: Default
@@ -207,43 +207,43 @@ rofi.kb-accept-custom:               Alt+exclam
 ! "Quit rofi" Set from: Default
 ! rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft
 ! "Custom keybinding 1" Set from: Default
-! rofi.kb-custom-1:                    Alt+1
+rofi.kb-custom-1:                    Alt+1
 ! "Custom keybinding 2" Set from: Default
-! rofi.kb-custom-2:                    Alt+2
+rofi.kb-custom-2:                    Alt+2
 ! "Custom keybinding 3" Set from: Default
-! rofi.kb-custom-3:                    Alt+3
+rofi.kb-custom-3:                    Alt+3
 ! "Custom keybinding 4" Set from: Default
-! rofi.kb-custom-4:                    Alt+4
+rofi.kb-custom-4:                    Alt+4
 ! "Custom Keybinding 5" Set from: Default
-! rofi.kb-custom-5:                    Alt+5
+rofi.kb-custom-5:                    Alt+5
 ! "Custom keybinding 6" Set from: Default
-! rofi.kb-custom-6:                    Alt+6
+rofi.kb-custom-6:                    Alt+6
 ! "Custom Keybinding 7" Set from: Default
-! rofi.kb-custom-7:                    Alt+7
+rofi.kb-custom-7:                    Alt+7
 ! "Custom keybinding 8" Set from: Default
-! rofi.kb-custom-8:                    Alt+8
+rofi.kb-custom-8:                    Alt+8
 ! "Custom keybinding 9" Set from: Default
-! rofi.kb-custom-9:                    Alt+9
+rofi.kb-custom-9:                    Alt+9
 ! "Custom keybinding 10" Set from: Default
-! rofi.kb-custom-10:                   Alt+0
+rofi.kb-custom-10:                   Alt+0
 ! "Custom keybinding 11" Set from: Default
 rofi.kb-custom-11:                   Control+Return
 ! "Custom keybinding 12" Set from: Default
-! rofi.kb-custom-12:                   Alt+at
+rofi.kb-custom-12:                   Alt+at
 ! "Csutom keybinding 13" Set from: Default
-! rofi.kb-custom-13:                   Alt+numbersign
+rofi.kb-custom-13:                   Alt+numbersign
 ! "Custom keybinding 14" Set from: Default
-! rofi.kb-custom-14:                   Alt+dollar
+rofi.kb-custom-14:                   Alt+dollar
 ! "Custom keybinding 15" Set from: Default
-! rofi.kb-custom-15:                   Alt+percent
+rofi.kb-custom-15:                   Alt+percent
 ! "Custom keybinding 16" Set from: Default
-! rofi.kb-custom-16:                   Alt+dead_circumflex
+rofi.kb-custom-16:                   Alt+dead_circumflex
 ! "Custom keybinding 17" Set from: Default
-! rofi.kb-custom-17:                   Alt+ampersand
+rofi.kb-custom-17:                   Alt+ampersand
 ! "Custom keybinding 18" Set from: Default
-! rofi.kb-custom-18:                   Alt+asterisk
+rofi.kb-custom-18:                   Alt+asterisk
 ! "Custom Keybinding 19" Set from: Default
-! rofi.kb-custom-19:                   Alt+parenleft
+rofi.kb-custom-19:                   Alt+parenleft
 ! "Select row 1" Set from: Default
 ! rofi.kb-select-1:                    Super+1
 ! "Select row 2" Set from: Default

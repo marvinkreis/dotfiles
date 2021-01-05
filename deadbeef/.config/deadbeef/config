@@ -74,13 +74,13 @@ gtkui.eq.visible 0
 gtkui.font.listview_text DejaVu Sans Semi-Condensed 9
 gtkui.hide_remove_from_disk 1
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.960742 pos=1353 size2=0 {hsplitter locked=0 ratio=0.227778 pos=264 size2=0 {vsplitter locked=0 ratio=0.981417 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle,toggle_eq|0|format-justify-fill" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.083624 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.310513 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=818 {} } } waveform_seekbar {} } 
+gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.948201 pos=1353 size2=0 {hsplitter locked=0 ratio=0.227778 pos=264 size2=0 {vsplitter locked=0 ratio=0.981417 pos=1352 size2=0 {filebrowser {} hsplitter locked=0 ratio=0.500000 pos=189 size2=0 {customizable_toolbar layout="stop|0|media-playback-stop,play|0|media-playback-start,toggle_pause|0|media-playback-pause,next|0|media-skip-forward,playback_random|0|media-playlist-shuffle,toggle_eq|0|format-justify-fill" {} volumebar {} } } vsplitter locked=0 ratio=0.164713 pos=263 size2=0 {vsplitter locked=0 ratio=0.083624 pos=0 size2=0 {tabstrip {} hsplitter locked=0 ratio=0.310513 pos=244 size2=0 {coverart {} selproperties {} } } playlist hideheaders=1 width=818 {} } } waveform_seekbar {} } 
 gtkui.mmb_delete_playlist 1
 gtkui.name_playlist_from_folder 1
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 1
 gtkui.override_tabstrip_colors 0
-gtkui.playlist.group_by_tf "%album artist% - ['['%year%']' ]%album%"
+gtkui.playlist.group_by_tf "%album artist% - %album%"
 gtkui.pltbrowser.show_headers 0
 gtkui.refresh_rate 60
 gtkui.selection_properties.show_headers 0
@@ -133,7 +133,7 @@ junk.enable_cp936_detection 1
 junk.enable_shift_jis_detection 1
 logwindow.geometry.h 765
 logwindow.geometry.w 454
-logwindow.geometry.x 244
+logwindow.geometry.x 243
 logwindow.geometry.y 625
 mainwin.geometry.h 1898
 mainwin.geometry.w 1080
@@ -155,9 +155,9 @@ notify.format_title_tf %title%
 output_plugin pulseaudio
 playback.loop 1
 playback.order 0
-playback.volume -14.00000
+playback.volume -13.00000
 playlist.current 0
-playlist.cursor.0 41
+playlist.cursor.0 96
 playlist.cursor.1 156
 playlist.cursor.2 0
 playlist.cursor.3 0
@@ -168,7 +168,7 @@ playlist.cursor.7 0
 playlist.cursor.8 0
 playlist.groups.spacing 0
 playlist.pin.groups 0
-playlist.scroll.0 0
+playlist.scroll.0 1544
 playlist.scroll.1 2492
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -185,8 +185,8 @@ playlist.tab.00000 Default
 playlist.tab.00001 Medicine
 prefwin.geometry.h 676
 prefwin.geometry.w 953
-prefwin.geometry.x 185
-prefwin.geometry.y 793
+prefwin.geometry.x 43
+prefwin.geometry.y 762
 replaygain.processing_flags 3
 replaygain_mode 1
 replaygain_scale 1

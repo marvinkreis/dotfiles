@@ -27,9 +27,9 @@ function trunc_pwd {
 function trunc_git_branch {
     local branch="$(git branch --show-current 2> /dev/null)"
 
-    if [[ "${branch}" -ne '' ]]; then
+    if (( ${#branch} > 0 )); then
         if (( ${#branch} > $(( ${COLUMNS} / 4 )) )); then
-            branch="${branch:0:$(( ${COLUMNS} / 4 ))}.."
+            branch="${branch:0:$(( ${COLUMNS} / 4 - 2 ))}.."
         fi
         echo "${branch} "
     fi
@@ -60,7 +60,7 @@ add-zsh-hook precmd get_retval
 
 # Colors
 reset_fg="%{[39;22m%}"
-reset_bg="%{[49m%}"
+# reset_bg="%{[49m%}"
 # bgcolor_bg="%{[48;5;233m%}"
 # bgcolor_fg="%{[38;5;233m%}"
 color_time="%{[38;5;7m%}"

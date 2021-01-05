@@ -79,10 +79,10 @@ function _rofi_file_browser() {
         dir="${PWD}"
     fi
 
-    rofi -modi file-browser         \
-         -show file-browser         \
-         -file-browser-dir "${dir}" \
-         -file-browser-depth 10     \
+    rofi -modi file-browser-extended \
+         -show file-browser-extended \
+         -file-browser-dir "${dir}"  \
+         -file-browser-depth 10      \
          -file-browser-stdout |
     while read line; do
         file=$(realpath --relative-to "${PWD}" "${line}")
@@ -102,10 +102,10 @@ function _rofi_file_browser_open() {
         dir="${PWD}"
     fi
 
-    rofi -modi file-browser         \
-         -show file-browser         \
-         -file-browser-dir "${dir}" \
-         -file-browser-depth 10     \
+    rofi -modi file-browser-extended \
+         -show file-browser-extended \
+         -file-browser-dir "${dir}"  \
+         -file-browser-depth 10      \
 }
 
 zle -N rofi_file_browser_open_widget _rofi_file_browser_open
